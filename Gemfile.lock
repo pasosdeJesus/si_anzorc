@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/pasosdeJesus/sip.git
-  revision: f45cdd50716f49b962543cd3c6295473ec1634d3
+  revision: 31eba7617036bebacd099b944cbe9837cb16cf74
   specs:
     sip (2.0.a7)
       devise
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sivel2_gen.git
-  revision: 51b3bd49b693f35d9cae56a0d44ba0c7d8e8ce78
+  revision: 3c4345ad1728a5365fbd7ffc9b846c9a71d9787b
   specs:
     sivel2_gen (2.0.a7)
       devise
@@ -72,7 +72,7 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-datepicker-rails (1.4.0)
+    bootstrap-datepicker-rails (1.5.0)
       railties (>= 3.0)
     builder (3.2.2)
     camertron-eprun (1.1.0)
@@ -205,7 +205,6 @@ GEM
     raindrops (0.15.0)
     rake (10.4.2)
     rdoc (4.2.0)
-      json (~> 1.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec-core (3.3.2)
@@ -268,7 +267,7 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unicorn (4.9.0)
+    unicorn (5.0.0)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
