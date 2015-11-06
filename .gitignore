@@ -16,3 +16,4 @@ config/database.yml
 /log/*.log
 /tmp
 *~
+/public/anzorc/sivel2/assets/
