@@ -13,7 +13,7 @@ describe "Control de acceso " do
 
   describe "analista" do
     it "puede crear caso" do
-      visit "/casos/nuevo"
+      visit "/anzorc/sivel2/casos/nuevo"
       @numcaso=find_field('Código').value
 
       # Datos básicos
