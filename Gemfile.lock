@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/pasosdeJesus/sip.git
-  revision: cf49f141d8efd38ebf268eaf52ca4ffbe8753a6a
+  revision: 3b66db324abfeec0090cdaeea1e8307c90e48b80
   specs:
     sip (2.0.a7)
       bootstrap-datepicker-rails
@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: git://github.com/pasosdeJesus/sivel2_gen.git
-  revision: dd16f3903a7d62169e730aef7f8ca156736c05aa
+  revision: 8b6fdc9c8abde63bffc623f5d687bc6f571bfcf0
   specs:
     sivel2_gen (2.0.a7)
       devise
@@ -156,11 +156,11 @@ GEM
     method_source (0.8.2)
     mime-types (2.99)
     mimemagic (0.3.0)
-    mini_portile (0.6.2)
+    mini_portile2 (2.0.0)
     minitest (5.8.3)
     multi_json (1.11.2)
-    nokogiri (1.6.6.4)
-      mini_portile (~> 0.6.0)
+    nokogiri (1.6.7)
+      mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
     paperclip (4.3.2)
       activemodel (>= 3.2.0)
@@ -217,7 +217,6 @@ GEM
     raindrops (0.15.0)
     rake (10.4.2)
     rdoc (4.2.0)
-      json (~> 1.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec-core (3.4.1)
@@ -244,13 +243,13 @@ GEM
     simple_form (3.2.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
-    simplecov (0.10.0)
+    simplecov (0.11.0)
       docile (~> 1.1.0)
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
     slop (3.6.0)
-    spring (1.4.4)
+    spring (1.5.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
     sprockets (3.4.1)
