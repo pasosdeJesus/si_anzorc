@@ -6,12 +6,12 @@ Sistema de Información de Violencia Política en Línea versión 2
 
 
 ### Requerimientos
-* Ruby version >= 2.1
-* PostgreSQL >= 9.3 con extensión unaccent disponible
-* Recomendado sobre adJ 5.5p2 (que incluye todos los componentes mencionados).  
+* Ruby version >= 2.3
+* PostgreSQL >= 9.4 con extensión unaccent disponible
+* Recomendado sobre adJ 5.8 (que incluye todos los componentes mencionados).  
   Las siguientes instrucciones suponen que opera en este ambiente.
 
-Puede consultar como instalar estos componentes en: http://dhobsd.pasosdejesus.org/index.php?id=Ruby+on+Rails+en+OpenBSD
+Puede consultar como instalar estos componentes en: http://dhobsd.pasosdejesus.org/Ruby_on_Rails_en_OpenBSD.html
 
 
 ### Arquitectura
