@@ -8,7 +8,11 @@ if (test "${USUARIO_AP}" = "") then {
 	echo "Definir usuario con el que se ejecuta en USUARIO_AP"
 	exit 1;
 } fi;
-sudo su ${USUARIO_AP} -c "cd /var/www/htdocs/sivel2_anzorc; rake assets:precompile; echo \"Iniciando unicorn...\"; SECRET_KEY_BASE=${SECRET_KEY_BASE} bundle exec unicorn_rails -c ../sivel2_anzorc/config/unicorn.conf.minimal.rb  -E production -D"
+doas=`which doas 2> /dev/null`
+if (test "$?" != "0") then {
+	doas="sudo"
+} fi;
+$doas su ${USUARIO_AP} -c "cd /var/www/htdocs/sivel2_anzorc; rake assets:precompile; echo \"Iniciando unicorn...\"; SECRET_KEY_BASE=${SECRET_KEY_BASE} bundle exec unicorn_rails -c ../sivel2_anzorc/config/unicorn.conf.minimal.rb  -E production -D"
 
 
   
