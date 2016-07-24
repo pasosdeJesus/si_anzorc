@@ -40,9 +40,9 @@ describe "Llenar caso con javascript", :js => true do
       within ("div#victima") do 
         fill_in "Nombres", with: 'Nombres V'
         fill_in "Apellidos", with: 'Apellidos V'
-        fill_in "Año Nacimiento", with: '1999'
-        fill_in "Mes Nacimiento", with: '1'
-        fill_in "Día Nacimiento", with: '1'
+        select("1999", from: 'Año nacimiento')
+        select("ENERO", from: 'Mes nacimiento')
+        select("1", from: 'Día nacimiento')
         select("MASCULINO", from: 'Sexo')
         select("CÉDULA DE CIUDADANÍA", from: 'Tipo de Documento')
         fill_in "Número Documento", with: '19222'
