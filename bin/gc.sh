@@ -60,6 +60,3 @@ if (test "$?" != "0") then {
 	exit 1;
 } fi;
 
-git push heroku master
-
-heroku run rake db:migrate sip:indices
