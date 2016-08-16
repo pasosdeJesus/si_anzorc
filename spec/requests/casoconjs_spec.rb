@@ -40,16 +40,16 @@ describe "Llenar caso con javascript", :js => true do
       within ("div#victima") do 
         fill_in "Nombres", with: 'Nombres V'
         fill_in "Apellidos", with: 'Apellidos V'
-        select("1999", from: 'Año nacimiento')
-        select("ENERO", from: 'Mes nacimiento')
-        select("1", from: 'Día nacimiento')
+        select("1999", from: 'Año de nacimiento')
+        select("ENERO", from: 'Mes de nacimiento')
+        select("1", from: 'Día de nacimiento')
         select("MASCULINO", from: 'Sexo')
         select("CÉDULA DE CIUDADANÍA", from: 'Tipo de Documento')
         fill_in "Número Documento", with: '19222'
         select('ALBANIA', from: 'País de Nacionalidad')
         select('RUSIA', from: 'País de Nacimiento')
         select('OTRO', from: 'Profesión')
-        select('De 0 a 15 Años', from: 'Rango de Edad')
+        #select('De 0 a 15 Años', from: 'Rango de Edad')
         select('ROM', from: 'Etnia') 
         select('IGLESIA DE DIOS', from: 'Religión/Iglesia') 
         select('HETEROSEXUAL', from: 'Orientación Sexual') 
