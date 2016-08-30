@@ -1,6 +1,12 @@
+<% if !File.directory?(Sip.ruta_anexos) %>
+	<div class="alert fade in alert-danger ">
+		<button type="button" class="close" data-dismiss="alert">×</button>
+		ATENCIÓN: No existe ruta de anexos <%= Sip.ruta_anexos %>
+	</div>
+<% end %>
 <article>
 <br>
 <center><img src="/anzorc/sivel2/images/logo.jpg" class="img-responsive"></img></center>
-	
+
 <%= render "local" %>
 </article>
