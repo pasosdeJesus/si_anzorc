@@ -23,5 +23,8 @@ module Sivel2Anzorc
     config.i18n.default_locale = :es
 
     config.active_record.schema_format = :sql
+
+    config.x.heb412_ruta = Rails.root.join('public', 'heb412')
+
   end
 end
