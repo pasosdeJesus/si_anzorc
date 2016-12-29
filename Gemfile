@@ -9,6 +9,9 @@ gem "rails-i18n"
 # Postgresql
 gem "pg"
 
+# Mientras solucionan https://github.com/sparklemotion/nokogiri/issues/1569
+gem 'nokogiri', '1.6.8.1' 
+
 gem 'puma'
 
 # CSS
@@ -82,11 +85,6 @@ gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git'
 # Motor de SIVeL 2
 gem 'sivel2_gen', git: 'https://github.com/pasosdeJesus/sivel2_gen.git'
 #gem 'sivel2_gen', path: '../sivel2_gen'
-
-group :doc do
-    # Genera documentación en doc/api con bundle exec rake doc:rails
-    gem "sdoc", require: false
-end
 
 # Los siguientes son para desarrollo o para pruebas con generadores
 group :development do
