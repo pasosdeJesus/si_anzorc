@@ -2,11 +2,12 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.4
--- Dumped by pg_dump version 9.5.4
+-- Dumped from database version 9.6.1
+-- Dumped by pg_dump version 9.6.1
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
@@ -2174,70 +2175,70 @@ CREATE MATERIALIZED VIEW vvictimasoundexesp AS
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: heb412_gen_campohc id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY heb412_gen_campohc ALTER COLUMN id SET DEFAULT nextval('heb412_gen_campohc_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: heb412_gen_campoplantillahcm id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY heb412_gen_campoplantillahcm ALTER COLUMN id SET DEFAULT nextval('heb412_gen_campoplantillahcm_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: heb412_gen_doc id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY heb412_gen_doc ALTER COLUMN id SET DEFAULT nextval('heb412_gen_doc_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: heb412_gen_plantillahcm id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY heb412_gen_plantillahcm ALTER COLUMN id SET DEFAULT nextval('heb412_gen_plantillahcm_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: sip_anexo id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_anexo ALTER COLUMN id SET DEFAULT nextval('sip_anexo_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: sip_pais id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_pais ALTER COLUMN id SET DEFAULT nextval('sip_pais_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: sip_tdocumento id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_tdocumento ALTER COLUMN id SET DEFAULT nextval('sip_tdocumento_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: sivel2_gen_combatiente id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_combatiente ALTER COLUMN id SET DEFAULT nextval('sivel2_gen_combatiente_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: sivel2_gen_resagresion id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_resagresion ALTER COLUMN id SET DEFAULT nextval('sivel2_gen_resagresion_id_seq'::regclass);
 
 
 --
--- Name: actividadoficio_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_actividadoficio actividadoficio_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_actividadoficio
@@ -2245,7 +2246,7 @@ ALTER TABLE ONLY sivel2_gen_actividadoficio
 
 
 --
--- Name: acto_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_acto acto_id_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_acto
@@ -2253,7 +2254,7 @@ ALTER TABLE ONLY sivel2_gen_acto
 
 
 --
--- Name: acto_id_presponsable_id_categoria_id_persona_id_caso_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_acto acto_id_presponsable_id_categoria_id_persona_id_caso_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_acto
@@ -2261,7 +2262,7 @@ ALTER TABLE ONLY sivel2_gen_acto
 
 
 --
--- Name: acto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_acto acto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_acto
@@ -2269,7 +2270,7 @@ ALTER TABLE ONLY sivel2_gen_acto
 
 
 --
--- Name: actocolectivo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_actocolectivo actocolectivo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_actocolectivo
@@ -2277,7 +2278,7 @@ ALTER TABLE ONLY sivel2_gen_actocolectivo
 
 
 --
--- Name: anexo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_anexo_caso anexo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_anexo_caso
@@ -2285,7 +2286,7 @@ ALTER TABLE ONLY sivel2_gen_anexo_caso
 
 
 --
--- Name: antecedente_caso_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_caso antecedente_caso_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_caso
@@ -2293,7 +2294,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_caso
 
 
 --
--- Name: antecedente_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente antecedente_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente
@@ -2301,7 +2302,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente
 
 
 --
--- Name: antecedente_victima_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_victima antecedente_victima_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_victima
@@ -2309,7 +2310,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_victima
 
 
 --
--- Name: ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY ar_internal_metadata
@@ -2317,7 +2318,7 @@ ALTER TABLE ONLY ar_internal_metadata
 
 
 --
--- Name: caso_contexto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_contexto caso_contexto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_contexto
@@ -2325,7 +2326,7 @@ ALTER TABLE ONLY sivel2_gen_caso_contexto
 
 
 --
--- Name: caso_etiqueta_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_etiqueta caso_etiqueta_id_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_etiqueta
@@ -2333,7 +2334,7 @@ ALTER TABLE ONLY sivel2_gen_caso_etiqueta
 
 
 --
--- Name: caso_etiqueta_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_etiqueta caso_etiqueta_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_etiqueta
@@ -2341,7 +2342,7 @@ ALTER TABLE ONLY sivel2_gen_caso_etiqueta
 
 
 --
--- Name: caso_frontera_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_frontera caso_frontera_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_frontera
@@ -2349,7 +2350,7 @@ ALTER TABLE ONLY sivel2_gen_caso_frontera
 
 
 --
--- Name: caso_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso caso_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso
@@ -2357,7 +2358,7 @@ ALTER TABLE ONLY sivel2_gen_caso
 
 
 --
--- Name: caso_presponsable_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_presponsable caso_presponsable_id_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_presponsable
@@ -2365,7 +2366,7 @@ ALTER TABLE ONLY sivel2_gen_caso_presponsable
 
 
 --
--- Name: caso_presponsable_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_presponsable caso_presponsable_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_presponsable
@@ -2373,7 +2374,7 @@ ALTER TABLE ONLY sivel2_gen_caso_presponsable
 
 
 --
--- Name: caso_region_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_region caso_region_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_region
@@ -2381,7 +2382,7 @@ ALTER TABLE ONLY sivel2_gen_caso_region
 
 
 --
--- Name: categoria_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_categoria categoria_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_categoria
@@ -2389,7 +2390,7 @@ ALTER TABLE ONLY sivel2_gen_categoria
 
 
 --
--- Name: contexto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_contexto contexto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_contexto
@@ -2397,7 +2398,7 @@ ALTER TABLE ONLY sivel2_gen_contexto
 
 
 --
--- Name: escolaridad_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_escolaridad escolaridad_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_escolaridad
@@ -2405,7 +2406,7 @@ ALTER TABLE ONLY sivel2_gen_escolaridad
 
 
 --
--- Name: estadocivil_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_estadocivil estadocivil_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_estadocivil
@@ -2413,7 +2414,7 @@ ALTER TABLE ONLY sivel2_gen_estadocivil
 
 
 --
--- Name: etiqueta_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_etiqueta etiqueta_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_etiqueta
@@ -2421,7 +2422,7 @@ ALTER TABLE ONLY sip_etiqueta
 
 
 --
--- Name: etnia_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_etnia etnia_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_etnia
@@ -2429,7 +2430,7 @@ ALTER TABLE ONLY sivel2_gen_etnia
 
 
 --
--- Name: filiacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_filiacion filiacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_filiacion
@@ -2437,7 +2438,7 @@ ALTER TABLE ONLY sivel2_gen_filiacion
 
 
 --
--- Name: fotra_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_fotra fotra_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_fotra
@@ -2445,7 +2446,7 @@ ALTER TABLE ONLY sivel2_gen_fotra
 
 
 --
--- Name: frontera_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_frontera frontera_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_frontera
@@ -2453,7 +2454,7 @@ ALTER TABLE ONLY sivel2_gen_frontera
 
 
 --
--- Name: grupoper_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_grupoper grupoper_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_grupoper
@@ -2461,7 +2462,7 @@ ALTER TABLE ONLY sivel2_gen_grupoper
 
 
 --
--- Name: heb412_gen_campohc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: heb412_gen_campohc heb412_gen_campohc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY heb412_gen_campohc
@@ -2469,7 +2470,7 @@ ALTER TABLE ONLY heb412_gen_campohc
 
 
 --
--- Name: heb412_gen_campoplantillahcm_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: heb412_gen_campoplantillahcm heb412_gen_campoplantillahcm_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY heb412_gen_campoplantillahcm
@@ -2477,7 +2478,7 @@ ALTER TABLE ONLY heb412_gen_campoplantillahcm
 
 
 --
--- Name: heb412_gen_doc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: heb412_gen_doc heb412_gen_doc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY heb412_gen_doc
@@ -2485,7 +2486,7 @@ ALTER TABLE ONLY heb412_gen_doc
 
 
 --
--- Name: heb412_gen_plantillahcm_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: heb412_gen_plantillahcm heb412_gen_plantillahcm_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY heb412_gen_plantillahcm
@@ -2493,7 +2494,7 @@ ALTER TABLE ONLY heb412_gen_plantillahcm
 
 
 --
--- Name: iglesia_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_iglesia iglesia_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_iglesia
@@ -2501,7 +2502,7 @@ ALTER TABLE ONLY sivel2_gen_iglesia
 
 
 --
--- Name: intervalo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_intervalo intervalo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_intervalo
@@ -2509,7 +2510,7 @@ ALTER TABLE ONLY sivel2_gen_intervalo
 
 
 --
--- Name: maternidad_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_maternidad maternidad_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_maternidad
@@ -2517,7 +2518,7 @@ ALTER TABLE ONLY sivel2_gen_maternidad
 
 
 --
--- Name: organizacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_organizacion organizacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_organizacion
@@ -2525,7 +2526,7 @@ ALTER TABLE ONLY sivel2_gen_organizacion
 
 
 --
--- Name: pais_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_pais pais_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_pais
@@ -2533,7 +2534,7 @@ ALTER TABLE ONLY sip_pais
 
 
 --
--- Name: pconsolidado_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_pconsolidado pconsolidado_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_pconsolidado
@@ -2541,7 +2542,7 @@ ALTER TABLE ONLY sivel2_gen_pconsolidado
 
 
 --
--- Name: persona_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona persona_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona
@@ -2549,7 +2550,7 @@ ALTER TABLE ONLY sip_persona
 
 
 --
--- Name: presponsable_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_presponsable presponsable_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_presponsable
@@ -2557,7 +2558,7 @@ ALTER TABLE ONLY sivel2_gen_presponsable
 
 
 --
--- Name: profesion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_profesion profesion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_profesion
@@ -2565,7 +2566,7 @@ ALTER TABLE ONLY sivel2_gen_profesion
 
 
 --
--- Name: rangoedad_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_rangoedad rangoedad_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_rangoedad
@@ -2573,7 +2574,7 @@ ALTER TABLE ONLY sivel2_gen_rangoedad
 
 
 --
--- Name: regimensalud_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_regimensalud regimensalud_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_regimensalud
@@ -2581,7 +2582,7 @@ ALTER TABLE ONLY sivel2_gen_regimensalud
 
 
 --
--- Name: region_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_region region_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_region
@@ -2589,7 +2590,7 @@ ALTER TABLE ONLY sivel2_gen_region
 
 
 --
--- Name: regionsjr_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_oficina regionsjr_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_oficina
@@ -2597,7 +2598,7 @@ ALTER TABLE ONLY sip_oficina
 
 
 --
--- Name: sectorsocial_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_sectorsocial sectorsocial_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_sectorsocial
@@ -2605,7 +2606,7 @@ ALTER TABLE ONLY sivel2_gen_sectorsocial
 
 
 --
--- Name: sip_anexo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_anexo sip_anexo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_anexo
@@ -2613,7 +2614,7 @@ ALTER TABLE ONLY sip_anexo
 
 
 --
--- Name: sip_clase_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_clase sip_clase_id_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_clase
@@ -2621,7 +2622,7 @@ ALTER TABLE ONLY sip_clase
 
 
 --
--- Name: sip_clase_id_municipio_id_clalocal_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_clase sip_clase_id_municipio_id_clalocal_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_clase
@@ -2629,7 +2630,7 @@ ALTER TABLE ONLY sip_clase
 
 
 --
--- Name: sip_clase_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_clase sip_clase_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_clase
@@ -2637,7 +2638,7 @@ ALTER TABLE ONLY sip_clase
 
 
 --
--- Name: sip_departamento_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_departamento sip_departamento_id_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_departamento
@@ -2645,7 +2646,7 @@ ALTER TABLE ONLY sip_departamento
 
 
 --
--- Name: sip_departamento_id_pais_id_deplocal_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_departamento sip_departamento_id_pais_id_deplocal_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_departamento
@@ -2653,7 +2654,7 @@ ALTER TABLE ONLY sip_departamento
 
 
 --
--- Name: sip_departamento_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_departamento sip_departamento_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_departamento
@@ -2661,7 +2662,7 @@ ALTER TABLE ONLY sip_departamento
 
 
 --
--- Name: sip_fuenteprensa_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_fuenteprensa sip_fuenteprensa_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_fuenteprensa
@@ -2669,7 +2670,7 @@ ALTER TABLE ONLY sip_fuenteprensa
 
 
 --
--- Name: sip_municipio_id_departamento_id_munlocal_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_municipio sip_municipio_id_departamento_id_munlocal_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_municipio
@@ -2677,7 +2678,7 @@ ALTER TABLE ONLY sip_municipio
 
 
 --
--- Name: sip_municipio_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_municipio sip_municipio_id_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_municipio
@@ -2685,7 +2686,7 @@ ALTER TABLE ONLY sip_municipio
 
 
 --
--- Name: sip_municipio_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_municipio sip_municipio_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_municipio
@@ -2693,7 +2694,7 @@ ALTER TABLE ONLY sip_municipio
 
 
 --
--- Name: sip_persona_trelacion_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona_trelacion sip_persona_trelacion_id_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona_trelacion
@@ -2701,7 +2702,7 @@ ALTER TABLE ONLY sip_persona_trelacion
 
 
 --
--- Name: sip_persona_trelacion_persona1_persona2_id_trelacion_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona_trelacion sip_persona_trelacion_persona1_persona2_id_trelacion_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona_trelacion
@@ -2709,7 +2710,7 @@ ALTER TABLE ONLY sip_persona_trelacion
 
 
 --
--- Name: sip_persona_trelacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona_trelacion sip_persona_trelacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona_trelacion
@@ -2717,7 +2718,7 @@ ALTER TABLE ONLY sip_persona_trelacion
 
 
 --
--- Name: sivel2_gen_caso_fotra_id_caso_nombre_fecha_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_fotra sivel2_gen_caso_fotra_id_caso_nombre_fecha_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_fotra
@@ -2725,7 +2726,7 @@ ALTER TABLE ONLY sivel2_gen_caso_fotra
 
 
 --
--- Name: sivel2_gen_caso_fotra_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_fotra sivel2_gen_caso_fotra_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_fotra
@@ -2733,7 +2734,7 @@ ALTER TABLE ONLY sivel2_gen_caso_fotra
 
 
 --
--- Name: sivel2_gen_caso_fuenteprensa_id_caso_fecha_fuenteprensa_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_fuenteprensa sivel2_gen_caso_fuenteprensa_id_caso_fecha_fuenteprensa_id_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_fuenteprensa
@@ -2741,7 +2742,7 @@ ALTER TABLE ONLY sivel2_gen_caso_fuenteprensa
 
 
 --
--- Name: sivel2_gen_caso_fuenteprensa_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_fuenteprensa sivel2_gen_caso_fuenteprensa_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_fuenteprensa
@@ -2749,7 +2750,7 @@ ALTER TABLE ONLY sivel2_gen_caso_fuenteprensa
 
 
 --
--- Name: sivel2_gen_combatiente_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_combatiente sivel2_gen_combatiente_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_combatiente
@@ -2757,7 +2758,7 @@ ALTER TABLE ONLY sivel2_gen_combatiente
 
 
 --
--- Name: sivel2_gen_resagresion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_resagresion sivel2_gen_resagresion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_resagresion
@@ -2765,7 +2766,7 @@ ALTER TABLE ONLY sivel2_gen_resagresion
 
 
 --
--- Name: sivel2_gen_supracategoria_id_tviolencia_codigo_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_supracategoria sivel2_gen_supracategoria_id_tviolencia_codigo_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_supracategoria
@@ -2773,7 +2774,7 @@ ALTER TABLE ONLY sivel2_gen_supracategoria
 
 
 --
--- Name: sivel2_gen_supracategoria_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_supracategoria sivel2_gen_supracategoria_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_supracategoria
@@ -2781,7 +2782,7 @@ ALTER TABLE ONLY sivel2_gen_supracategoria
 
 
 --
--- Name: sivel2_gen_victimacolectiva_id_caso_id_grupoper_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victimacolectiva sivel2_gen_victimacolectiva_id_caso_id_grupoper_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victimacolectiva
@@ -2789,7 +2790,7 @@ ALTER TABLE ONLY sivel2_gen_victimacolectiva
 
 
 --
--- Name: sivel2_gen_victimacolectiva_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victimacolectiva sivel2_gen_victimacolectiva_id_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victimacolectiva
@@ -2797,7 +2798,7 @@ ALTER TABLE ONLY sivel2_gen_victimacolectiva
 
 
 --
--- Name: sivel2_gen_victimacolectiva_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victimacolectiva sivel2_gen_victimacolectiva_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victimacolectiva
@@ -2805,7 +2806,7 @@ ALTER TABLE ONLY sivel2_gen_victimacolectiva
 
 
 --
--- Name: tclase_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_tclase tclase_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_tclase
@@ -2813,7 +2814,7 @@ ALTER TABLE ONLY sip_tclase
 
 
 --
--- Name: tdocumento_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_tdocumento tdocumento_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_tdocumento
@@ -2821,7 +2822,7 @@ ALTER TABLE ONLY sip_tdocumento
 
 
 --
--- Name: trelacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_trelacion trelacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_trelacion
@@ -2829,7 +2830,7 @@ ALTER TABLE ONLY sip_trelacion
 
 
 --
--- Name: tsitio_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_tsitio tsitio_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_tsitio
@@ -2837,7 +2838,7 @@ ALTER TABLE ONLY sip_tsitio
 
 
 --
--- Name: tviolencia_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_tviolencia tviolencia_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_tviolencia
@@ -2845,7 +2846,7 @@ ALTER TABLE ONLY sivel2_gen_tviolencia
 
 
 --
--- Name: ubicacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_ubicacion ubicacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_ubicacion
@@ -2853,7 +2854,7 @@ ALTER TABLE ONLY sip_ubicacion
 
 
 --
--- Name: usuario_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: usuario usuario_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY usuario
@@ -2861,7 +2862,7 @@ ALTER TABLE ONLY usuario
 
 
 --
--- Name: victima_id_caso_id_persona_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_id_caso_id_persona_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -2869,7 +2870,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victima_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_id_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -2877,7 +2878,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victima_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -2885,7 +2886,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: vinculoestado_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_vinculoestado vinculoestado_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_vinculoestado
@@ -2963,7 +2964,7 @@ CREATE UNIQUE INDEX usuario_nusuario ON usuario USING btree (nusuario);
 
 
 --
--- Name: acto_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_acto acto_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_acto
@@ -2971,7 +2972,7 @@ ALTER TABLE ONLY sivel2_gen_acto
 
 
 --
--- Name: acto_id_categoria_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_acto acto_id_categoria_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_acto
@@ -2979,7 +2980,7 @@ ALTER TABLE ONLY sivel2_gen_acto
 
 
 --
--- Name: acto_id_persona_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_acto acto_id_persona_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_acto
@@ -2987,7 +2988,7 @@ ALTER TABLE ONLY sivel2_gen_acto
 
 
 --
--- Name: acto_id_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_acto acto_id_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_acto
@@ -2995,7 +2996,7 @@ ALTER TABLE ONLY sivel2_gen_acto
 
 
 --
--- Name: actocolectivo_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_actocolectivo actocolectivo_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_actocolectivo
@@ -3003,7 +3004,7 @@ ALTER TABLE ONLY sivel2_gen_actocolectivo
 
 
 --
--- Name: actocolectivo_id_categoria_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_actocolectivo actocolectivo_id_categoria_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_actocolectivo
@@ -3011,7 +3012,7 @@ ALTER TABLE ONLY sivel2_gen_actocolectivo
 
 
 --
--- Name: actocolectivo_id_grupoper_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_actocolectivo actocolectivo_id_grupoper_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_actocolectivo
@@ -3019,7 +3020,7 @@ ALTER TABLE ONLY sivel2_gen_actocolectivo
 
 
 --
--- Name: actocolectivo_id_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_actocolectivo actocolectivo_id_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_actocolectivo
@@ -3027,7 +3028,7 @@ ALTER TABLE ONLY sivel2_gen_actocolectivo
 
 
 --
--- Name: anexo_fuenteprensa_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_anexo_caso anexo_fuenteprensa_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_anexo_caso
@@ -3035,7 +3036,7 @@ ALTER TABLE ONLY sivel2_gen_anexo_caso
 
 
 --
--- Name: anexo_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_anexo_caso anexo_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_anexo_caso
@@ -3043,7 +3044,7 @@ ALTER TABLE ONLY sivel2_gen_anexo_caso
 
 
 --
--- Name: anexo_id_fotra_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_anexo_caso anexo_id_fotra_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_anexo_caso
@@ -3051,7 +3052,7 @@ ALTER TABLE ONLY sivel2_gen_anexo_caso
 
 
 --
--- Name: antecedente_caso_id_antecedente_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_caso antecedente_caso_id_antecedente_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_caso
@@ -3059,7 +3060,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_caso
 
 
 --
--- Name: antecedente_caso_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_caso antecedente_caso_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_caso
@@ -3067,7 +3068,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_caso
 
 
 --
--- Name: antecedente_comunidad_id_antecedente_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_victimacolectiva antecedente_comunidad_id_antecedente_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_victimacolectiva
@@ -3075,7 +3076,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_victimacolectiva
 
 
 --
--- Name: antecedente_victima_id_antecedente_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_victima antecedente_victima_id_antecedente_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_victima
@@ -3083,7 +3084,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_victima
 
 
 --
--- Name: antecedente_victima_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_victima antecedente_victima_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_victima
@@ -3091,7 +3092,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_victima
 
 
 --
--- Name: antecedente_victima_id_persona_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_victima antecedente_victima_id_persona_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_victima
@@ -3099,7 +3100,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_victima
 
 
 --
--- Name: antecedente_victima_id_victima_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_victima antecedente_victima_id_victima_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_victima
@@ -3107,7 +3108,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_victima
 
 
 --
--- Name: caso_categoria_presponsable_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
@@ -3115,7 +3116,7 @@ ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
 
 
 --
--- Name: caso_categoria_presponsable_id_caso_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_caso_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
@@ -3123,7 +3124,7 @@ ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
 
 
 --
--- Name: caso_categoria_presponsable_id_categoria_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_categoria_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
@@ -3131,7 +3132,7 @@ ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
 
 
 --
--- Name: caso_categoria_presponsable_id_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
@@ -3139,7 +3140,7 @@ ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
 
 
 --
--- Name: caso_categoria_presponsable_id_tviolencia_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_tviolencia_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
@@ -3147,7 +3148,7 @@ ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
 
 
 --
--- Name: caso_contexto_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_contexto caso_contexto_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_contexto
@@ -3155,7 +3156,7 @@ ALTER TABLE ONLY sivel2_gen_caso_contexto
 
 
 --
--- Name: caso_contexto_id_contexto_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_contexto caso_contexto_id_contexto_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_contexto
@@ -3163,7 +3164,7 @@ ALTER TABLE ONLY sivel2_gen_caso_contexto
 
 
 --
--- Name: caso_etiqueta_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_etiqueta caso_etiqueta_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_etiqueta
@@ -3171,7 +3172,7 @@ ALTER TABLE ONLY sivel2_gen_caso_etiqueta
 
 
 --
--- Name: caso_etiqueta_id_etiqueta_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_etiqueta caso_etiqueta_id_etiqueta_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_etiqueta
@@ -3179,7 +3180,7 @@ ALTER TABLE ONLY sivel2_gen_caso_etiqueta
 
 
 --
--- Name: caso_etiqueta_id_usuario_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_etiqueta caso_etiqueta_id_usuario_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_etiqueta
@@ -3187,7 +3188,7 @@ ALTER TABLE ONLY sivel2_gen_caso_etiqueta
 
 
 --
--- Name: caso_fotra_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_fotra caso_fotra_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_fotra
@@ -3195,7 +3196,7 @@ ALTER TABLE ONLY sivel2_gen_caso_fotra
 
 
 --
--- Name: caso_fotra_id_fotra_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_fotra caso_fotra_id_fotra_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_fotra
@@ -3203,7 +3204,7 @@ ALTER TABLE ONLY sivel2_gen_caso_fotra
 
 
 --
--- Name: caso_frontera_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_frontera caso_frontera_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_frontera
@@ -3211,7 +3212,7 @@ ALTER TABLE ONLY sivel2_gen_caso_frontera
 
 
 --
--- Name: caso_frontera_id_frontera_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_frontera caso_frontera_id_frontera_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_frontera
@@ -3219,7 +3220,7 @@ ALTER TABLE ONLY sivel2_gen_caso_frontera
 
 
 --
--- Name: caso_funcionario_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_usuario caso_funcionario_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_usuario
@@ -3227,7 +3228,7 @@ ALTER TABLE ONLY sivel2_gen_caso_usuario
 
 
 --
--- Name: caso_id_intervalo_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso caso_id_intervalo_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso
@@ -3235,7 +3236,7 @@ ALTER TABLE ONLY sivel2_gen_caso
 
 
 --
--- Name: caso_presponsable_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_presponsable caso_presponsable_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_presponsable
@@ -3243,7 +3244,7 @@ ALTER TABLE ONLY sivel2_gen_caso_presponsable
 
 
 --
--- Name: caso_presponsable_id_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_presponsable caso_presponsable_id_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_presponsable
@@ -3251,7 +3252,7 @@ ALTER TABLE ONLY sivel2_gen_caso_presponsable
 
 
 --
--- Name: caso_region_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_region caso_region_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_region
@@ -3259,7 +3260,7 @@ ALTER TABLE ONLY sivel2_gen_caso_region
 
 
 --
--- Name: caso_region_id_region_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_region caso_region_id_region_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_region
@@ -3267,7 +3268,7 @@ ALTER TABLE ONLY sivel2_gen_caso_region
 
 
 --
--- Name: caso_usuario_id_usuario_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_usuario caso_usuario_id_usuario_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_usuario
@@ -3275,7 +3276,7 @@ ALTER TABLE ONLY sivel2_gen_caso_usuario
 
 
 --
--- Name: categoria_contadaen_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_categoria categoria_contadaen_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_categoria
@@ -3283,7 +3284,7 @@ ALTER TABLE ONLY sivel2_gen_categoria
 
 
 --
--- Name: categoria_id_pconsolidado_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_categoria categoria_id_pconsolidado_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_categoria
@@ -3291,7 +3292,7 @@ ALTER TABLE ONLY sivel2_gen_categoria
 
 
 --
--- Name: clase_id_tclase_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_clase clase_id_tclase_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_clase
@@ -3299,7 +3300,7 @@ ALTER TABLE ONLY sip_clase
 
 
 --
--- Name: comunidad_filiacion_id_filiacion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_filiacion_victimacolectiva comunidad_filiacion_id_filiacion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_filiacion_victimacolectiva
@@ -3307,7 +3308,7 @@ ALTER TABLE ONLY sivel2_gen_filiacion_victimacolectiva
 
 
 --
--- Name: comunidad_organizacion_id_organizacion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_organizacion_victimacolectiva comunidad_organizacion_id_organizacion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_organizacion_victimacolectiva
@@ -3315,7 +3316,7 @@ ALTER TABLE ONLY sivel2_gen_organizacion_victimacolectiva
 
 
 --
--- Name: comunidad_profesion_id_profesion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_profesion_victimacolectiva comunidad_profesion_id_profesion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_profesion_victimacolectiva
@@ -3323,7 +3324,7 @@ ALTER TABLE ONLY sivel2_gen_profesion_victimacolectiva
 
 
 --
--- Name: comunidad_rangoedad_id_rangoedad_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_rangoedad_victimacolectiva comunidad_rangoedad_id_rangoedad_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_rangoedad_victimacolectiva
@@ -3331,7 +3332,7 @@ ALTER TABLE ONLY sivel2_gen_rangoedad_victimacolectiva
 
 
 --
--- Name: comunidad_sectorsocial_id_sector_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_sectorsocial_victimacolectiva comunidad_sectorsocial_id_sector_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_sectorsocial_victimacolectiva
@@ -3339,7 +3340,7 @@ ALTER TABLE ONLY sivel2_gen_sectorsocial_victimacolectiva
 
 
 --
--- Name: comunidad_vinculoestado_id_vinculoestado_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victimacolectiva_vinculoestado comunidad_vinculoestado_id_vinculoestado_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victimacolectiva_vinculoestado
@@ -3347,7 +3348,7 @@ ALTER TABLE ONLY sivel2_gen_victimacolectiva_vinculoestado
 
 
 --
--- Name: departamento_id_pais_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_departamento departamento_id_pais_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_departamento
@@ -3355,7 +3356,7 @@ ALTER TABLE ONLY sip_departamento
 
 
 --
--- Name: fk_rails_1e5f26c999; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: heb412_gen_campohc fk_rails_1e5f26c999; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY heb412_gen_campohc
@@ -3363,7 +3364,7 @@ ALTER TABLE ONLY heb412_gen_campohc
 
 
 --
--- Name: fk_rails_2dd6d3dac3; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: heb412_gen_doc fk_rails_2dd6d3dac3; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY heb412_gen_doc
@@ -3371,7 +3372,7 @@ ALTER TABLE ONLY heb412_gen_doc
 
 
 --
--- Name: fk_rails_6485d06d37; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_combatiente fk_rails_6485d06d37; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_combatiente
@@ -3379,7 +3380,7 @@ ALTER TABLE ONLY sivel2_gen_combatiente
 
 
 --
--- Name: fk_rails_95f4a0b8f6; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_combatiente fk_rails_95f4a0b8f6; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_combatiente
@@ -3387,7 +3388,7 @@ ALTER TABLE ONLY sivel2_gen_combatiente
 
 
 --
--- Name: fk_rails_af43e915a6; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_combatiente fk_rails_af43e915a6; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_combatiente
@@ -3395,7 +3396,7 @@ ALTER TABLE ONLY sivel2_gen_combatiente
 
 
 --
--- Name: fk_rails_bfb49597e1; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_combatiente fk_rails_bfb49597e1; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_combatiente
@@ -3403,7 +3404,7 @@ ALTER TABLE ONLY sivel2_gen_combatiente
 
 
 --
--- Name: fk_rails_e0e38e0782; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: heb412_gen_campoplantillahcm fk_rails_e0e38e0782; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY heb412_gen_campoplantillahcm
@@ -3411,7 +3412,7 @@ ALTER TABLE ONLY heb412_gen_campoplantillahcm
 
 
 --
--- Name: fk_rails_e2d01a5a99; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_combatiente fk_rails_e2d01a5a99; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_combatiente
@@ -3419,7 +3420,7 @@ ALTER TABLE ONLY sivel2_gen_combatiente
 
 
 --
--- Name: fk_rails_f0cf2a7bec; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_combatiente fk_rails_f0cf2a7bec; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_combatiente
@@ -3427,7 +3428,7 @@ ALTER TABLE ONLY sivel2_gen_combatiente
 
 
 --
--- Name: fk_rails_f305297325; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_combatiente fk_rails_f305297325; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_combatiente
@@ -3435,7 +3436,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_combatiente
 
 
 --
--- Name: fk_rails_f77dda7a40; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_combatiente fk_rails_f77dda7a40; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_combatiente
@@ -3443,7 +3444,7 @@ ALTER TABLE ONLY sivel2_gen_combatiente
 
 
 --
--- Name: fk_rails_fb02819ec4; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_combatiente fk_rails_fb02819ec4; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_combatiente
@@ -3451,7 +3452,7 @@ ALTER TABLE ONLY sivel2_gen_combatiente
 
 
 --
--- Name: fk_rails_fc1811169b; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_combatiente fk_rails_fc1811169b; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_combatiente
@@ -3459,7 +3460,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_combatiente
 
 
 --
--- Name: persona_id_pais_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona persona_id_pais_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona
@@ -3467,7 +3468,7 @@ ALTER TABLE ONLY sip_persona
 
 
 --
--- Name: persona_nacionalde_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona persona_nacionalde_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona
@@ -3475,7 +3476,7 @@ ALTER TABLE ONLY sip_persona
 
 
 --
--- Name: persona_tdocumento_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona persona_tdocumento_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona
@@ -3483,7 +3484,7 @@ ALTER TABLE ONLY sip_persona
 
 
 --
--- Name: persona_trelacion_id_trelacion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona_trelacion persona_trelacion_id_trelacion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona_trelacion
@@ -3491,7 +3492,7 @@ ALTER TABLE ONLY sip_persona_trelacion
 
 
 --
--- Name: persona_trelacion_persona1_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona_trelacion persona_trelacion_persona1_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona_trelacion
@@ -3499,7 +3500,7 @@ ALTER TABLE ONLY sip_persona_trelacion
 
 
 --
--- Name: persona_trelacion_persona2_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona_trelacion persona_trelacion_persona2_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona_trelacion
@@ -3507,7 +3508,7 @@ ALTER TABLE ONLY sip_persona_trelacion
 
 
 --
--- Name: presponsable_papa_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_presponsable presponsable_papa_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_presponsable
@@ -3515,7 +3516,7 @@ ALTER TABLE ONLY sivel2_gen_presponsable
 
 
 --
--- Name: sip_clase_id_municipio_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_clase sip_clase_id_municipio_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_clase
@@ -3523,7 +3524,7 @@ ALTER TABLE ONLY sip_clase
 
 
 --
--- Name: sip_municipio_id_departamento_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_municipio sip_municipio_id_departamento_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_municipio
@@ -3531,7 +3532,7 @@ ALTER TABLE ONLY sip_municipio
 
 
 --
--- Name: sip_persona_id_clase_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona sip_persona_id_clase_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona
@@ -3539,7 +3540,7 @@ ALTER TABLE ONLY sip_persona
 
 
 --
--- Name: sip_persona_id_departamento_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona sip_persona_id_departamento_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona
@@ -3547,7 +3548,7 @@ ALTER TABLE ONLY sip_persona
 
 
 --
--- Name: sip_persona_id_municipio_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_persona sip_persona_id_municipio_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_persona
@@ -3555,7 +3556,7 @@ ALTER TABLE ONLY sip_persona
 
 
 --
--- Name: sip_ubicacion_id_clase_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_ubicacion sip_ubicacion_id_clase_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_ubicacion
@@ -3563,7 +3564,7 @@ ALTER TABLE ONLY sip_ubicacion
 
 
 --
--- Name: sip_ubicacion_id_departamento_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_ubicacion sip_ubicacion_id_departamento_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_ubicacion
@@ -3571,7 +3572,7 @@ ALTER TABLE ONLY sip_ubicacion
 
 
 --
--- Name: sip_ubicacion_id_municipio_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_ubicacion sip_ubicacion_id_municipio_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_ubicacion
@@ -3579,7 +3580,7 @@ ALTER TABLE ONLY sip_ubicacion
 
 
 --
--- Name: sivel2_gen_antecedente_victimacolectiv_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_victimacolectiva sivel2_gen_antecedente_victimacolectiv_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_victimacolectiva
@@ -3587,7 +3588,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_victimacolectiva
 
 
 --
--- Name: sivel2_gen_caso_fotra_anexo_caso_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_fotra sivel2_gen_caso_fotra_anexo_caso_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_fotra
@@ -3595,7 +3596,7 @@ ALTER TABLE ONLY sivel2_gen_caso_fotra
 
 
 --
--- Name: sivel2_gen_caso_fuenteprensa_anexo_caso_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_fuenteprensa sivel2_gen_caso_fuenteprensa_anexo_caso_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_fuenteprensa
@@ -3603,7 +3604,7 @@ ALTER TABLE ONLY sivel2_gen_caso_fuenteprensa
 
 
 --
--- Name: sivel2_gen_caso_fuenteprensa_fuenteprensa_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_fuenteprensa sivel2_gen_caso_fuenteprensa_fuenteprensa_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_fuenteprensa
@@ -3611,7 +3612,7 @@ ALTER TABLE ONLY sivel2_gen_caso_fuenteprensa
 
 
 --
--- Name: sivel2_gen_caso_fuenteprensa_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_caso_fuenteprensa sivel2_gen_caso_fuenteprensa_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_caso_fuenteprensa
@@ -3619,7 +3620,7 @@ ALTER TABLE ONLY sivel2_gen_caso_fuenteprensa
 
 
 --
--- Name: sivel2_gen_categoria_supracategoria_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_categoria sivel2_gen_categoria_supracategoria_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_categoria
@@ -3627,7 +3628,7 @@ ALTER TABLE ONLY sivel2_gen_categoria
 
 
 --
--- Name: sivel2_gen_filiacion_victimacolectiva_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_filiacion_victimacolectiva sivel2_gen_filiacion_victimacolectiva_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_filiacion_victimacolectiva
@@ -3635,7 +3636,7 @@ ALTER TABLE ONLY sivel2_gen_filiacion_victimacolectiva
 
 
 --
--- Name: sivel2_gen_organizacion_victimacolecti_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_organizacion_victimacolectiva sivel2_gen_organizacion_victimacolecti_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_organizacion_victimacolectiva
@@ -3643,7 +3644,7 @@ ALTER TABLE ONLY sivel2_gen_organizacion_victimacolectiva
 
 
 --
--- Name: sivel2_gen_profesion_victimacolectiva_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_profesion_victimacolectiva sivel2_gen_profesion_victimacolectiva_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_profesion_victimacolectiva
@@ -3651,7 +3652,7 @@ ALTER TABLE ONLY sivel2_gen_profesion_victimacolectiva
 
 
 --
--- Name: sivel2_gen_rangoedad_victimacolectiva_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_rangoedad_victimacolectiva sivel2_gen_rangoedad_victimacolectiva_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_rangoedad_victimacolectiva
@@ -3659,7 +3660,7 @@ ALTER TABLE ONLY sivel2_gen_rangoedad_victimacolectiva
 
 
 --
--- Name: sivel2_gen_sectorsocial_victimacolecti_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_sectorsocial_victimacolectiva sivel2_gen_sectorsocial_victimacolecti_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_sectorsocial_victimacolectiva
@@ -3667,7 +3668,7 @@ ALTER TABLE ONLY sivel2_gen_sectorsocial_victimacolectiva
 
 
 --
--- Name: sivel2_gen_victimacolectiva_vinculoest_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victimacolectiva_vinculoestado sivel2_gen_victimacolectiva_vinculoest_victimacolectiva_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victimacolectiva_vinculoestado
@@ -3675,7 +3676,7 @@ ALTER TABLE ONLY sivel2_gen_victimacolectiva_vinculoestado
 
 
 --
--- Name: supracategoria_id_tviolencia_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_supracategoria supracategoria_id_tviolencia_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_supracategoria
@@ -3683,7 +3684,7 @@ ALTER TABLE ONLY sivel2_gen_supracategoria
 
 
 --
--- Name: trelacion_inverso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_trelacion trelacion_inverso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_trelacion
@@ -3691,7 +3692,7 @@ ALTER TABLE ONLY sip_trelacion
 
 
 --
--- Name: ubicacion_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_ubicacion ubicacion_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_ubicacion
@@ -3699,7 +3700,7 @@ ALTER TABLE ONLY sip_ubicacion
 
 
 --
--- Name: ubicacion_id_pais_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_ubicacion ubicacion_id_pais_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_ubicacion
@@ -3707,7 +3708,7 @@ ALTER TABLE ONLY sip_ubicacion
 
 
 --
--- Name: ubicacion_id_tsitio_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_ubicacion ubicacion_id_tsitio_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sip_ubicacion
@@ -3715,7 +3716,7 @@ ALTER TABLE ONLY sip_ubicacion
 
 
 --
--- Name: victima_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_antecedente_victima victima_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_antecedente_victima
@@ -3723,7 +3724,7 @@ ALTER TABLE ONLY sivel2_gen_antecedente_victima
 
 
 --
--- Name: victima_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -3731,7 +3732,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victima_id_etnia_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_id_etnia_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -3739,7 +3740,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victima_id_filiacion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_id_filiacion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -3747,7 +3748,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victima_id_iglesia_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_id_iglesia_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -3755,7 +3756,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victima_id_organizacion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_id_organizacion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -3763,7 +3764,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victima_id_persona_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_id_persona_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -3771,7 +3772,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victima_id_profesion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_id_profesion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -3779,7 +3780,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victima_id_rangoedad_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_id_rangoedad_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -3787,7 +3788,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victima_id_sectorsocial_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_id_sectorsocial_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -3795,7 +3796,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victima_id_vinculoestado_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_id_vinculoestado_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -3803,7 +3804,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victima_organizacionarmada_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victima victima_organizacionarmada_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victima
@@ -3811,7 +3812,7 @@ ALTER TABLE ONLY sivel2_gen_victima
 
 
 --
--- Name: victimacolectiva_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victimacolectiva victimacolectiva_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victimacolectiva
@@ -3819,7 +3820,7 @@ ALTER TABLE ONLY sivel2_gen_victimacolectiva
 
 
 --
--- Name: victimacolectiva_id_grupoper_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victimacolectiva victimacolectiva_id_grupoper_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victimacolectiva
@@ -3827,7 +3828,7 @@ ALTER TABLE ONLY sivel2_gen_victimacolectiva
 
 
 --
--- Name: victimacolectiva_organizacionarmada_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sivel2_gen_victimacolectiva victimacolectiva_organizacionarmada_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY sivel2_gen_victimacolectiva
@@ -3838,7 +3839,7 @@ ALTER TABLE ONLY sivel2_gen_victimacolectiva
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO "$user", public;
+SET search_path TO public, pg_catalog;
 
 INSERT INTO schema_migrations (version) VALUES
 ('20131128151014'),

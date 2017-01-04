@@ -17,3 +17,5 @@ config/database.yml
 /tmp
 *~
 /public/anzorc/sivel2/assets/
+*.core
+
