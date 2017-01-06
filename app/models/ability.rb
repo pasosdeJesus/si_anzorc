@@ -28,6 +28,7 @@ class Ability  < Sivel2Gen::Ability
         can :manage, Sip::Persona
       when Ability::ROLADMIN
         can :manage, Sivel2Gen::Caso
+        can :manage, Sip::Respaldo7z
         can :manage, Sip::Persona
         can :manage, Usuario
         can :manage, Sivel2Gen::Acto
