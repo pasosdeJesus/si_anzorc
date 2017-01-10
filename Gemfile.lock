@@ -1,12 +1,12 @@
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: aeb1e70bf1f8280e6f975858e728720182f2c085
+  revision: dad4645ae5d65aaa51fc593e14b12edb5f097b8b
   specs:
     heb412_gen (1.0.a1)
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 0bf14db5f86a6e83de8206bbab273cc80afb5b19
+  revision: 6f0b3a0af766620370047cce170c5f7c5635c010
   specs:
     sip (2.0.b2)
       bootstrap-datepicker-rails
@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: 6e512f07ce23ace3621fac83b342a16fae59b115
+  revision: ad577d83c3369e610982b846ceec2f86e02fe431
   specs:
     sivel2_gen (2.0b1)
       devise
@@ -100,8 +100,7 @@ GEM
       xpath (~> 2.0)
     chosen (0.0.4)
     cldr-plurals-runtime-rb (1.0.1)
-    climate_control (0.0.4)
-      activesupport (>= 3.0)
+    climate_control (0.1.0)
     cliver (0.3.2)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
