@@ -19,3 +19,5 @@ config/database.yml
 /public/anzorc/sivel2/assets/
 *.core
 archivos/
+config/initializers/sip.rb
+
