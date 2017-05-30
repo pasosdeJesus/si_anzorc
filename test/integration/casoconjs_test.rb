@@ -18,8 +18,8 @@ class CasoconjsTest < Capybara::Rails::TestCase
     @numcaso=find_field('Código').value
 
     # Datos básicos
-    fill_in "Fecha del Hecho", with: '2014-08-05'
-    fill_in "Titulo", with: 'titulo'
+    fill_in "Fecha del hecho", with: '2014-08-05'
+    fill_in "Título", with: 'titulo'
 
     # Núcleo familiar
     click_on "Víctimas"
@@ -35,15 +35,15 @@ class CasoconjsTest < Capybara::Rails::TestCase
       select("ENERO", from: 'Mes de nacimiento')
       select("1", from: 'Día de nacimiento')
       select("MASCULINO", from: 'Sexo')
-      select("CÉDULA DE CIUDADANÍA", from: 'Tipo de Documento')
-      fill_in "Número Documento", with: '19222'
-      select('ALBANIA', from: 'País de Nacionalidad')
-      select('RUSIA', from: 'País de Nacimiento')
+      select("CÉDULA DE CIUDADANÍA", from: 'Tipo de documento')
+      fill_in "Número de documento", with: '19222'
+      #select('ALBANIA', from: 'País de Nacionalidad')
+      select('RUSIA', from: 'País de nacimiento')
       select('OTRO', from: 'Profesión')
       #select('De 0 a 15 Años', from: 'Rango de Edad')
       select('ROM', from: 'Etnia') 
       select('IGLESIA DE DIOS', from: 'Religión/Iglesia') 
-      select('HETEROSEXUAL', from: 'Orientación Sexual') 
+      select('HETEROSEXUAL', from: 'Orientación sexual') 
     end
     
     click_link "Ubicación"
@@ -62,7 +62,7 @@ class CasoconjsTest < Capybara::Rails::TestCase
       fill_in "Sitio", with: 'Sitio'
       fill_in "Latitud", with: '4.1'
       fill_in "Longitud", with: '-74.3'
-      select('URBANO', from: 'Tipo de Sitio') 
+      select('URBANO', from: 'Tipo de sitio') 
     end
     click_on "Añadir Ubicación"
     su = "//div[@id='ubicacion']/div[2]"
@@ -72,7 +72,7 @@ class CasoconjsTest < Capybara::Rails::TestCase
       fill_in "Sitio", with: 'Sitio2'
       fill_in "Latitud", with: '4.2'
       fill_in "Longitud", with: '-74.32'
-      select('RURAL', from: 'Tipo de Sitio') 
+      select('RURAL', from: 'Tipo de sitio') 
     end
     click_button "Guardar"
     assert page.has_content?("2014-08-05")
