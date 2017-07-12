@@ -117,8 +117,6 @@ group :test do
   gem "connection_pool" 
   gem 'poltergeist'
   
-  # Envia resultados de pruebas desde travis a codeclimate
-  #gem "codeclimate-test-reporter", require: nil
 end
 
 
