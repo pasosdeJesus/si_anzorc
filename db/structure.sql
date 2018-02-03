@@ -27,7 +27,7 @@ SET search_path = public, pg_catalog;
 -- Name: es_co_utf_8; Type: COLLATION; Schema: public; Owner: -
 --
 
-CREATE COLLATION es_co_utf_8 (lc_collate = 'es_CO.UTF-8', lc_ctype = 'es_CO.UTF-8');
+CREATE COLLATION es_co_utf_8 (provider = libc, locale = 'es_CO.UTF-8');
 
 
 --
@@ -1131,18 +1131,27 @@ CREATE TABLE sivel2_gen_caso (
 
 
 --
+-- Name: sivel2_gen_caso_categoria_presponsable_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE sivel2_gen_caso_categoria_presponsable_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
 -- Name: sivel2_gen_caso_categoria_presponsable; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE sivel2_gen_caso_categoria_presponsable (
-    id_tviolencia character varying(1) NOT NULL,
-    id_supracategoria integer NOT NULL,
     id_categoria integer NOT NULL,
-    id_caso integer NOT NULL,
-    id_presponsable integer NOT NULL,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    id_caso_presponsable integer
+    id_caso_presponsable integer,
+    id integer DEFAULT nextval('sivel2_gen_caso_categoria_presponsable_id_seq'::regclass) NOT NULL
 );
 
 
@@ -2819,6 +2828,30 @@ ALTER TABLE ONLY sivel2_gen_actocolectivo
 
 
 --
+-- Name: sivel2_gen_caso_categoria_presponsable sivel2_gen_caso_categoria_pre_id_caso_presponsable_id_categ_key; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
+    ADD CONSTRAINT sivel2_gen_caso_categoria_pre_id_caso_presponsable_id_categ_key UNIQUE (id_caso_presponsable, id_categoria);
+
+
+--
+-- Name: sivel2_gen_caso_categoria_presponsable sivel2_gen_caso_categoria_presponsable_id_key; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
+    ADD CONSTRAINT sivel2_gen_caso_categoria_presponsable_id_key UNIQUE (id);
+
+
+--
+-- Name: sivel2_gen_caso_categoria_presponsable sivel2_gen_caso_categoria_presponsable_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
+    ADD CONSTRAINT sivel2_gen_caso_categoria_presponsable_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: sivel2_gen_caso_fotra sivel2_gen_caso_fotra_id_caso_nombre_fecha_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -3193,14 +3226,6 @@ ALTER TABLE ONLY sivel2_gen_antecedente_victima
 
 
 --
--- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_caso_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
-    ADD CONSTRAINT caso_categoria_presponsable_id_caso_fkey FOREIGN KEY (id_caso) REFERENCES sivel2_gen_caso(id);
-
-
---
 -- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_caso_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -3214,22 +3239,6 @@ ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
 
 ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
     ADD CONSTRAINT caso_categoria_presponsable_id_categoria_fkey FOREIGN KEY (id_categoria) REFERENCES sivel2_gen_categoria(id);
-
-
---
--- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_presponsable_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
-    ADD CONSTRAINT caso_categoria_presponsable_id_presponsable_fkey FOREIGN KEY (id_presponsable) REFERENCES sivel2_gen_presponsable(id);
-
-
---
--- Name: sivel2_gen_caso_categoria_presponsable caso_categoria_presponsable_id_tviolencia_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY sivel2_gen_caso_categoria_presponsable
-    ADD CONSTRAINT caso_categoria_presponsable_id_tviolencia_fkey FOREIGN KEY (id_tviolencia) REFERENCES sivel2_gen_tviolencia(id);
 
 
 --
@@ -4055,6 +4064,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20170529020218'),
 ('20170529154413'),
 ('20170609131212'),
-('20171019133203');
+('20171019133203'),
+('20180126035129'),
+('20180126055129');
 
 
