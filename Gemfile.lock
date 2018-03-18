@@ -213,7 +213,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
-    pg (0.21.0)
+    pg (1.0.0)
     poltergeist (1.17.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -369,7 +369,7 @@ DEPENDENCIES
   minitest-rails-capybara
   minitest-reporters
   paperclip
-  pg (~> 0.21)
+  pg
   poltergeist
   pry-rescue
   pry-stack_explorer
