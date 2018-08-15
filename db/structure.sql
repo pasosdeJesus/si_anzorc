@@ -508,6 +508,16 @@ ALTER SEQUENCE public.sip_actorsocial_persona_id_seq OWNED BY public.sip_actorso
 
 
 --
+-- Name: sip_actorsocial_sectoractor; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sip_actorsocial_sectoractor (
+    actorsocial_id integer,
+    sectoractor_id integer
+);
+
+
+--
 -- Name: sip_anexo; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -709,24 +719,6 @@ CREATE TABLE public.sip_grupo_usuario (
 
 
 --
--- Name: sip_grupoper; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sip_grupoper (
-    id bigint NOT NULL,
-    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
-    anotaciones character varying(1000)
-);
-
-
---
--- Name: TABLE sip_grupoper; Type: COMMENT; Schema: public; Owner: -
---
-
-COMMENT ON TABLE public.sip_grupoper IS 'Creado por sip en sivel2anzorc_desarrollo';
-
-
---
 -- Name: sip_grupoper_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -739,10 +731,16 @@ CREATE SEQUENCE public.sip_grupoper_id_seq
 
 
 --
--- Name: sip_grupoper_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: sip_grupoper; Type: TABLE; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE public.sip_grupoper_id_seq OWNED BY public.sip_grupoper.id;
+CREATE TABLE public.sip_grupoper (
+    id integer DEFAULT nextval('public.sip_grupoper_id_seq'::regclass) NOT NULL,
+    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
+    anotaciones character varying(1000),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
 
 
 --
@@ -1940,31 +1938,6 @@ CREATE TABLE public.sivel2_gen_frontera (
 
 
 --
--- Name: sivel2_gen_grupoper_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.sivel2_gen_grupoper_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: sivel2_gen_grupoper; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.sivel2_gen_grupoper (
-    id integer DEFAULT nextval('public.sivel2_gen_grupoper_id_seq'::regclass) NOT NULL,
-    nombre character varying(500) COLLATE public.es_co_utf_8 NOT NULL,
-    anotaciones character varying(1000),
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone
-);
-
-
---
 -- Name: sivel2_gen_iglesia_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2532,13 +2505,6 @@ ALTER TABLE ONLY public.sip_grupo ALTER COLUMN id SET DEFAULT nextval('public.si
 
 
 --
--- Name: sip_grupoper id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sip_grupoper ALTER COLUMN id SET DEFAULT nextval('public.sip_grupoper_id_seq'::regclass);
-
-
---
 -- Name: sip_pais id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2621,14 +2587,6 @@ ALTER TABLE ONLY public.sivel2_gen_anexo_caso
 
 
 --
--- Name: sivel2_gen_antecedente_caso antecedente_caso_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sivel2_gen_antecedente_caso
-    ADD CONSTRAINT antecedente_caso_pkey PRIMARY KEY (id_antecedente, id_caso);
-
-
---
 -- Name: sivel2_gen_antecedente antecedente_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2645,14 +2603,6 @@ ALTER TABLE ONLY public.ar_internal_metadata
 
 
 --
--- Name: sivel2_gen_caso_contexto caso_contexto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sivel2_gen_caso_contexto
-    ADD CONSTRAINT caso_contexto_pkey PRIMARY KEY (id_caso, id_contexto);
-
-
---
 -- Name: sivel2_gen_caso_etiqueta caso_etiqueta_id_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2666,14 +2616,6 @@ ALTER TABLE ONLY public.sivel2_gen_caso_etiqueta
 
 ALTER TABLE ONLY public.sivel2_gen_caso_etiqueta
     ADD CONSTRAINT caso_etiqueta_pkey PRIMARY KEY (id);
-
-
---
--- Name: sivel2_gen_caso_frontera caso_frontera_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sivel2_gen_caso_frontera
-    ADD CONSTRAINT caso_frontera_pkey PRIMARY KEY (id_frontera, id_caso);
 
 
 --
@@ -2698,14 +2640,6 @@ ALTER TABLE ONLY public.sivel2_gen_caso_presponsable
 
 ALTER TABLE ONLY public.sivel2_gen_caso_presponsable
     ADD CONSTRAINT caso_presponsable_pkey PRIMARY KEY (id);
-
-
---
--- Name: sivel2_gen_caso_region caso_region_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sivel2_gen_caso_region
-    ADD CONSTRAINT caso_region_pkey PRIMARY KEY (id_region, id_caso);
 
 
 --
@@ -2778,14 +2712,6 @@ ALTER TABLE ONLY public.sivel2_gen_fotra
 
 ALTER TABLE ONLY public.sivel2_gen_frontera
     ADD CONSTRAINT frontera_pkey PRIMARY KEY (id);
-
-
---
--- Name: sivel2_gen_grupoper grupoper_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sivel2_gen_grupoper
-    ADD CONSTRAINT grupoper_pkey PRIMARY KEY (id);
 
 
 --
@@ -3461,7 +3387,7 @@ ALTER TABLE ONLY public.sivel2_gen_actocolectivo
 --
 
 ALTER TABLE ONLY public.sivel2_gen_actocolectivo
-    ADD CONSTRAINT actocolectivo_id_grupoper_fkey FOREIGN KEY (id_grupoper) REFERENCES public.sivel2_gen_grupoper(id);
+    ADD CONSTRAINT actocolectivo_id_grupoper_fkey FOREIGN KEY (id_grupoper) REFERENCES public.sip_grupoper(id);
 
 
 --
@@ -3785,14 +3711,6 @@ ALTER TABLE ONLY public.sip_actorsocial_persona
 
 
 --
--- Name: sip_actorsocial fk_rails_5b21e3a2af; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sip_actorsocial
-    ADD CONSTRAINT fk_rails_5b21e3a2af FOREIGN KEY (grupoper_id) REFERENCES public.sip_grupoper(id);
-
-
---
 -- Name: sivel2_gen_combatiente fk_rails_6485d06d37; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -3841,6 +3759,14 @@ ALTER TABLE ONLY public.sivel2_gen_combatiente
 
 
 --
+-- Name: sip_actorsocial_sectoractor fk_rails_9f61a364e0; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_actorsocial_sectoractor
+    ADD CONSTRAINT fk_rails_9f61a364e0 FOREIGN KEY (sectoractor_id) REFERENCES public.sip_sectoractor(id);
+
+
+--
 -- Name: sivel2_gen_combatiente fk_rails_af43e915a6; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -3870,6 +3796,14 @@ ALTER TABLE ONLY public.heb412_gen_campoplantillahcm
 
 ALTER TABLE ONLY public.sivel2_gen_combatiente
     ADD CONSTRAINT fk_rails_e2d01a5a99 FOREIGN KEY (id_sectorsocial) REFERENCES public.sivel2_gen_sectorsocial(id);
+
+
+--
+-- Name: sip_actorsocial_sectoractor fk_rails_f032bb21a6; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_actorsocial_sectoractor
+    ADD CONSTRAINT fk_rails_f032bb21a6 FOREIGN KEY (actorsocial_id) REFERENCES public.sip_actorsocial(id);
 
 
 --
@@ -4269,7 +4203,7 @@ ALTER TABLE ONLY public.sivel2_gen_victimacolectiva
 --
 
 ALTER TABLE ONLY public.sivel2_gen_victimacolectiva
-    ADD CONSTRAINT victimacolectiva_id_grupoper_fkey FOREIGN KEY (id_grupoper) REFERENCES public.sivel2_gen_grupoper(id);
+    ADD CONSTRAINT victimacolectiva_id_grupoper_fkey FOREIGN KEY (id_grupoper) REFERENCES public.sip_grupoper(id);
 
 
 --
@@ -4414,10 +4348,17 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20180320230847'),
 ('20180427194732'),
 ('20180509111948'),
+('20180717134314'),
 ('20180717135811'),
+('20180718094829'),
+('20180719015902'),
 ('20180720140443'),
 ('20180720171842'),
 ('20180724135332'),
-('20180724202353');
+('20180724202353'),
+('20180726213123'),
+('20180726234755'),
+('20180801105304'),
+('20180810221619');
 
 
