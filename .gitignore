@@ -21,3 +21,6 @@ config/database.yml
 archivos/
 config/initializers/sip.rb
 
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key

@@ -1,7 +1,14 @@
 #!/bin/sh
 # Actualiza de github
 
-RC=sivel2anzorc bin/detiene.sh
+
+if (test -f ".env") then {
+	. .env
+} fi;
+if (test "$RC" = "") then {
+	export RC=sivel2anzorc;
+} fi;
+bin/detiene.sh
 if (test "$?" != "0") then { 
 	echo "Problema al detener"; 
 	exit 1; 
@@ -21,7 +28,7 @@ if (test "$?" != "0") then {
 	echo "Problema con db:migrate"; 
 	exit 1; 
 } fi;
-RC=sivel2anzorc bin/corre.sh
+bin/corre.sh
 if (test "$?" != "0") then { 
 	echo "Problema al volver a iniciar"; 
 	exit 1; 
