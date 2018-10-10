@@ -14,3 +14,35 @@
 .navbar-default {
 	color: #356a00 !important;
 }
+
+
+.boolean {
+	height: inherit;
+}
+
+.nav-tabs > li > a {
+	padding: 10px 15px;
+	border-radius: 4px 4px 0 0;
+	line-height: 1.42857143;
+	margin-right: 2px;
+	background-color: rgb(189, 215, 75);
+	border: 1px solid #eee;
+}
+
+.nav-tabs > li.active > a {
+	background-color: #eee;
+	border: 1px solid #aaa;
+	border-bottom-color: transparent;
+}
+.panel-heading {
+	text-align: center;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #ffffff;
+  background-color: rgb(189, 215, 75);
+  border-color: #285e8e;
+}
