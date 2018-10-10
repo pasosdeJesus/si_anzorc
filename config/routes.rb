@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope 'anzorc/sivel2' do
+  scope 'anzorc/si' do
     devise_scope :usuario do
       get 'sign_out' => 'devise/sessions#destroy'
       # El siguiente para superar mala generación del action en el formulario
@@ -23,7 +23,9 @@ Rails.application.routes.draw do
   
     root 'sivel2_gen/hogar#index'
   end
-  mount Sip::Engine, at: '/anzorc/sivel2', as: 'sip'
-  mount Sivel2Gen::Engine, at: '/anzorc/sivel2', as: 'sivel2_gen'
+  mount Sip::Engine, at: '/anzorc/si', as: 'sip'
+  mount Heb412Gen::Engine, at: '/anzorc/si', as: 'heb412_gen'
+  mount Sivel2Gen::Engine, at: '/anzorc/si', as: 'sivel2_gen'
+  mount Cor1440Gen::Engine, at: '/anzorc/si', as: 'cor1440_gen'
 
 end

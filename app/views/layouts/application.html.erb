@@ -12,10 +12,26 @@
         <%= menu_item "Conteo general de víctimas", sivel2_gen.conteos_genvic_path %>
         <%= menu_item "Validaciones", sivel2_gen.validarcasos_path %>
       <% end %>
+      <%= drop_down "Actividades" do %>
+        <%= menu_item "Listado", cor1440_gen.actividades_path %>
+        <%= menu_item "Nueva", cor1440_gen.new_actividad_path %>
+      <% end %>
+      <%= drop_down "Proyectos" do %>
+        <%= menu_item "Listado", cor1440_gen.proyectosfinancieros_path %>
+        <%= menu_item "Nuevo", cor1440_gen.new_proyectofinanciero_path %>
+      <% end %>
+
+
     <% end %>
   <% end %>
   <%= menu_group :pull => :right do %>
-    <%= menu_item "Documentacion", sivel2_gen.acercade_path %>
+    <%= drop_down "Documentos" do %>
+      <%= menu_item "Manual SIVeL 2", 'https://docs.google.com/document/d/1xr1vtkfpWdpM_VrEbHacm44NiMPCzAIcRUS1ENoBrQU/edit?usp=sharing' %>
+      <%= menu_item "Nube", heb412_gen.sisini_path %>
+      <% if current_usuario.nil? %>
+        <%= menu_item "Acerca de", sivel2_gen.acercade_path %>
+      <% end %>
+    <% end %>
     <% if !current_usuario.nil? %>
       <%= drop_down "Administrar" do %>
         <%= menu_item "Clave", main_app.editar_registro_usuario_path %>
@@ -23,6 +39,18 @@
           <li><a id="fichacasovertical" href="<%= sivel2_gen.fichacasovertical_path %>">Ficha caso vertical ✓</a></li>
         <% else %>
           <li><a id="fichacasovertical" href="<%= sivel2_gen.fichacasovertical_path %>">Ficha caso vertical</a></li>
+        <% end %>
+        <% if can? :manage, ::Heb412Gen::Plantillahcm %>
+          <%= menu_item "Plantillas para listados en hojas de calculo",
+            heb412_gen.plantillashcm_path %>
+        <% end %>
+        <% if can? :manage, ::Heb412Gen::Plantillahcr %>
+          <%= menu_item "Plantillas para un registro en hoja de calculo",
+            heb412_gen.plantillashcr_path %>
+        <% end %>
+        <% if can? :manage, ::Heb412Gen::Plantilladoc %>
+          <%= menu_item "Plantillas para un registro en documento",
+            heb412_gen.plantillasdoc_path %>
         <% end %>
         <% if current_usuario.rol == Ability::ROLADMIN %>
           <%= menu_item "Usuarios", main_app.usuarios_path %>
