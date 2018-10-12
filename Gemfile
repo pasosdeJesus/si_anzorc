@@ -79,7 +79,7 @@ gem "paperclip"
 gem "tzinfo"
 
 # Motor de SIVeL 2
-gem 'sip', git: "https://github.com/pasosdeJesus/sip.git", branch: :persona_sipmodelo
+gem 'sip', git: "https://github.com/pasosdeJesus/sip.git"
 #gem 'sip', path: '../sip'
 
 # Motor heb412_gen para manejar archivos como nube y plantillas
@@ -87,7 +87,7 @@ gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git'
 #gem 'heb412_gen', path: '../heb412_gen/'
 
 # Motor sivel2_gen
-gem 'sivel2_gen', git: "https://github.com/pasosdeJesus/sivel2_gen.git", branch: :persona_sipmodelo
+gem 'sivel2_gen', git: "https://github.com/pasosdeJesus/sivel2_gen.git"
 #gem "sivel2_gen", path: '../sivel2_gen'
 
 # Motor cor1440_gen
