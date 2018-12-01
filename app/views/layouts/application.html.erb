@@ -7,18 +7,16 @@
     <% if !current_usuario.nil? %>
       <%= drop_down "Casos" do %>
         <%= menu_item "Listado", sivel2_gen.casos_path %>
-        <%= menu_item "Nuevo", sivel2_gen.new_caso_path %>
+        <%= menu_item "Validaciones", sivel2_gen.validarcasos_path %>
+        <%= menu_item "Listado de víctimas y casos", sivel2_gen.victimas_path %>
         <%= menu_item "Conteo demografía víctimas", sivel2_gen.conteos_personas_path %>
         <%= menu_item "Conteo general de víctimas", sivel2_gen.conteos_genvic_path %>
-        <%= menu_item "Validaciones", sivel2_gen.validarcasos_path %>
       <% end %>
       <%= drop_down "Actividades" do %>
         <%= menu_item "Listado", cor1440_gen.actividades_path %>
-        <%= menu_item "Nueva", cor1440_gen.new_actividad_path %>
       <% end %>
       <%= drop_down "Proyectos" do %>
         <%= menu_item "Listado", cor1440_gen.proyectosfinancieros_path %>
-        <%= menu_item "Nuevo", cor1440_gen.new_proyectofinanciero_path %>
       <% end %>
 
 

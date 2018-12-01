@@ -79,6 +79,7 @@ class Ability  < Sivel2Gen::Ability
         can :read, Sivel2Gen::Caso
         can :new, Sivel2Gen::Caso
         can [:update, :create, :destroy], Sivel2Gen::Caso
+        can :read, Sivel2Gen::Victima
 
       when Ability::ROLADMIN
 
@@ -102,6 +103,7 @@ class Ability  < Sivel2Gen::Ability
 
         can :manage, Sivel2Gen::Caso
         can :manage, Sivel2Gen::Acto
+        can :read, Sivel2Gen::Victima
 
         can :manage, Usuario
         can :manage, :tablasbasicas
