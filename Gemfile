@@ -11,6 +11,7 @@ gem "rails-i18n"
 
 gem "odf-report"
 
+gem 'redcarpet'
 
 # Postgresql
 gem "pg"#, '~> 0.21'

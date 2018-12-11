@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 1fb77328d245a2fb244a1f33a594ea64b5348919
+  revision: 0f6662a6ebf6d0a4a60132c8b7c64e2d6da4046f
   specs:
     sip (2.0.b5)
       bootstrap-datepicker-rails
@@ -45,7 +45,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: 8cb9559e1de9b52b19e4679c4e82c080d0d17895
+  revision: b981d11ccad9e59eed6a1863d33e87ab6f0aa5e3
   specs:
     sivel2_gen (2.0b8)
       devise
@@ -163,7 +163,7 @@ GEM
       railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    i18n (1.1.1)
+    i18n (1.2.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
@@ -410,6 +410,7 @@ DEPENDENCIES
   rails (~> 5.2.1)
   rails-i18n
   rails_12factor
+  redcarpet
   rspreadsheet
   sass
   simple_form
