@@ -10,6 +10,7 @@ class Ability  < Sivel2Gen::Ability
       Sivel2Gen::Ability::BASICAS_PROPIAS + 
       BASICAS_PROPIAS - [
         ['Sivel2Gen', 'pconsolidado'],
+        ['Sip', 'perfilactorsocial'],
       ]
   end
 

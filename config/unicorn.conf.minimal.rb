@@ -7,7 +7,7 @@
 # a more verbose configuration using more features.
 
 listen 3009 # by default Unicorn listens on port 8080
-APP_PATH = "/var/www/htdocs/sivel2_anzorc"
+APP_PATH = "/var/www/htdocs/si_anzorc"
 working_directory APP_PATH
 worker_processes 4 # this should be >= nr_cpus
 pid APP_PATH + "/tmp/pids/unicorn.pid"

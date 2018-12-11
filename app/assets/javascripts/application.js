@@ -21,7 +21,7 @@ $(document).on('turbolinks:load ready page:load', function() {
 	root = typeof exports !== "undefined" && exports !== null ? 
 		exports : window;
 
-	sip_prepara_eventos_comunes(root);
+	sip_prepara_eventos_comunes(root, false, false);
 	heb412_gen_prepara_eventos_comunes(root);
 	sivel2_gen_prepara_eventos_comunes(root);
 	cor1440_gen_prepara_eventos_comunes(root);
