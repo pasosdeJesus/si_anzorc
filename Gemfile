@@ -85,9 +85,14 @@ gem "tzinfo"
 gem 'sip', git: "https://github.com/pasosdeJesus/sip.git"
 #gem 'sip', path: '../sip'
 
-# Motor heb412_gen para manejar archivos como nube y plantillas
+# Motor para manejar archivos como nube y plantillas
 gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git'
 #gem 'heb412_gen', path: '../heb412_gen/'
+
+# Motor para formularios
+gem 'mr519_gen', git: 'https://github.com/pasosdeJesus/mr519_gen.git'
+#gem 'mr519_gen', path: '../mr519_gen/'
+
 
 # Motor sivel2_gen
 gem 'sivel2_gen', git: "https://github.com/pasosdeJesus/sivel2_gen.git"
