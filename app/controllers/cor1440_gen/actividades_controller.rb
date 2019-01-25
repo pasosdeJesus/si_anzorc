@@ -11,7 +11,23 @@ module Cor1440Gen
         :fecha_localizada, 
         :nombre, 
         :responsable,
-        :proyectosfinancieros,
+        :proyectofinanciero,
+        :actividadpf, 
+        :objetivo,
+        :valorcampoact,
+        :actorsocial,
+        :listadoasistencia,
+        :poblacion,
+        :anexos
+      ]
+    end
+
+    def atributos_index
+      [ :id, 
+        :fecha_localizada, 
+        :nombre, 
+        :responsable,
+        :proyectofinanciero,
         :actividadpf, 
         :objetivo,
         :poblacion,
@@ -19,15 +35,14 @@ module Cor1440Gen
       ]
     end
 
-    def atributos_index
-      i = atributos_show.index(:proyectosfinancieros)
-      r = atributos_show
-      r[i] = :proyectofinanciero
-      return r
-    end
-
     def atributos_form
       atributos_show - [:id, 'id']
+    end
+
+    def edit
+      edit_cor1440_gen
+      @listadoasistencia = true
+      render layout: 'application'
     end
 
   end

@@ -8,10 +8,7 @@ class Ability  < Sivel2Gen::Ability
     Sip::Ability::BASICAS_PROPIAS + 
       Cor1440Gen::Ability::BASICAS_PROPIAS +
       Sivel2Gen::Ability::BASICAS_PROPIAS + 
-      BASICAS_PROPIAS - [
-        ['Sivel2Gen', 'pconsolidado'],
-        ['Sip', 'perfilactorsocial'],
-      ]
+      BASICAS_PROPIAS
   end
 
   def basicas_id_noauto 

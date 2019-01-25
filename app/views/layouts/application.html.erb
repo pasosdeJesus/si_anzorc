@@ -14,6 +14,8 @@
       <% end %>
       <%= drop_down "Actividades" do %>
         <%= menu_item "Listado", cor1440_gen.actividades_path %>
+        <%= menu_item "Actores sociales", sip.actoressociales_path %>
+        <%= menu_item "Víctimas/Beneficiarios", sip.personas_path %>
       <% end %>
       <%= drop_down "Proyectos" do %>
         <%= menu_item "Listado", cor1440_gen.proyectosfinancieros_path %>
