@@ -1611,7 +1611,8 @@ CREATE TABLE public.sip_actorsocial (
     pais_id integer,
     web character varying(500),
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    fechadeshabilitacion date
 );
 
 
