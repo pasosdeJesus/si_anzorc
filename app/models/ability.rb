@@ -82,13 +82,14 @@ class Ability  < Sivel2Gen::Ability
       when Ability::ROLADMIN
 
         can :manage, Cor1440Gen::Actividad
+        can :manage, Cor1440Gen::Campotind
         can :manage, Cor1440Gen::Financiador
         can :manage, Cor1440Gen::Indicadorpf
-        can :manage, Cor1440Gen::Tipoindicador
-        can :manage, Cor1440Gen::Campotind
         can :manage, Cor1440Gen::Informe
+        can :manage, Cor1440Gen::Mindicadorpf
         can :manage, Cor1440Gen::Proyectofinanciero
         can :manage, Cor1440Gen::Sectoractor
+        can :manage, Cor1440Gen::Tipoindicador
 
         can :manage, Heb412Gen::Doc
         can :manage, Heb412Gen::Plantilladoc
