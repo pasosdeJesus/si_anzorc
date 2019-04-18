@@ -1549,7 +1549,7 @@ ALTER SEQUENCE public.heb412_gen_campohc_id_seq OWNED BY public.heb412_gen_campo
 CREATE TABLE public.heb412_gen_campoplantillahcm (
     id integer NOT NULL,
     plantillahcm_id integer,
-    nombrecampo character varying(127),
+    nombrecampo character varying(183),
     columna character varying(5)
 );
 
@@ -1870,7 +1870,7 @@ CREATE TABLE public.mr519_gen_opcioncs (
     id bigint NOT NULL,
     campo_id integer NOT NULL,
     nombre character varying(1024) NOT NULL,
-    valor character varying(1024) NOT NULL
+    valor character varying(60) NOT NULL
 );
 
 
@@ -6798,6 +6798,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190401175521'),
 ('20190403202049'),
 ('20190406141156'),
-('20190406164301');
+('20190406164301'),
+('20190418011743'),
+('20190418014012');
 
 
