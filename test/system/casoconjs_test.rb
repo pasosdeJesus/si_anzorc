@@ -1,8 +1,8 @@
 # encoding: UTF-8
 
-require 'test_helper'
+require 'application_system_test_case'
 
-class CasoconjsTest < Capybara::Rails::TestCase
+class CasoconjsTest < ApplicationSystemTestCase
 
   test 'administrador crea' do
     skip
