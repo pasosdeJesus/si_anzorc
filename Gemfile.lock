@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 78868e6d0a23ad0d406fe7a78643b00dad20bad4
+  revision: 92bd4ff0ffbb9d26df05968f901a99a6ea111b43
   specs:
     cor1440_gen (1.0b3)
       devise
@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 700678291bf89ce79446082d9ba9d98fc236082f
+  revision: 3e3eef0a342024f670c1b94a53a971af1db98ccb
   specs:
     heb412_gen (1.0.b6)
       chosen-rails
@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/mr519_gen.git
-  revision: fb324c0392f4ef2e57416a62785ca452a57236d8
+  revision: 48801c87f8ee6841d3e5c49dc8807b6705cbd56e
   specs:
     mr519_gen (0.2.0)
       rails (~> 6.0.0.rc1, >= 6.0.0.rc1)
@@ -32,7 +32,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: a5f25a7441d45b2df62d4c28d2c99e6c9107abaf
+  revision: 139dacadd99c645c62c643680369c3eb0c347728
   specs:
     sip (2.0.b6)
       bootstrap-datepicker-rails
@@ -54,9 +54,9 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: 2eafa3f8c64f8ae5d3e277abfbfc94e7c61c16b6
+  revision: 7089e0895906980b6bb953cdf5fcd247bd62082f
   specs:
-    sivel2_gen (2.0b8)
+    sivel2_gen (2.0b9)
       devise
       jquery-rails
       rails
@@ -139,7 +139,7 @@ GEM
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     andand (1.3.3)
-    bcrypt (3.1.12)
+    bcrypt (3.1.13)
     bigdecimal (1.4.4)
     bindex (0.7.0)
     binding_of_caller (0.8.0)
@@ -151,7 +151,7 @@ GEM
     builder (3.2.3)
     camertron-eprun (1.1.1)
     cancancan (3.0.1)
-    capybara (3.21.0)
+    capybara (3.23.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -314,7 +314,7 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
-    rspreadsheet (0.4.8)
+    rspreadsheet (0.5.0)
       andand (~> 1.3)
       rubyzip (~> 1.1)
     rubyzip (1.2.3)
@@ -381,13 +381,13 @@ GEM
       activemodel (>= 6.0.0.a)
       bindex (>= 0.4.0)
       railties (>= 6.0.0.a)
-    webpacker (4.0.3)
+    webpacker (4.0.7)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
-    websocket-driver (0.7.0)
+    websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.3)
+    websocket-extensions (0.1.4)
     will_paginate (3.1.7)
     xpath (3.2.0)
       nokogiri (~> 1.8)

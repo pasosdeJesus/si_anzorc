@@ -1770,7 +1770,7 @@ CREATE SEQUENCE public.instanciader_seq
 
 CREATE TABLE public.mr519_gen_campo (
     id bigint NOT NULL,
-    nombre character varying(128) NOT NULL,
+    nombre character varying(512) NOT NULL,
     ayudauso character varying(1024),
     tipo integer DEFAULT 1 NOT NULL,
     obligatorio boolean,
@@ -6804,6 +6804,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190418123920'),
 ('20190418142712'),
 ('20190426125052'),
-('20190430112229');
+('20190430112229'),
+('20190605143420');
 
 
