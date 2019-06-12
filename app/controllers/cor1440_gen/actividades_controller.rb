@@ -14,7 +14,7 @@ module Cor1440Gen
         :proyectofinanciero,
         :actividadpf, 
         :objetivo,
-        :valorcampoact,
+        :respuestafor,
         :actorsocial,
         :listadoasistencia,
         :poblacion,
