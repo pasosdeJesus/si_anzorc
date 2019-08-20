@@ -178,13 +178,13 @@ GEM
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     debug_inspector (0.0.3)
-    devise (4.6.2)
+    devise (4.7.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 6.0)
+      railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.8.0)
+    devise-i18n (1.8.1)
       devise (>= 4.6)
     docile (1.3.2)
     erubi (1.8.0)
@@ -232,7 +232,7 @@ GEM
     minitest (5.11.3)
     msgpack (1.3.0)
     nio4r (2.4.0)
-    nokogiri (1.10.3)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     odf-report (0.6.0)
       nokogiri (>= 1.5.0)
@@ -294,7 +294,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.0.4)
+    rails-html-sanitizer (1.2.0)
       loofah (~> 2.2, >= 2.2.2)
     rails-i18n (5.1.3)
       i18n (>= 0.7, < 2)
@@ -414,8 +414,8 @@ DEPENDENCIES
   coffee-rails
   colorize
   cor1440_gen!
-  devise
-  devise-i18n
+  devise (>= 4.7.0)
+  devise-i18n (>= 1.8.0)
   font-awesome-rails
   heb412_gen!
   jbuilder
@@ -461,4 +461,4 @@ RUBY VERSION
    ruby 2.5.0p0
 
 BUNDLED WITH
-   2.0.1
+   1.17.3
