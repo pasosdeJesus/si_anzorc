@@ -133,10 +133,8 @@ group :test do
   # https://www.relishapp.com/womply/rails-style-guide/docs/developing-rails-applications/bundler
   # Lanza programas para examinar resultados
   gem 'launchy'
-
-  gem 'poltergeist'
+  gem 'capybara'
   gem 'selenium-webdriver'
-
   gem 'simplecov'
 
   # Para examinar errores, usar 'rescue rspec' en lugar de 'rspec'
@@ -146,7 +144,7 @@ end
 
 group :production do
   # Para despliegue
-  gem 'unicorn',  '~> 5.5.0.1.g6836'
+  gem 'unicorn'
 
   # Requerido por heroku para usar stdout como bitacora
   gem 'rails_12factor'
