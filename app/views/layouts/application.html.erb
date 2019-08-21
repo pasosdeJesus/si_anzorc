@@ -8,9 +8,12 @@
       <%= drop_down "Casos" do %>
         <%= menu_item "Listado", sivel2_gen.casos_path %>
         <%= menu_item "Validaciones", sivel2_gen.validarcasos_path %>
+        <%= menu_item "Buscar repetidos", sivel2_gen.buscarrepetidos_path %>
         <%= menu_item "Listado de víctimas y casos", sivel2_gen.victimas_path %>
         <%= menu_item "Conteo demografía víctimas", sivel2_gen.conteos_personas_path %>
         <%= menu_item "Conteo general de víctimas", sivel2_gen.conteos_genvic_path %>
+        <%= menu_item "Conteo de victimizaciones individuales", 
+          sivel2_gen.conteos_victimizaciones_path %>
       <% end %>
       <%= drop_down "Actividades" do %>
         <%= menu_item "Listado", cor1440_gen.actividades_path %>
@@ -72,7 +75,7 @@
 
 <% content_for :piedepagina do %>
   <p><span class='derechos'>Dominio Público de acuerdo a Legislación Colombiana<br/>
-    Desarrollado por <a href="http://www.pasosdeJesus.org" target="_blank">Pasos de Jesús</a>. 2016. 
+    Desarrollado por <a href="http://www.pasosdeJesus.org" target="_blank">Pasos de Jesús</a>. 2019. 
   </span></p>
 <% end %>
 
