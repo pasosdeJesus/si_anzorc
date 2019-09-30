@@ -108,7 +108,7 @@ gem 'cor1440_gen', git: 'https://github.com/pasosdeJesus/cor1440_gen.git'
 
 gem 'chosen-rails', git: 'https://github.com/vtamara/chosen-rails.git', branch: 'several-fixes'
 
-gem 'rspreadsheet'
+gem 'rspreadsheet', '>= 0.5.1'
 gem 'libxml-ruby'
 
 # Los siguientes son para desarrollo o para pruebas con generadores
@@ -134,7 +134,7 @@ group :test do
   # Lanza programas para examinar resultados
   gem 'launchy'
   gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '>= 3.142.4'
   gem 'simplecov'
 
   # Para examinar errores, usar 'rescue rspec' en lugar de 'rspec'
