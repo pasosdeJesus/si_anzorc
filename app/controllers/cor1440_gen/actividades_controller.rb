@@ -6,6 +6,11 @@ module Cor1440Gen
 
     include Cor1440Gen::Concerns::Controllers::ActividadesController
 
+    before_action :set_actividad, 
+      only: [:show, :edit, :update, :destroy],
+      exclude: [:contar]
+    load_and_authorize_resource class: Cor1440Gen::Actividad
+
     def atributos_show
       [ :id, 
         :fecha_localizada, 
