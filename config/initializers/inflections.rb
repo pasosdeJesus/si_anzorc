@@ -14,6 +14,9 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+require File.join(
+          Gem::Specification.find_by_name("sip").gem_dir, 
+          'config/initializers/inflections')
 ActiveSupport::Inflector.inflections do |inflect|
-	inflect.irregular 'perfilactorsocial', 'perfilesactorsocial'
+	#inflect.irregular 'perfilactorsocial', 'perfilesactorsocial'
 end
