@@ -29,7 +29,7 @@ gem 'paperclip' # Maneja adjuntos
 
 gem 'pg' # Postgresql
 
-gem 'puma'
+gem 'puma', '>= 4.3.1'
 
 gem 'prawn' # Generación de PDF
 
