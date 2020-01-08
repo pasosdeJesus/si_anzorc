@@ -31,7 +31,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 32db02022eab4569985ec11c81d60db0aa68553d
+  revision: 45f1518c2b7476f8cb3e89e6cc925ba458296ab9
   specs:
     sip (2.0.b7)
       cancancan
@@ -182,7 +182,7 @@ GEM
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
     json (2.3.0)
-    kgio (2.11.2)
+    kgio (2.11.3)
     libxml-ruby (3.1.0)
     loofah (2.4.0)
       crass (~> 1.0.2)
@@ -260,7 +260,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
-    raindrops (0.19.0)
+    raindrops (0.19.1)
     rake (13.0.1)
     redcarpet (3.5.0)
     regexp_parser (1.6.0)
