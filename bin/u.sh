@@ -20,7 +20,7 @@ doas=`which doas 2> /dev/null`
 if (test "$?" != "0") then {
 	doas="sudo"
 } fi;
-$doas su ${USUARIO_AP} -c "cd /var/www/htdocs/si_anzorc; rake assets:precompile; echo \"Iniciando unicorn...\"; CONFIG_HOSTS=defensor.info SECRET_KEY_BASE=${SECRET_KEY_BASE} bundle exec unicorn_rails -c ../si_anzorc/config/unicorn.conf.minimal.rb  -E production -D"
+$doas su ${USUARIO_AP} -c "cd /var/www/htdocs/si_anzorc; RAILS_ENV=production bin/rails assets:precompile --trace; echo \"Iniciando unicorn...\"; CONFIG_HOSTS=defensor.info SECRET_KEY_BASE=${SECRET_KEY_BASE} bundle exec unicorn_rails -c ../si_anzorc/config/unicorn.conf.minimal.rb  -E production -D"
 
 
   
