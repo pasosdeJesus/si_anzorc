@@ -21,6 +21,8 @@
         <%= opcion_menu 'Conteo de victimizaciones individuales', 
           sivel2_gen.conteos_victimizaciones_path,
           desplegable: true %>
+        <%= opcion_menu 'Geolocalización de casos sobre OpenStreetMap',
+          sivel2_gen.casos_mapaosm_path, desplegable: true %>
       <% end %>
       <%= despliega_abajo 'Actividades' do %>
         <%= opcion_menu 'Listado', cor1440_gen.actividades_path,
