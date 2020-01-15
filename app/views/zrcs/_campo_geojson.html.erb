@@ -1,0 +1,10 @@
+<% pgeo = [] 
+  Dir.chdir(Rails.application.config.x.heb412_ruta.join('ZRC')) { 
+  pgeo = Dir.glob("**/*geojson") } %>
+<%= f.input :geojson, 
+  collection: pgeo,
+  input_html: {
+    "data-toggle" => 'tooltip',
+    "title" => 'Ruta al GeoJSON de la ZRC'
+  } %>
+

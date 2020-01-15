@@ -1,0 +1,10 @@
+<% pdir = [] 
+  Dir.chdir(Rails.application.config.x.heb412_ruta.join('ZRC')) { 
+  pdir = Dir.glob("*") } %>
+<%= f.input :carpeta, 
+  collection: pdir,
+  input_html: {
+    "data-toggle" => 'tooltip',
+    "title" => 'Carpeta dentro del carpeta ZRC de la nube, donde pondrá la información de la ZRC'
+  } %>
+

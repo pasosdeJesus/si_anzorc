@@ -27,9 +27,7 @@
       <%= despliega_abajo 'Actividades' do %>
         <%= opcion_menu 'Listado', cor1440_gen.actividades_path,
           desplegable: true %>
-        <%= opcion_menu 'Actores sociales', sip.actoressociales_path,
-          desplegable: true %>
-        <%= opcion_menu 'Víctimas/Beneficiarios', sip.personas_path,
+        <%= opcion_menu 'Participantes/Víctimas/Beneficiarios', sip.personas_path,
           desplegable: true %>
       <% end %>
       <%= despliega_abajo 'Proyectos' do %>
@@ -40,7 +38,15 @@
             cor1440_gen.mindicadorespf_path, desplegable: true %>
         <% end %>
       <% end %>
+      <%= despliega_abajo 'ZRC' do %>
+        <%= opcion_menu 'Nodos', main_app.admin_nodos_path,
+          desplegable: true %>
+        <%= opcion_menu 'ZRC', main_app.zrcs_path,
+          desplegable: true %>
+        <%= opcion_menu 'Organizaciones', sip.actoressociales_path,
+          desplegable: true %>
 
+      <% end %>
 
     <% end %>
   <% end %>
@@ -101,8 +107,8 @@
 <% end %>
 
 <% content_for :piedepagina do %>
-  <p><span class='derechos'>Dominio Público de acuerdo a Legislación Colombiana<br/>
-    Desarrollado por <a href='http://www.pasosdeJesus.org' target='_blank'>Pasos de Jesús</a>. 2019. 
+  <p style='text-align: right'><span class='derechos'>Dominio Público de acuerdo a Legislación Colombiana<br/>
+    Desarrollado por <a href='http://www.pasosdeJesus.org' target='_blank'>Pasos de Jesús</a>. 2020. 
   </span></p>
 <% end %>
 

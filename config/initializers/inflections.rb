@@ -18,5 +18,10 @@
 #          Gem::Specification.find_by_name("sip").gem_dir, 
 #          'config/initializers/inflections')
 ActiveSupport::Inflector.inflections do |inflect|
-	#inflect.irregular 'perfilactorsocial', 'perfilesactorsocial'
+	inflect.irregular 'nodo', 'nodos'
+	inflect.irregular 'zrc', 'zrcs'
+	inflect.irregular 'zx', 'zsx'
+
+  # No se puso en orden porque la rregla de zrc estaba teniendo precedencia
+	inflect.irregular 'estadozrc', 'estadoszrc'
 end
