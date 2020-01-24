@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>ayudas-sideex</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">temas-colores</td></tr>
+</thead>
+<tbody>
+<tr><td>runScript</td><td>$("#tema_fondo").val("#c34456")<datalist><option>$("#tema_fondo").val("#c34456")</option><option>//li[2]/a/span[3]</option><option>css=span.color-box.spectrum-red</option><option>//div[@id='tema[nav_ini]']/div/div/div[2]/ul/li[2]/a/span[3]</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">escoger-ubicacion-llegada</td></tr>
+</thead>
+<tbody>
+<tr><td>pause</td><td><datalist><option></option></datalist></td><td>1000</td>
+</tr>
+<tr><td>runScript</td><td>$('#caso_casosjr_attributes_id_llegada option:contains(COLOMBIA)').attr('selected', 'selected');<datalist><option>$('#caso_casosjr_attributes_id_llegada option:contains(COLOMBIA)').attr('selected', 'selected');</option><option>$('#caso_casosjr_attributes_id_llegada option:contains(VENEZUELA)').attr('selected', 'selected');</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">assertText</td></tr>
+</thead>
+<tbody>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Caso</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">escoger-ubicacion-salida</td></tr>
+</thead>
+<tbody>
+<tr><td>pause</td><td><datalist><option></option></datalist></td><td>1000</td>
+</tr>
+<tr><td>runScript</td><td>$('#caso_casosjr_attributes_id_salida option:contains(VENEZUELA)').attr('selected', 'selected');<datalist><option>$('#caso_casosjr_attributes_id_salida option:contains(VENEZUELA)').attr('selected', 'selected');</option><option>$('#caso_casosjr_attributes_id_llegada option:contains(COLOMBIA)').attr('selected', 'selected');</option><option>$('#caso_casosjr_attributes_id_llegada option:contains(VENEZUELA)').attr('selected', 'selected');</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">escoger-ubicacion-salida-llegada</td></tr>
+</thead>
+<tbody>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td>agregar 1</td>
+</tr>
+<tr><td>runScript</td><td>$('#caso_casosjr_attributes_id_salidam option:contains(COLOMBIA / CAUCA )').attr('selected', 'selected');<datalist><option>$('#caso_casosjr_attributes_id_salidam option:contains(COLOMBIA / CAUCA )').attr('selected', 'selected');</option><option>$('#caso_casosjr_attributes_id_salida option:contains(VENEZUELA)').attr('selected', 'selected');</option><option>$('#caso_casosjr_attributes_id_llegada option:contains(COLOMBIA)').attr('selected', 'selected');</option><option>$('#caso_casosjr_attributes_id_llegada option:contains(VENEZUELA)').attr('selected', 'selected');</option><option>$('#caso_casosjr_attributes_id_salida option:contains(COLOMBIA / CAUCA )').attr('selected', 'selected');</option></datalist></td><td>agregar 2</td>
+</tr>
+<tr><td>runScript</td><td>$('#caso_casosjr_attributes_id_llegadam option:contains(COLOMBIA / TOLIMA / FLANDES / EL COLEGIO)').attr('selected', 'selected');<datalist><option>$('#caso_casosjr_attributes_id_llegadam option:contains(COLOMBIA / TOLIMA / FLANDES / EL COLEGIO)').attr('selected', 'selected');</option><option>$('#caso_casosjr_attributes_id_llegada option:contains(COLOMBIA)').attr('selected', 'selected');</option><option>$('#caso_casosjr_attributes_id_llegada option:contains(VENEZUELA)').attr('selected', 'selected');</option><option>$('#caso_casosjr_attributes_id_llegada option:contains(COLOMBIA / TOLIMA / FLANDES / EL COLEGIO)').attr('selected', 'selected');</option></datalist></td><td>agregar 3</td>
+</tr>
+<tr><td>select</td><td>id=caso_casosjr_attributes_id_llegadam<datalist><option>id=caso_casosjr_attributes_id_llegadam</option><option>name=caso[casosjr_attributes][id_llegadam]</option><option>css=#caso_casosjr_attributes_id_llegadam</option><option>//select[@id='caso_casosjr_attributes_id_llegadam']</option><option>//div[@id='migracion']/div[4]/select</option><option>//div[6]/div[4]/select</option></datalist></td><td>label=COLOMBIA / TOLIMA / FLANDES / EL COLEGIO</td>
+</tr>
+<tr><td>select</td><td>id=caso_casosjr_attributes_id_llegadam<datalist><option>id=caso_casosjr_attributes_id_llegadam</option><option>name=caso[casosjr_attributes][id_llegadam]</option><option>css=#caso_casosjr_attributes_id_llegadam</option><option>//select[@id='caso_casosjr_attributes_id_llegadam']</option><option>//div[@id='migracion']/div[4]/select</option><option>//div[6]/div[4]/select</option></datalist></td><td> eliminar este select 4 label=COLOMBIA / TOLIMA / FLANDES / EL COLEGIO</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">pausa</td></tr>
+</thead>
+<tbody>
+<tr><td>pause</td><td><datalist><option></option></datalist></td><td>500</td>
+</tr>
+<tr><td>pause</td><td><datalist><option></option></datalist></td><td>1000</td>
+</tr>
+<tr><td>pause</td><td><datalist><option></option></datalist></td><td>3000</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">quitar chosen</td></tr>
+</thead>
+<tbody>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td></td><td><datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option><option></option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">quitar-type</td></tr>
+</thead>
+<tbody>
+<tr><td>runScript</td><td>$('[type=number]').removeAttr('type')<datalist><option>$('[type=number]').removeAttr('type')</option><option>$('#rangoedad_limiteinferior').removeAttr('type')</option><option>$('#pais_codiso').removeAttr('type')</option></datalist></td><td></td>
+</tr>
+<tr><td>runScript</td><td>$('[type=email]').removeAttr('type')<datalist><option>$('[type=number]').removeAttr('type')</option><option>$('#rangoedad_limiteinferior').removeAttr('type')</option><option>$('#pais_codiso').removeAttr('type')</option><option>$('[type=email]').removeAttr('type')</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">storeval-para-verificar</td></tr>
+</thead>
+<tbody>
+<tr><td>storeText</td><td>css=dd<datalist><option>css=dd</option><option>//dd</option></datalist></td><td>idusuario</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Tal vez un remplazo para pause en sideex</td></tr>
+</thead>
+<tbody>
+<tr><td>runScript</td><td>var ya=0; var revisa=function  ()  { const maxc=1000000;   console.log(ya); c=0; while (ya == 0 &amp;&amp; c&lt;maxc &amp;&amp; ($('h1').length == 0 || $('h1').html().trim() != 'Editar Caso')) { if (c == 0) { console.log('Entro al ciclo') }; c += 1; }; if (c&lt;maxc) {ya=1;} }; revisa();<datalist><option>var ya=0; var revisa=function  ()  { const maxc=1000000;   console.log(ya); c=0; while (ya == 0 &amp;&amp; c&lt;maxc &amp;&amp; ($('h1').length == 0 || $('h1').html().trim() != 'Editar Caso')) { if (c == 0) { console.log('Entro al ciclo') }; c += 1; }; if (c&lt;maxc) {ya=1;} }; revisa();</option></datalist></td><td></td>
+</tr>
+<tr><td>runScript</td><td>revisa()<datalist><option>revisa()</option></datalist></td><td></td>
+</tr>
+<tr><td>runScript</td><td>revisa()<datalist><option>revisa()</option></datalist></td><td></td>
+</tr>
+<tr><td>runScript</td><td>revisa()<datalist><option>revisa()</option></datalist></td><td></td>
+</tr>
+<tr><td>runScript</td><td>revisa()<datalist><option>revisa()</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
