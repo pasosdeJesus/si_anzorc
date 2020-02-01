@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>anzorc-08-admin-crea-actividad</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">actividad-fecha-nombre</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>id=navbarDropdownActividades<datalist><option>id=navbarDropdownActividades</option><option>link=Actividades</option><option>css=#navbarDropdownActividades</option><option>//a[contains(text(),'Actividades')]</option><option>//a[@id='navbarDropdownActividades']</option><option>//div[@id='navbarSupportedContent']/ul/li[2]/a</option><option>xpath=(//a[contains(@href, '#')])[2]</option><option>//li[2]/a</option></datalist></td><td>47,24</td>
+</tr>
+<tr><td>clickAt</td><td>css=div.dropdown-menu.show &gt; a.dropdown-item<datalist><option>css=div.dropdown-menu.show &gt; a.dropdown-item</option><option>xpath=(//a[contains(text(),'Listado')])[3]</option><option>//div[@id='navbarSupportedContent']/ul/li[2]/div/a</option><option>//a[contains(@href, '/anzorc/si/actividades')]</option><option>//li[2]/div/a</option></datalist></td><td>51,16</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nueva<datalist><option>link=Nueva</option><option>css=a.btn.btn-primary</option><option>//a[contains(text(),'Nueva')]</option><option>//a[contains(@href, '/anzorc/si/actividades/nueva')]</option><option>//div[3]/div/a</option></datalist></td><td>54,33</td>
+</tr>
+<tr><td>clickAt</td><td>id=actividad_fecha_localizada<datalist><option>id=actividad_fecha_localizada</option><option>name=actividad[fecha_localizada]</option><option>css=#actividad_fecha_localizada</option><option>//input[@id='actividad_fecha_localizada']</option><option>//form[@id='edit_actividad_84']/div[3]/input</option><option>//div[3]/input</option></datalist></td><td>63,11</td>
+</tr>
+<tr><td>clickAt</td><td>css=td.today.day<datalist><option>css=td.today.day</option><option>//tr[4]/td[4]</option></datalist></td><td>10,18</td>
+</tr>
+<tr><td>clickAt</td><td>id=actividad_nombre<datalist><option>id=actividad_nombre</option><option>name=actividad[nombre]</option><option>css=#actividad_nombre</option><option>//input[@id='actividad_nombre']</option><option>//form[@id='edit_actividad_1090']/div/div[6]/div[2]/input</option><option>//div[6]/div[2]/input</option></datalist></td><td>51,10</td>
+</tr>
+<tr><td>type</td><td>id=actividad_nombre<datalist><option>id=actividad_nombre</option><option>name=actividad[nombre]</option><option>css=#actividad_nombre</option><option>//input[@id='actividad_nombre']</option><option>//form[@id='edit_actividad_1090']/div/div[6]/div[2]/input</option><option>//div[6]/div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_1090']/div/div[13]/input</option><option>//div[13]/input</option></datalist></td><td>83,14</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Actividad</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">actividad-responsable</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/actividades/1092/edita')]</option><option>//a[2]</option></datalist></td><td>38,17</td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>id=actividad_usuario_id<datalist><option>id=actividad_usuario_id</option><option>name=actividad[usuario_id]</option><option>css=#actividad_usuario_id</option><option>//select[@id='actividad_usuario_id']</option><option>//form[@id='edit_actividad_14']/div[4]/select</option><option>//select</option></datalist></td><td>label=anzorc - anzorc</td>
+</tr>
+<tr><td>clickAt</td><td>id=actividad_usuario_id<datalist><option>id=actividad_usuario_id</option><option>name=actividad[usuario_id]</option><option>css=#actividad_usuario_id</option><option>//select[@id='actividad_usuario_id']</option><option>//form[@id='edit_actividad_14']/div[4]/select</option><option>//select</option></datalist></td><td>-90,-253</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_38']/div/div[16]/input</option><option>//div[16]/input</option></datalist></td><td>69,9</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Actividad</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">actividad-convenio-financiado</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/actividades/1092/edita')]</option><option>//a[2]</option></datalist></td><td>38,17</td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>addSelection</td><td>id=actividad_proyectofinanciero_ids<datalist><option>id=actividad_proyectofinanciero_ids</option><option>css=#actividad_proyectofinanciero_ids</option><option>//select[@id='actividad_proyectofinanciero_ids']</option><option>//form[@id='edit_actividad_12']/div[5]/select</option><option>//div[5]/select</option></datalist></td><td>label=MANDATO</td>
+</tr>
+<tr><td>clickAt</td><td>css=#actividad_proyectofinanciero_ids &gt; option[value="1"]<datalist><option>css=#actividad_proyectofinanciero_ids &gt; option[value="1"]</option><option>xpath=(//option[@value='1'])[2]</option><option>//select[@id='actividad_proyectofinanciero_ids']/option</option><option>//div[5]/select/option</option></datalist></td><td>31,9</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_12']/div[13]/input</option><option>//div[13]/input</option></datalist></td><td>70,23</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Actividad</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">actividad-actividad-de-convenio</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/actividades/1092/edita')]</option><option>//a[2]</option></datalist></td><td>38,17</td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>addSelection</td><td>id=actividad_actividadpf_ids<datalist><option>id=actividad_actividadpf_ids</option><option>css=#actividad_actividadpf_ids</option><option>//select[@id='actividad_actividadpf_ids']</option><option>//form[@id='edit_actividad_10']/div[6]/select</option><option>//div[6]/select</option></datalist></td><td>label=a1:a1</td>
+</tr>
+<tr><td>clickAt</td><td>css=#actividad_actividadpf_ids &gt; option[value="2"]<datalist><option>css=#actividad_actividadpf_ids &gt; option[value="2"]</option><option>xpath=(//option[@value='2'])[2]</option><option>//select[@id='actividad_actividadpf_ids']/option</option><option>//div[6]/select/option</option></datalist></td><td>22,16</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_10']/div[13]/input</option><option>//div[13]/input</option></datalist></td><td>59,21</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Actividad</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">actividad-objetivo-de-la-actividad</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/anzorc/si/actividades/10/edita')]</option><option>//div/div/a[2]</option></datalist></td><td>29,14</td>
+</tr>
+<tr><td>clickAt</td><td>id=actividad_objetivo<datalist><option>id=actividad_objetivo</option><option>name=actividad[objetivo]</option><option>css=#actividad_objetivo</option><option>//input[@id='actividad_objetivo']</option><option>//form[@id='edit_actividad_10']/div[7]/input</option><option>//div[7]/input</option></datalist></td><td>103,21</td>
+</tr>
+<tr><td>type</td><td>id=actividad_objetivo<datalist><option>id=actividad_objetivo</option><option>name=actividad[objetivo]</option><option>css=#actividad_objetivo</option><option>//input[@id='actividad_objetivo']</option><option>//form[@id='edit_actividad_10']/div[7]/input</option><option>//div[7]/input</option></datalist></td><td>Educar a mujeres para el trabajo</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_10']/div[13]/input</option><option>//div[13]/input</option></datalist></td><td>65,22</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Actividad</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">actividad-actores-sociales-en-lista-de-asistencia</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/actividades/27/edita')]</option><option>//a[2]</option></datalist></td><td>33,15</td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>id=actividad_actorsocial_ids<datalist><option>id=actividad_actorsocial_ids</option><option>css=#actividad_actorsocial_ids</option><option>//select[@id='actividad_actorsocial_ids']</option><option>//form[@id='edit_actividad_38']/div/div[9]/select</option><option>//div[9]/select</option></datalist></td><td>10,68</td>
+</tr>
+<tr><td>addSelection</td><td>id=actividad_actorsocial_ids<datalist><option>id=actividad_actorsocial_ids</option><option>css=#actividad_actorsocial_ids</option><option>//select[@id='actividad_actorsocial_ids']</option><option>//form[@id='edit_actividad_38']/div/div[9]/select</option><option>//div[9]/select</option></datalist></td><td>label=x</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_38']/div/div[16]/input</option><option>//div[16]/input</option></datalist></td><td>81,17</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Actividad</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">actividad-listado-de-asistencia-nuevo</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/actividades/27/edita')]</option><option>//a[2]</option></datalist></td><td>25,16</td>
+</tr>
+<tr><td>clickAt</td><td>link=Listado de asistencia<datalist><option>link=Listado de asistencia</option><option>css=a.collapsed</option><option>//a[contains(text(),'Listado de asistencia')]</option><option>//div[@id='panella']/div/div/a</option><option>//a[contains(@href, '#colapsala')]</option><option>//div/div/div/a</option></datalist></td><td>53,13</td>
+</tr>
+<tr><td>clickAt</td><td>link=Añadir Asistente<datalist><option>link=Añadir Asistente</option><option>//a[contains(text(),'Añadir Asistente')]</option><option>//form[@id='edit_actividad_27']/div/div[11]/a</option><option>xpath=(//a[contains(@href, '#')])[8]</option><option>//div[11]/a</option></datalist></td><td>60,9</td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>//td/div[2]/input<datalist><option>id=actividad_asistencia_attributes_1566430016103_persona_attributes_nombres</option><option>name=actividad[asistencia_attributes][1566430016103][persona_attributes][nombres]</option><option>css=#actividad_asistencia_attributes_1566430016103_persona_attributes_nombres</option><option>//input[@id='actividad_asistencia_attributes_1566430016103_persona_attributes_nombres']</option><option>//tbody[@id='asistencia']/tr/td/div[2]/input</option><option>//td/div[2]/input</option></datalist></td><td>Betty</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='asistencia']/tr/td[2]/div/input<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_apellidos</option><option>name=actividad[asistencia_attributes][0][persona_attributes][apellidos]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_apellidos</option><option>//input[@id='actividad_asistencia_attributes_0_persona_attributes_apellidos']</option><option>//tbody[@id='asistencia']/tr/td[2]/div/input</option><option>//td[2]/div/input</option></datalist></td><td>44,24</td>
+</tr>
+<tr><td>type</td><td>//tbody[@id='asistencia']/tr/td[2]/div/input<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_apellidos</option><option>name=actividad[asistencia_attributes][0][persona_attributes][apellidos]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_apellidos</option><option>//input[@id='actividad_asistencia_attributes_0_persona_attributes_apellidos']</option><option>//tbody[@id='asistencia']/tr/td[2]/div/input</option><option>//td[2]/div/input</option></datalist></td><td>Gonzalez</td>
+</tr>
+<tr><td>select</td><td>//tbody[@id='asistencia']/tr/td[3]/div/select<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_tdocumento_id</option><option>name=actividad[asistencia_attributes][0][persona_attributes][tdocumento_id]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_tdocumento_id</option><option>//select[@id='actividad_asistencia_attributes_0_persona_attributes_tdocumento_id']</option><option>//tbody[@id='asistencia']/tr/td[3]/div/select</option><option>//td[3]/div/select</option></datalist></td><td>label=CC</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='asistencia']/tr/td[3]/div/select<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_tdocumento_id</option><option>name=actividad[asistencia_attributes][0][persona_attributes][tdocumento_id]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_tdocumento_id</option><option>//select[@id='actividad_asistencia_attributes_0_persona_attributes_tdocumento_id']</option><option>//tbody[@id='asistencia']/tr/td[3]/div/select</option><option>//td[3]/div/select</option></datalist></td><td>-280,-489</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='asistencia']/tr/td[4]/div/input<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_numerodocumento</option><option>name=actividad[asistencia_attributes][0][persona_attributes][numerodocumento]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_numerodocumento</option><option>//input[@id='actividad_asistencia_attributes_0_persona_attributes_numerodocumento']</option><option>//tbody[@id='asistencia']/tr/td[4]/div/input</option><option>//td[4]/div/input</option></datalist></td><td>67,20</td>
+</tr>
+<tr><td>type</td><td>//tbody[@id='asistencia']/tr/td[4]/div/input<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_numerodocumento</option><option>name=actividad[asistencia_attributes][0][persona_attributes][numerodocumento]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_numerodocumento</option><option>//input[@id='actividad_asistencia_attributes_0_persona_attributes_numerodocumento']</option><option>//tbody[@id='asistencia']/tr/td[4]/div/input</option><option>//td[4]/div/input</option></datalist></td><td>3344229966</td>
+</tr>
+<tr><td>select</td><td>//tbody[@id='asistencia']/tr/td[5]/div/select<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_sexo</option><option>name=actividad[asistencia_attributes][0][persona_attributes][sexo]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_sexo</option><option>//select[@id='actividad_asistencia_attributes_0_persona_attributes_sexo']</option><option>//tbody[@id='asistencia']/tr/td[5]/div/select</option><option>//td[5]/div/select</option></datalist></td><td>label=M</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='asistencia']/tr/td[5]/div/select<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_sexo</option><option>name=actividad[asistencia_attributes][0][persona_attributes][sexo]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_sexo</option><option>//select[@id='actividad_asistencia_attributes_0_persona_attributes_sexo']</option><option>//tbody[@id='asistencia']/tr/td[5]/div/select</option><option>//td[5]/div/select</option></datalist></td><td>-538,-489</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='asistencia']/tr/td/div[2]/input<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_nombres</option><option>name=actividad[asistencia_attributes][0][persona_attributes][nombres]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_nombres</option><option>//input[@id='actividad_asistencia_attributes_0_persona_attributes_nombres']</option><option>//tbody[@id='asistencia']/tr/td/div[2]/input</option><option>//td/div[2]/input</option></datalist></td><td>60,23</td>
+</tr>
+<tr><td>runScript</td><td>$('[type=number]').removeAttr('type')<datalist><option>$('[type=number]').removeAttr('type')</option><option>$('#rangoedad_limiteinferior').removeAttr('type')</option><option>$('#pais_codiso').removeAttr('type')</option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='asistencia']/tr/td[6]/div/input<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_anionac</option><option>name=actividad[asistencia_attributes][0][persona_attributes][anionac]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_anionac</option><option>//input[@id='actividad_asistencia_attributes_0_persona_attributes_anionac']</option><option>//tbody[@id='asistencia']/tr/td[6]/div/input</option><option>//td[6]/div/input</option></datalist></td><td>64,18</td>
+</tr>
+<tr><td>type</td><td>//tbody[@id='asistencia']/tr/td[6]/div/input<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_anionac</option><option>name=actividad[asistencia_attributes][0][persona_attributes][anionac]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_anionac</option><option>//input[@id='actividad_asistencia_attributes_0_persona_attributes_anionac']</option><option>//tbody[@id='asistencia']/tr/td[6]/div/input</option><option>//td[6]/div/input</option></datalist></td><td>1985</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='asistencia']/tr/td[7]/div/input<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_mesnac</option><option>name=actividad[asistencia_attributes][0][persona_attributes][mesnac]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_mesnac</option><option>//input[@id='actividad_asistencia_attributes_0_persona_attributes_mesnac']</option><option>//tbody[@id='asistencia']/tr/td[7]/div/input</option><option>//td[7]/div/input</option></datalist></td><td>49,31</td>
+</tr>
+<tr><td>type</td><td>//tbody[@id='asistencia']/tr/td[7]/div/input<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_mesnac</option><option>name=actividad[asistencia_attributes][0][persona_attributes][mesnac]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_mesnac</option><option>//input[@id='actividad_asistencia_attributes_0_persona_attributes_mesnac']</option><option>//tbody[@id='asistencia']/tr/td[7]/div/input</option><option>//td[7]/div/input</option></datalist></td><td>4</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='asistencia']/tr/td[8]/div/input<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_dianac</option><option>name=actividad[asistencia_attributes][0][persona_attributes][dianac]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_dianac</option><option>//input[@id='actividad_asistencia_attributes_0_persona_attributes_dianac']</option><option>//tbody[@id='asistencia']/tr/td[8]/div/input</option><option>//td[8]/div/input</option></datalist></td><td>59,28</td>
+</tr>
+<tr><td>type</td><td>//tbody[@id='asistencia']/tr/td[8]/div/input<datalist><option>id=actividad_asistencia_attributes_0_persona_attributes_dianac</option><option>name=actividad[asistencia_attributes][0][persona_attributes][dianac]</option><option>css=#actividad_asistencia_attributes_0_persona_attributes_dianac</option><option>//input[@id='actividad_asistencia_attributes_0_persona_attributes_dianac']</option><option>//tbody[@id='asistencia']/tr/td[8]/div/input</option><option>//td[8]/div/input</option></datalist></td><td>22</td>
+</tr>
+<tr><td>select</td><td>//tbody[@id='asistencia']/tr/td[9]/div/select<datalist><option>id=actividad_asistencia_attributes_0_actorsocial_id</option><option>name=actividad[asistencia_attributes][0][actorsocial_id]</option><option>css=#actividad_asistencia_attributes_0_actorsocial_id</option><option>//select[@id='actividad_asistencia_attributes_0_actorsocial_id']</option><option>//tbody[@id='asistencia']/tr/td[9]/div/select</option><option>//td[9]/div/select</option></datalist></td><td>label=x</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='asistencia']/tr/td[9]/div/select<datalist><option>id=actividad_asistencia_attributes_0_actorsocial_id</option><option>name=actividad[asistencia_attributes][0][actorsocial_id]</option><option>css=#actividad_asistencia_attributes_0_actorsocial_id</option><option>//select[@id='actividad_asistencia_attributes_0_actorsocial_id']</option><option>//tbody[@id='asistencia']/tr/td[9]/div/select</option><option>//td[9]/div/select</option></datalist></td><td>-1102,-489</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_18']/div[13]/input</option><option>//div[13]/input</option></datalist></td><td>69,24</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Actividad</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">actividad-listado-de-asistencia-buscar</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/actividades/1092/edita')]</option><option>//a[2]</option></datalist></td><td>38,17</td>
+</tr>
+<tr><td>clickAt</td><td>link=Listado de asistencia<datalist><option>link=Listado de asistencia</option><option>css=div.panel-title &gt; a</option><option>//a[contains(text(),'Listado de asistencia')]</option><option>//div[@id='panella']/div/div/a</option><option>//a[contains(@href, '#colapsala')]</option><option>//div/div/div/a</option></datalist></td><td>54,5</td>
+</tr>
+<tr><td>clickAt</td><td>link=Añadir Asistente<datalist><option>link=Añadir Asistente</option><option>css=a.btn-primary.add_fields</option><option>//a[contains(text(),'Añadir Asistente')]</option><option>//div[@id='colapsala']/div/div/a</option><option>xpath=(//a[contains(@href, '#')])[9]</option><option>//div[2]/div/div/a</option></datalist></td><td>99,12</td>
+</tr>
+<tr><td>type</td><td>//tbody[@id='asistencia']/tr[2]/td/div[2]/input<datalist><option>id=actividad_asistencia_attributes_1580514302162_persona_attributes_nombres</option><option>name=actividad[asistencia_attributes][1580514302162][persona_attributes][nombres]</option><option>css=#actividad_asistencia_attributes_1580514302162_persona_attributes_nombres</option><option>//input[@id='actividad_asistencia_attributes_1580514302162_persona_attributes_nombres']</option><option>//tbody[@id='asistencia']/tr[2]/td/div[2]/input</option><option>//tr[2]/td/div[2]/input</option></datalist></td><td>luisa</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='asistencia']/tr[2]/td[2]/div/input<datalist><option>id=actividad_asistencia_attributes_1580517716369_persona_attributes_apellidos</option><option>name=actividad[asistencia_attributes][1580517716369][persona_attributes][apellidos]</option><option>css=#actividad_asistencia_attributes_1580517716369_persona_attributes_apellidos</option><option>//input[@id='actividad_asistencia_attributes_1580517716369_persona_attributes_apellidos']</option><option>//tbody[@id='asistencia']/tr[2]/td[2]/div/input</option><option>//tr[2]/td[2]/div/input</option></datalist></td><td>34,19</td>
+</tr>
+<tr><td>type</td><td>//tbody[@id='asistencia']/tr[2]/td[2]/div/input<datalist><option>id=actividad_asistencia_attributes_1580517716369_persona_attributes_apellidos</option><option>name=actividad[asistencia_attributes][1580517716369][persona_attributes][apellidos]</option><option>css=#actividad_asistencia_attributes_1580517716369_persona_attributes_apellidos</option><option>//input[@id='actividad_asistencia_attributes_1580517716369_persona_attributes_apellidos']</option><option>//tbody[@id='asistencia']/tr[2]/td[2]/div/input</option><option>//tr[2]/td[2]/div/input</option></datalist></td><td>Velez</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_18']/div[13]/input</option><option>//div[13]/input</option></datalist></td><td>50,23</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Actividad</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">actividad-rango-de-edad-mujeres-organizacion</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/actividades/1092/edita')]</option><option>//a[2]</option></datalist></td><td>38,17</td>
+</tr>
+<tr><td>clickAt</td><td>link=Añadir Rango de Edad<datalist><option>link=Añadir Rango de Edad</option><option>css=#edit_actividad_18 &gt; div.table-responsive &gt; div.links &gt; a.btn-primary.add_fields</option><option>//a[contains(text(),'Añadir Rango de Edad')]</option><option>//form[@id='edit_actividad_18']/div[11]/div/a</option><option>xpath=(//a[contains(@href, '#')])[11]</option><option>//div[11]/div/a</option></datalist></td><td>86,10</td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580518147036_rangoedadac_id</option><option>name=actividad[actividad_rangoedadac_attributes][1580518147036][rangoedadac_id]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580518147036_rangoedadac_id</option><option>//select[@id='actividad_actividad_rangoedadac_attributes_1580518147036_rangoedadac_id']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select</option><option>//td/select</option></datalist></td><td>label=De 26 a 45</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580518147036_rangoedadac_id</option><option>name=actividad[actividad_rangoedadac_attributes][1580518147036][rangoedadac_id]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580518147036_rangoedadac_id</option><option>//select[@id='actividad_actividad_rangoedadac_attributes_1580518147036_rangoedadac_id']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select</option><option>//td/select</option></datalist></td><td>-92,-462</td>
+</tr>
+<tr><td>runScript</td><td>$('[type=number]').removeAttr('type')<datalist><option>$('[type=number]').removeAttr('type')</option><option>$('#rangoedad_limiteinferior').removeAttr('type')</option><option>$('#pais_codiso').removeAttr('type')</option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td[2]/input<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580518440240_fl</option><option>name=actividad[actividad_rangoedadac_attributes][1580518440240][fl]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580518440240_fl</option><option>//input[@id='actividad_actividad_rangoedadac_attributes_1580518440240_fl']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td[2]/input</option><option>//td[2]/input</option></datalist></td><td>11,14</td>
+</tr>
+<tr><td>type</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td[2]/input<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580518440240_fl</option><option>name=actividad[actividad_rangoedadac_attributes][1580518440240][fl]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580518440240_fl</option><option>//input[@id='actividad_actividad_rangoedadac_attributes_1580518440240_fl']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td[2]/input</option><option>//td[2]/input</option></datalist></td><td>8</td>
+</tr>
+<tr><td></td><td><datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_18']/div[13]/input</option><option>//div[13]/input</option><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_18']/div[13]/input</option><option>//div[13]/input</option></datalist></td><td>71,26</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Actividad</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">actividad-añadir-rango-de-edad-mujeres-externas</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/actividades/1092/edita')]</option><option>//a[2]</option></datalist></td><td>38,17</td>
+</tr>
+<tr><td>clickAt</td><td>link=Añadir Rango de Edad<datalist><option>link=Añadir Rango de Edad</option><option>css=#edit_actividad_10 &gt; div.table-responsive &gt; div.links &gt; a.btn-primary.add_fields</option><option>//a[contains(text(),'Añadir Rango de Edad')]</option><option>//form[@id='edit_actividad_10']/div[11]/div/a</option><option>xpath=(//a[contains(@href, '#')])[9]</option><option>//div[11]/div/a</option></datalist></td><td>62,6</td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580522762267_rangoedadac_id</option><option>name=actividad[actividad_rangoedadac_attributes][1580522762267][rangoedadac_id]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580522762267_rangoedadac_id</option><option>//select[@id='actividad_actividad_rangoedadac_attributes_1580522762267_rangoedadac_id']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select</option><option>//td/select</option></datalist></td><td>label=De 26 a 45</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580522762267_rangoedadac_id</option><option>name=actividad[actividad_rangoedadac_attributes][1580522762267][rangoedadac_id]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580522762267_rangoedadac_id</option><option>//select[@id='actividad_actividad_rangoedadac_attributes_1580522762267_rangoedadac_id']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select</option><option>//td/select</option></datalist></td><td>-92,-462</td>
+</tr>
+<tr><td>runScript</td><td>$('[type=number]').removeAttr('type')<datalist><option>$('[type=number]').removeAttr('type')</option><option>$('#rangoedad_limiteinferior').removeAttr('type')</option><option>$('#pais_codiso').removeAttr('type')</option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td[3]/input<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580522762267_fr</option><option>name=actividad[actividad_rangoedadac_attributes][1580522762267][fr]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580522762267_fr</option><option>//input[@id='actividad_actividad_rangoedadac_attributes_1580522762267_fr']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td[3]/input</option><option>//td[3]/input</option></datalist></td><td>70,18</td>
+</tr>
+<tr><td>type</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td[3]/input<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580522762267_fr</option><option>name=actividad[actividad_rangoedadac_attributes][1580522762267][fr]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580522762267_fr</option><option>//input[@id='actividad_actividad_rangoedadac_attributes_1580522762267_fr']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td[3]/input</option><option>//td[3]/input</option></datalist></td><td>7</td>
+</tr>
+<tr><td></td><td><datalist><option>id=actividad_actividad_rangoedadac_attributes_1548961325076_mr</option><option>name=actividad[actividad_rangoedadac_attributes][1548961325076][mr]</option><option>css=#actividad_actividad_rangoedadac_attributes_1548961325076_mr</option><option>//input[@id='actividad_actividad_rangoedadac_attributes_1548961325076_mr']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td[5]/input</option><option>//td[5]/input</option><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_18']/div[13]/input</option><option>//div[13]/input</option></datalist></td><td>67,19</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Actividad</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">actividad-rango-de-edad-hombres-organizacion</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/actividades/1092/edita')]</option><option>//a[2]</option></datalist></td><td>38,17</td>
+</tr>
+<tr><td>clickAt</td><td>link=Añadir Rango de Edad<datalist><option>link=Añadir Rango de Edad</option><option>css=#edit_actividad_18 &gt; div.table-responsive &gt; div.links &gt; a.btn-primary.add_fields</option><option>//a[contains(text(),'Añadir Rango de Edad')]</option><option>//form[@id='edit_actividad_18']/div[11]/div/a</option><option>xpath=(//a[contains(@href, '#')])[11]</option><option>//div[11]/div/a</option></datalist></td><td>86,10</td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580522954222_rangoedadac_id</option><option>name=actividad[actividad_rangoedadac_attributes][1580522954222][rangoedadac_id]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580522954222_rangoedadac_id</option><option>//select[@id='actividad_actividad_rangoedadac_attributes_1580522954222_rangoedadac_id']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select</option><option>//td/select</option></datalist></td><td>label=De 26 a 45</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580522954222_rangoedadac_id</option><option>name=actividad[actividad_rangoedadac_attributes][1580522954222][rangoedadac_id]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580522954222_rangoedadac_id</option><option>//select[@id='actividad_actividad_rangoedadac_attributes_1580522954222_rangoedadac_id']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select</option><option>//td/select</option></datalist></td><td>-92,-462</td>
+</tr>
+<tr><td>runScript</td><td>$('[type=number]').removeAttr('type')<datalist><option>$('[type=number]').removeAttr('type')</option><option>$('#rangoedad_limiteinferior').removeAttr('type')</option><option>$('#pais_codiso').removeAttr('type')</option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td[4]/input<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580522954222_ml</option><option>name=actividad[actividad_rangoedadac_attributes][1580522954222][ml]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580522954222_ml</option><option>//input[@id='actividad_actividad_rangoedadac_attributes_1580522954222_ml']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td[4]/input</option><option>//td[4]/input</option></datalist></td><td>105,7</td>
+</tr>
+<tr><td>type</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td[4]/input<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580522954222_ml</option><option>name=actividad[actividad_rangoedadac_attributes][1580522954222][ml]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580522954222_ml</option><option>//input[@id='actividad_actividad_rangoedadac_attributes_1580522954222_ml']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td[4]/input</option><option>//td[4]/input</option></datalist></td><td>6</td>
+</tr>
+<tr><td></td><td><datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_18']/div[13]/input</option><option>//div[13]/input</option><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_18']/div[13]/input</option><option>//div[13]/input</option></datalist></td><td>52,23</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Actividad</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">actividad-añadir-rango-de-edad-hombres-externos</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/actividades/1092/edita')]</option><option>//a[2]</option></datalist></td><td>38,17</td>
+</tr>
+<tr><td>clickAt</td><td>link=Añadir Rango de Edad<datalist><option>link=Añadir Rango de Edad</option><option>css=#edit_actividad_18 &gt; div.table-responsive &gt; div.links &gt; a.btn-primary.add_fields</option><option>//a[contains(text(),'Añadir Rango de Edad')]</option><option>//form[@id='edit_actividad_18']/div[11]/div/a</option><option>xpath=(//a[contains(@href, '#')])[11]</option><option>//div[11]/div/a</option></datalist></td><td>86,10</td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580523361083_rangoedadac_id</option><option>name=actividad[actividad_rangoedadac_attributes][1580523361083][rangoedadac_id]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580523361083_rangoedadac_id</option><option>//select[@id='actividad_actividad_rangoedadac_attributes_1580523361083_rangoedadac_id']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select</option><option>//td/select</option></datalist></td><td>label=De 26 a 45</td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580523361083_rangoedadac_id</option><option>name=actividad[actividad_rangoedadac_attributes][1580523361083][rangoedadac_id]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580523361083_rangoedadac_id</option><option>//select[@id='actividad_actividad_rangoedadac_attributes_1580523361083_rangoedadac_id']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td/select</option><option>//td/select</option></datalist></td><td>-92,-462</td>
+</tr>
+<tr><td>runScript</td><td>$('[type=number]').removeAttr('type')<datalist><option>$('[type=number]').removeAttr('type')</option><option>$('#rangoedad_limiteinferior').removeAttr('type')</option><option>$('#pais_codiso').removeAttr('type')</option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td[5]/input<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580523361083_mr</option><option>name=actividad[actividad_rangoedadac_attributes][1580523361083][mr]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580523361083_mr</option><option>//input[@id='actividad_actividad_rangoedadac_attributes_1580523361083_mr']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td[5]/input</option><option>//td[5]/input</option></datalist></td><td>89,10</td>
+</tr>
+<tr><td>type</td><td>//tbody[@id='actividad_rangoedadac']/tr[2]/td[5]/input<datalist><option>id=actividad_actividad_rangoedadac_attributes_1580523361083_mr</option><option>name=actividad[actividad_rangoedadac_attributes][1580523361083][mr]</option><option>css=#actividad_actividad_rangoedadac_attributes_1580523361083_mr</option><option>//input[@id='actividad_actividad_rangoedadac_attributes_1580523361083_mr']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td[5]/input</option><option>//td[5]/input</option></datalist></td><td>9</td>
+</tr>
+<tr><td></td><td><datalist><option>id=actividad_actividad_rangoedadac_attributes_1548961325076_mr</option><option>name=actividad[actividad_rangoedadac_attributes][1548961325076][mr]</option><option>css=#actividad_actividad_rangoedadac_attributes_1548961325076_mr</option><option>//input[@id='actividad_actividad_rangoedadac_attributes_1548961325076_mr']</option><option>//tbody[@id='actividad_rangoedadac']/tr[2]/td[5]/input</option><option>//td[5]/input</option><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_actividad_18']/div[13]/input</option><option>//div[13]/input</option></datalist></td><td>52,23</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Actividad</td>
+</tr>
+</tbody></table>
+</body>
+</html>
