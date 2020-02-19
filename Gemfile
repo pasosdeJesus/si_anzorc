@@ -89,7 +89,6 @@ gem 'sivel2_gen', # Motor para manejo de casos
 
 
 group :development do
-
   gem 'web-console'  # Consola irb en páginas con excepciones o usando <%= console %> en vistas
 
 end

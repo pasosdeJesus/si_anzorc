@@ -29,6 +29,10 @@ module Sivel2Anzorc
 
     config.x.heb412_ruta = Rails.root.join('public', 'heb412')
 
+    # La siguiente es necesaria para que en layout/sip/application
+    # opere javascript_pack_tag 'application'
+    config.relative_url_root = '/anzorc/si'
+
     config.hosts << ENV['CONFIG_HOSTS'] || '127.0.0.1'
 
   end

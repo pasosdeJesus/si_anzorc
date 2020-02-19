@@ -2,6 +2,8 @@
 class Ability  < Sivel2Gen::Ability
 
   BASICAS_PROPIAS =  [
+    ['', 'estadozrc'],
+    ['', 'nodo']
   ]
   
   def tablasbasicas 
@@ -74,10 +76,14 @@ class Ability  < Sivel2Gen::Ability
         can :manage, Sip::Persona
 
         can :manage, Sivel2Gen::Acto
+        can :manage, Sivel2Gen::Actocolectivo
         can :read, Sivel2Gen::Caso
         can :new, Sivel2Gen::Caso
         can [:update, :create, :destroy], Sivel2Gen::Caso
         can :read, Sivel2Gen::Victima
+
+        can :read, Nodo
+        can :read, Zrc
 
       when Ability::ROLADMIN
 
@@ -102,7 +108,11 @@ class Ability  < Sivel2Gen::Ability
 
         can :manage, Sivel2Gen::Caso
         can :manage, Sivel2Gen::Acto
+        can :manage, Sivel2Gen::Actocolectivo
         can :read, Sivel2Gen::Victima
+
+        can :manage, Nodo
+        can :manage, Zrc
 
         can :manage, Usuario
         can :manage, :tablasbasicas

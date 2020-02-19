@@ -1,0 +1,21 @@
+
+es:
+  attributes:
+    fechadeshabilitacion: Fecha de deshabilitación
+    fechacreacion: Fecha de creación
+  activerecord:
+    attributes:
+      "estadozrc":
+        Estadozrc: Estado de ZRC
+        Estadoszrc: Estados de ZRC
+      "nodo":
+        Nodo: Nodo
+        Nodos: Nodos
+      "sip/actorsocial":
+        Actorsocial: Organización
+        Actoressociales: Organizaciones
+      "zrc":
+        Zrc: ZRC
+        Zrcs: ZRCs
+        estadozrc: Estado de ZRC
+

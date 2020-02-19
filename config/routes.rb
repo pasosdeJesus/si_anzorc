@@ -20,7 +20,20 @@ Rails.application.routes.draw do
               :as => 'registro_usuario'            
     end
     resources :usuarios, path_names: { new: 'nuevo', edit: 'edita' } 
-  
+
+    resources :zrcs, path_names: {new: 'nueva', edit: 'edita' }
+
+    namespace :admin do
+      ab = ::Ability.new
+      ab.tablasbasicas.each do |t|
+        if (t[0] == "") 
+          c = t[1].pluralize
+          resources c.to_sym, 
+            path_names: { new: 'nueva', edit: 'edita' }
+        end
+      end
+    end
+
     root 'sivel2_gen/hogar#index'
   end
   mount Sip::Engine, at: '/anzorc/si', as: 'sip'
