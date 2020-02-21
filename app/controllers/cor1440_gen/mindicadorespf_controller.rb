@@ -12,7 +12,14 @@ module Cor1440Gen
                 'PNUD19OB1R1I3' => 'PNUD19OB1R1A2',
                 'PNUD19OB1R1I4' => 'PNUD19OB1R1A3',
                 'PNUD19OB1R1I5' => 'PNUD19OB1R1A4',
-                'PNUD19OB1R1I6' => 'PNUD19OB1R1A5' }
+                'PNUD19OB1R1I6' => 'PNUD19OB1R1A5',
+                'PNUD19OB1R2I1' => 'PNUD19OB1R2A1',
+                'PNUD19OB1R2I2' => 'PNUD19OB1R2A2',
+                'PNUD19OB1R2I3' => 'PNUD19OB1R2A3',
+                'PNUD19OB1R3I1' => 'PNUD19OB1R3A1',
+                'PNUD19OB1R3I2' => 'PNUD19OB1R3A2',
+                'PNUD19OB1R3I3' => 'PNUD19OB1R3A3'}
+
       if relai[ind.numero].nil?
         puts "Indicador desconocido #{ind.numero}"
         return [-1, '#', -1, '#', -1, '#', -1, '#']
