@@ -1,6 +1,39 @@
 GIT
-  remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 87d4d7dc05710753d5d985f054f4edfc04f2eff8
+  remote: https://github.com/pasosdeJesus/heb412_gen.git
+  revision: e366ee85520ffcaceadece0683dc78ce368c425a
+  specs:
+    heb412_gen (1.0.b6)
+      mr519_gen
+      redcarpet
+      rspreadsheet
+      sip
+
+GIT
+  remote: https://github.com/pasosdeJesus/mr519_gen.git
+  revision: a28d19179b834bfb514b070b34868cc325f0750b
+  specs:
+    mr519_gen (0.2.0)
+      rails (~> 6.0.0.rc1, >= 6.0.0.rc1)
+      sip
+
+GIT
+  remote: https://github.com/pasosdeJesus/sivel2_gen.git
+  revision: f7161b83f021d444bab7a332997ed1bbce0dbac4
+  specs:
+    sivel2_gen (2.0b10)
+      devise
+      jquery-rails
+      rails
+
+GIT
+  remote: https://github.com/vtamara/cocoon.git
+  revision: 088c8d9dcce7f51cf3a968398047eaac7a37718b
+  branch: new_id_with_ajax
+  specs:
+    cocoon (1.2.11)
+
+PATH
+  remote: ../cor1440_gen
   specs:
     cor1440_gen (1.0b3)
       devise
@@ -11,27 +44,8 @@ GIT
       rails
       sip
 
-GIT
-  remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 8128438726ab3c69e3207c5a457eb38d45030b59
-  specs:
-    heb412_gen (1.0.b6)
-      mr519_gen
-      redcarpet
-      rspreadsheet
-      sip
-
-GIT
-  remote: https://github.com/pasosdeJesus/mr519_gen.git
-  revision: a1c32d6d2d8d88b45e72adc112e9a2558fd579ab
-  specs:
-    mr519_gen (0.2.0)
-      rails (~> 6.0.0.rc1, >= 6.0.0.rc1)
-      sip
-
-GIT
-  remote: https://github.com/pasosdeJesus/sip.git
-  revision: 04643f2784d7e58f2182441fa1e740bcea0426c8
+PATH
+  remote: ../sip
   specs:
     sip (2.0.b10)
       cancancan
@@ -46,22 +60,6 @@ GIT
       simple_form
       twitter_cldr
       will_paginate
-
-GIT
-  remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: e4b7f2096500f609940797a90d0a985ce79ffc3e
-  specs:
-    sivel2_gen (2.0b10)
-      devise
-      jquery-rails
-      rails
-
-GIT
-  remote: https://github.com/vtamara/cocoon.git
-  revision: 088c8d9dcce7f51cf3a968398047eaac7a37718b
-  branch: new_id_with_ajax
-  specs:
-    cocoon (1.2.11)
 
 GEM
   remote: https://rubygems.org/
@@ -127,9 +125,10 @@ GEM
     bcrypt (3.1.13)
     bigdecimal (2.0.0)
     bindex (0.8.1)
-    bootsnap (1.4.5)
+    bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
+    byebug (11.1.1)
     camertron-eprun (1.1.1)
     cancancan (3.0.2)
     capybara (3.31.0)
@@ -224,7 +223,7 @@ GEM
       prawn (>= 1.0.0)
       rails (>= 3.2)
     public_suffix (4.0.3)
-    puma (4.3.1)
+    puma (4.3.2)
       nio4r (~> 2.0)
     rack (2.2.2)
     rack-proxy (0.6.5)
@@ -263,7 +262,7 @@ GEM
     raindrops (0.19.1)
     rake (13.0.1)
     redcarpet (3.5.0)
-    regexp_parser (1.6.0)
+    regexp_parser (1.7.0)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -285,10 +284,10 @@ GEM
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
-    simplecov (0.18.2)
+    simplecov (0.18.5)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
-    simplecov-html (0.12.0)
+    simplecov-html (0.12.2)
     spring (2.1.0)
     sprockets (4.0.0)
       concurrent-ruby (~> 1.0)
@@ -305,7 +304,7 @@ GEM
     tiny-color-rails (0.0.2)
       railties (>= 3.0)
     ttfunk (1.6.2.1)
-    twitter_cldr (5.3.0)
+    twitter_cldr (5.4.0)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.0)
       tzinfo
@@ -328,7 +327,7 @@ GEM
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
-    will_paginate (3.2.1)
+    will_paginate (3.3.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.2.2)
@@ -340,6 +339,7 @@ DEPENDENCIES
   bcrypt
   bigdecimal
   bootsnap (>= 1.1.0)
+  byebug
   cancancan
   capybara
   cocoon!

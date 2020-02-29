@@ -67,8 +67,8 @@ gem 'will_paginate' # Listados en páginas
 # lógico y no alfabetico como las gemas anteriores) 
 
 gem 'sip', # Motor generico
-  git: 'https://github.com/pasosdeJesus/sip.git'
-  #path: '../sip'
+  #git: 'https://github.com/pasosdeJesus/sip.git'
+  path: '../sip'
 
 gem 'mr519_gen', # Motor de gestion de formularios y encuestas
   git: 'https://github.com/pasosdeJesus/mr519_gen.git'
@@ -79,8 +79,8 @@ gem 'heb412_gen',  # Motor de nube y llenado de plantillas
   #path: '../heb412_gen'
 
 gem 'cor1440_gen', # Motor para manejo de actividades y proyectos con marco lógico
-  git: 'https://github.com/pasosdeJesus/cor1440_gen.git'
-  #path: '../cor1440_gen'
+  #git: 'https://github.com/pasosdeJesus/cor1440_gen.git'
+  path: '../cor1440_gen'
 
 gem 'sivel2_gen', # Motor para manejo de casos
   git: 'https://github.com/pasosdeJesus/sivel2_gen.git'
@@ -96,7 +96,7 @@ end
 
 group :development, :test do
   
-  #gem 'byebug' # Depurar
+  gem 'byebug' # Depurar
 
   gem 'colorize' # Color en terminal
 

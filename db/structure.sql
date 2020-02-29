@@ -282,12 +282,17 @@ CREATE TABLE public.sivel2_gen_victima (
 
 CREATE VIEW public.cben1 AS
  SELECT caso.id AS id_caso,
-    victima.id_persona,
+    subv.id_victima,
+    subv.id_persona,
     1 AS npersona,
     'total'::text AS total
    FROM public.sivel2_gen_caso caso,
-    public.sivel2_gen_victima victima
-  WHERE (caso.id = victima.id_caso);
+    public.sivel2_gen_victima victima,
+    ( SELECT sivel2_gen_victima.id_persona,
+            max(sivel2_gen_victima.id) AS id_victima
+           FROM public.sivel2_gen_victima
+          GROUP BY sivel2_gen_victima.id_persona) subv
+  WHERE ((subv.id_victima = victima.id) AND (caso.id = victima.id_caso));
 
 
 --
@@ -426,6 +431,7 @@ CREATE TABLE public.sip_ubicacion (
 
 CREATE VIEW public.cben2 AS
  SELECT cben1.id_caso,
+    cben1.id_victima,
     cben1.id_persona,
     cben1.npersona,
     cben1.total,
@@ -435,12 +441,13 @@ CREATE VIEW public.cben2 AS
     municipio.nombre AS municipio_nombre,
     ubicacion.id_clase,
     clase.nombre AS clase_nombre
-   FROM ((((public.cben1
-     LEFT JOIN public.sip_ubicacion ubicacion ON ((cben1.id_caso = ubicacion.id_caso)))
+   FROM (((((public.cben1
+     JOIN public.sivel2_gen_caso caso ON ((cben1.id_caso = caso.id)))
+     LEFT JOIN public.sip_ubicacion ubicacion ON ((caso.ubicacion_id = ubicacion.id)))
      LEFT JOIN public.sip_departamento departamento ON ((ubicacion.id_departamento = departamento.id)))
      LEFT JOIN public.sip_municipio municipio ON ((ubicacion.id_municipio = municipio.id)))
      LEFT JOIN public.sip_clase clase ON ((ubicacion.id_clase = clase.id)))
-  GROUP BY cben1.id_caso, cben1.id_persona, cben1.npersona, cben1.total, ubicacion.id_departamento, departamento.nombre, ubicacion.id_municipio, municipio.nombre, ubicacion.id_clase, clase.nombre;
+  GROUP BY cben1.id_caso, cben1.id_victima, cben1.id_persona, cben1.npersona, cben1.total, ubicacion.id_departamento, departamento.nombre, ubicacion.id_municipio, municipio.nombre, ubicacion.id_clase, clase.nombre;
 
 
 --
@@ -2293,6 +2300,40 @@ ALTER SEQUENCE public.mr519_gen_valorcampo_id_seq OWNED BY public.mr519_gen_valo
 
 
 --
+-- Name: nivelorganzorc; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.nivelorganzorc (
+    id bigint NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: nivelorganzorc_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.nivelorganzorc_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: nivelorganzorc_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.nivelorganzorc_id_seq OWNED BY public.nivelorganzorc.id;
+
+
+--
 -- Name: nodo; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2362,7 +2403,13 @@ CREATE TABLE public.sip_actorsocial (
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
     fechadeshabilitacion date,
-    zrc_id integer
+    zrc_id integer,
+    nit character varying(500),
+    numasociados integer,
+    numasociadas integer,
+    carpeta character varying(5000),
+    tipoorganzorc_id integer,
+    nivelorganzorc_id integer
 );
 
 
@@ -2395,7 +2442,8 @@ CREATE TABLE public.sip_actorsocial_persona (
     actorsocial_id integer,
     perfilactorsocial_id integer,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    correo character varying(100)
 );
 
 
@@ -3390,53 +3438,6 @@ CREATE VIEW public.sivel2_gen_conscaso1 AS
 
 
 --
--- Name: sivel2_gen_conscaso; Type: MATERIALIZED VIEW; Schema: public; Owner: -
---
-
-CREATE MATERIALIZED VIEW public.sivel2_gen_conscaso AS
- SELECT sivel2_gen_conscaso1.caso_id,
-    sivel2_gen_conscaso1.fecha,
-    sivel2_gen_conscaso1.memo,
-    sivel2_gen_conscaso1.ubicaciones,
-    sivel2_gen_conscaso1.victimas,
-    sivel2_gen_conscaso1.presponsables,
-    sivel2_gen_conscaso1.tipificacion,
-    to_tsvector('spanish'::regconfig, public.unaccent(((((((((((((sivel2_gen_conscaso1.caso_id || ' '::text) || replace(((sivel2_gen_conscaso1.fecha)::character varying)::text, '-'::text, ' '::text)) || ' '::text) || sivel2_gen_conscaso1.memo) || ' '::text) || sivel2_gen_conscaso1.ubicaciones) || ' '::text) || sivel2_gen_conscaso1.victimas) || ' '::text) || sivel2_gen_conscaso1.presponsables) || ' '::text) || sivel2_gen_conscaso1.tipificacion))) AS q
-   FROM public.sivel2_gen_conscaso1
-  WITH NO DATA;
-
-
---
--- Name: sivel2_gen_consexpcaso; Type: MATERIALIZED VIEW; Schema: public; Owner: -
---
-
-CREATE MATERIALIZED VIEW public.sivel2_gen_consexpcaso AS
- SELECT conscaso.caso_id,
-    conscaso.fecha,
-    conscaso.memo,
-    conscaso.ubicaciones,
-    conscaso.victimas,
-    conscaso.presponsables,
-    conscaso.tipificacion,
-    conscaso.q,
-    caso.titulo,
-    caso.hora,
-    caso.duracion,
-    caso.grconfiabilidad,
-    caso.gresclarecimiento,
-    caso.grimpunidad,
-    caso.grinformacion,
-    caso.bienes,
-    caso.id_intervalo,
-    caso.created_at,
-    caso.updated_at
-   FROM (public.sivel2_gen_conscaso conscaso
-     JOIN public.sivel2_gen_caso caso ON ((caso.id = conscaso.caso_id)))
-  WHERE (true = false)
-  WITH NO DATA;
-
-
---
 -- Name: sivel2_gen_contexto_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -4143,6 +4144,40 @@ CREATE TABLE public.sivel2_gen_vinculoestado (
 
 
 --
+-- Name: tipoorganzorc; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.tipoorganzorc (
+    id bigint NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: tipoorganzorc_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.tipoorganzorc_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: tipoorganzorc_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.tipoorganzorc_id_seq OWNED BY public.tipoorganzorc.id;
+
+
+--
 -- Name: vvictimasoundexesp; Type: MATERIALIZED VIEW; Schema: public; Owner: -
 --
 
@@ -4498,6 +4533,13 @@ ALTER TABLE ONLY public.mr519_gen_valorcampo ALTER COLUMN id SET DEFAULT nextval
 
 
 --
+-- Name: nivelorganzorc id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.nivelorganzorc ALTER COLUMN id SET DEFAULT nextval('public.nivelorganzorc_id_seq'::regclass);
+
+
+--
 -- Name: nodo id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4586,6 +4628,13 @@ ALTER TABLE ONLY public.sivel2_gen_combatiente ALTER COLUMN id SET DEFAULT nextv
 --
 
 ALTER TABLE ONLY public.sivel2_gen_resagresion ALTER COLUMN id SET DEFAULT nextval('public.sivel2_gen_resagresion_id_seq'::regclass);
+
+
+--
+-- Name: tipoorganzorc id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tipoorganzorc ALTER COLUMN id SET DEFAULT nextval('public.tipoorganzorc_id_seq'::regclass);
 
 
 --
@@ -5140,6 +5189,14 @@ ALTER TABLE ONLY public.mr519_gen_valorcampo
 
 
 --
+-- Name: nivelorganzorc nivelorganzorc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.nivelorganzorc
+    ADD CONSTRAINT nivelorganzorc_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: nodo nodo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5564,6 +5621,14 @@ ALTER TABLE ONLY public.sip_tdocumento
 
 
 --
+-- Name: tipoorganzorc tipoorganzorc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tipoorganzorc
+    ADD CONSTRAINT tipoorganzorc_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: sip_trelacion trelacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5641,13 +5706,6 @@ ALTER TABLE ONLY public.sivel2_gen_vinculoestado
 
 ALTER TABLE ONLY public.zrc
     ADD CONSTRAINT zrc_pkey PRIMARY KEY (id);
-
-
---
--- Name: busca_sivel2_gen_conscaso; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX busca_sivel2_gen_conscaso ON public.sivel2_gen_conscaso USING gin (q);
 
 
 --
@@ -6427,6 +6485,14 @@ ALTER TABLE ONLY public.cor1440_gen_campotind
 
 
 --
+-- Name: sip_actorsocial fk_rails_28272d4df3; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_actorsocial
+    ADD CONSTRAINT fk_rails_28272d4df3 FOREIGN KEY (tipoorganzorc_id) REFERENCES public.tipoorganzorc(id);
+
+
+--
 -- Name: cor1440_gen_informe fk_rails_294895347e; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6760,6 +6826,14 @@ ALTER TABLE ONLY public.sip_grupo_usuario
 
 ALTER TABLE ONLY public.sip_departamento
     ADD CONSTRAINT fk_rails_92093de1a1 FOREIGN KEY (id_pais) REFERENCES public.sip_pais(id);
+
+
+--
+-- Name: sip_actorsocial fk_rails_940da8a93a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_actorsocial
+    ADD CONSTRAINT fk_rails_940da8a93a FOREIGN KEY (nivelorganzorc_id) REFERENCES public.nivelorganzorc(id);
 
 
 --
@@ -7779,6 +7853,16 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20200116003807'),
 ('20200211112230'),
 ('20200212103617'),
-('20200212104807');
+('20200212104807'),
+('20200221181049'),
+('20200224134339'),
+('20200228171744'),
+('20200228180403'),
+('20200228193506'),
+('20200228195955'),
+('20200228200609'),
+('20200228222055'),
+('20200228235200'),
+('20200229005349');
 
 

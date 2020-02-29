@@ -3,7 +3,9 @@ class Ability  < Sivel2Gen::Ability
 
   BASICAS_PROPIAS =  [
     ['', 'estadozrc'],
-    ['', 'nodo']
+    ['', 'nodo'],
+    ['', 'tipoorganzorc'],
+    ['', 'nivelorganzorc']
   ]
   
   def tablasbasicas 
