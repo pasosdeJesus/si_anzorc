@@ -8,12 +8,24 @@ es:
       "estadozrc":
         Estadozrc: Estado de ZRC
         Estadoszrc: Estados de ZRC
+      "nivelorganzorc": 
+        Nivelorganzorc: Nivel de organización
+        Nivelesorganzorc: Niveles de organización
       "nodo":
         Nodo: Nodo
         Nodos: Nodos
       "sip/actorsocial":
         Actorsocial: Organización
         Actoressociales: Organizaciones
+        nit: Nit
+        numasociados: Número de asociados (hombres)
+        numasociadas: Número de asociadas (mujeres)
+        carpeta: Carpeta en nube
+        nivelorganzorc: Nivel de organización
+        tipoorganzorc: Tipo de organización
+      "tipoorganzorc": 
+        Tipoorganzorc: Tipo de organización
+        Tiposorganzorc: Tipos de organización
       "zrc":
         Zrc: ZRC
         Zrcs: ZRCs

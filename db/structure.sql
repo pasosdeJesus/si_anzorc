@@ -326,7 +326,8 @@ CREATE TABLE public.cor1440_gen_actividad_rangoedadac (
     fl integer,
     fr integer,
     created_at timestamp without time zone,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone,
+    s integer
 );
 
 
@@ -1554,6 +1555,40 @@ CREATE VIEW public.cvt1 AS
 
 
 --
+-- Name: estadozrc; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.estadozrc (
+    id bigint NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: estadozrc_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.estadozrc_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: estadozrc_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.estadozrc_id_seq OWNED BY public.estadozrc.id;
+
+
+--
 -- Name: fotra_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2091,6 +2126,40 @@ ALTER SEQUENCE public.mr519_gen_valorcampo_id_seq OWNED BY public.mr519_gen_valo
 
 
 --
+-- Name: nodo; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.nodo (
+    id bigint NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: nodo_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.nodo_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: nodo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.nodo_id_seq OWNED BY public.nodo.id;
+
+
+--
 -- Name: regimensalud_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2125,7 +2194,8 @@ CREATE TABLE public.sip_actorsocial (
     web character varying(500),
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    fechadeshabilitacion date
+    fechadeshabilitacion date,
+    zrc_id integer
 );
 
 
@@ -4053,6 +4123,43 @@ CREATE MATERIALIZED VIEW public.vvictimasoundexesp AS
 
 
 --
+-- Name: zrc; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.zrc (
+    id bigint NOT NULL,
+    nombre character varying(500) NOT NULL,
+    estadozrc_id integer,
+    carpeta character varying(5000),
+    geojson character varying(5000),
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: zrc_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.zrc_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: zrc_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.zrc_id_seq OWNED BY public.zrc.id;
+
+
+--
 -- Name: cor1440_gen_actividad id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4221,6 +4328,13 @@ ALTER TABLE ONLY public.cor1440_gen_valorcampotind ALTER COLUMN id SET DEFAULT n
 
 
 --
+-- Name: estadozrc id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.estadozrc ALTER COLUMN id SET DEFAULT nextval('public.estadozrc_id_seq'::regclass);
+
+
+--
 -- Name: heb412_gen_campohc id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4326,6 +4440,13 @@ ALTER TABLE ONLY public.mr519_gen_valorcampo ALTER COLUMN id SET DEFAULT nextval
 
 
 --
+-- Name: nodo id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.nodo ALTER COLUMN id SET DEFAULT nextval('public.nodo_id_seq'::regclass);
+
+
+--
 -- Name: sip_actorsocial id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4407,6 +4528,13 @@ ALTER TABLE ONLY public.sivel2_gen_combatiente ALTER COLUMN id SET DEFAULT nextv
 --
 
 ALTER TABLE ONLY public.sivel2_gen_resagresion ALTER COLUMN id SET DEFAULT nextval('public.sivel2_gen_resagresion_id_seq'::regclass);
+
+
+--
+-- Name: zrc id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.zrc ALTER COLUMN id SET DEFAULT nextval('public.zrc_id_seq'::regclass);
 
 
 --
@@ -4706,6 +4834,14 @@ ALTER TABLE ONLY public.cor1440_gen_proyectofinanciero
 
 
 --
+-- Name: cor1440_gen_rangoedadac cor1440_gen_rangoedadac_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_rangoedadac
+    ADD CONSTRAINT cor1440_gen_rangoedadac_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: cor1440_gen_resultadopf cor1440_gen_resultadopf_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -4751,6 +4887,14 @@ ALTER TABLE ONLY public.sivel2_gen_escolaridad
 
 ALTER TABLE ONLY public.sivel2_gen_estadocivil
     ADD CONSTRAINT estadocivil_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: estadozrc estadozrc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.estadozrc
+    ADD CONSTRAINT estadozrc_pkey PRIMARY KEY (id);
 
 
 --
@@ -4935,6 +5079,14 @@ ALTER TABLE ONLY public.mr519_gen_respuestafor
 
 ALTER TABLE ONLY public.mr519_gen_valorcampo
     ADD CONSTRAINT mr519_gen_valorcampo_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: nodo nodo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.nodo
+    ADD CONSTRAINT nodo_pkey PRIMARY KEY (id);
 
 
 --
@@ -5426,10 +5578,39 @@ ALTER TABLE ONLY public.sivel2_gen_vinculoestado
 
 
 --
+-- Name: zrc zrc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.zrc
+    ADD CONSTRAINT zrc_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: busca_sivel2_gen_conscaso; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX busca_sivel2_gen_conscaso ON public.sivel2_gen_conscaso USING gin (q);
+
+
+--
+-- Name: cor1440_gen_actividad_oficina_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX cor1440_gen_actividad_oficina_id_idx ON public.cor1440_gen_actividad USING btree (oficina_id);
+
+
+--
+-- Name: cor1440_gen_actividad_proyectofinanci_proyectofinanciero_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX cor1440_gen_actividad_proyectofinanci_proyectofinanciero_id_idx ON public.cor1440_gen_actividad_proyectofinanciero USING btree (proyectofinanciero_id);
+
+
+--
+-- Name: cor1440_gen_actividad_proyectofinanciero_actividad_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX cor1440_gen_actividad_proyectofinanciero_actividad_id_idx ON public.cor1440_gen_actividad_proyectofinanciero USING btree (actividad_id);
 
 
 --
@@ -6236,6 +6417,14 @@ ALTER TABLE ONLY public.cor1440_gen_actividad_proyecto
 
 
 --
+-- Name: sip_actorsocial fk_rails_3e3d5cba6f; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_actorsocial
+    ADD CONSTRAINT fk_rails_3e3d5cba6f FOREIGN KEY (zrc_id) REFERENCES public.zrc(id);
+
+
+--
 -- Name: cor1440_gen_informe fk_rails_40cb623d50; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6369,6 +6558,14 @@ ALTER TABLE ONLY public.mr519_gen_opcioncs
 
 ALTER TABLE ONLY public.heb412_gen_formulario_plantillahcr
     ADD CONSTRAINT fk_rails_696d27d6f5 FOREIGN KEY (formulario_id) REFERENCES public.mr519_gen_formulario(id);
+
+
+--
+-- Name: zrc fk_rails_699bb48add; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.zrc
+    ADD CONSTRAINT fk_rails_699bb48add FOREIGN KEY (estadozrc_id) REFERENCES public.estadozrc(id);
 
 
 --
@@ -7523,6 +7720,16 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20191205204511'),
 ('20191219011910'),
 ('20191231102721'),
-('20200108060953');
+('20200108060953'),
+('20200114044703'),
+('20200114050322'),
+('2020011412300'),
+('20200114123807'),
+('20200115042831'),
+('20200116003807'),
+('20200211112230'),
+('20200212103617'),
+('20200212104807'),
+('20200221181049');
 
 

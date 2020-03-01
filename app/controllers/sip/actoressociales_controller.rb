@@ -10,10 +10,19 @@ module Sip
       [ :id, 
         :grupoper_id,
         :zrc,
+        :nivelorganzorc,
+        :tipoorganzorc,
+        :nit,
         :web,
         :telefono, 
         :fax,
         :direccion,
+        :numasociados,
+        :numasociadas,
+        :carpeta,
+      ] +
+      [ :actorsocial_persona => [] ] +
+      [
         :habilitado
       ]
     end
@@ -32,11 +41,24 @@ module Sip
     def lista_params 
       atributos_form - [:grupoper] +
         [ :zrc_id, 
+          :nivelorganzorc_id,
+          :tipoorganzorc_id,
           :grupoper_attributes => [
             :id,
             :nombre,
-            :anotaciones ]
-      ]
+            :anotaciones ],
+          :actorsocial_persona_attributes => [
+            :id,
+            :perfilactorsocial_id,
+            :correo,
+            :_destroy,
+            :persona_attributes => [
+              :id,
+              :nombres,
+              :apellidos,
+            ]
+          ]
+        ] 
     end
 
     def actorsocial_params

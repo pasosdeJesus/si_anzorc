@@ -35,5 +35,7 @@ module Sivel2Anzorc
 
     config.hosts << ENV['CONFIG_HOSTS'] || '127.0.0.1'
 
+    config.x.sivel2_consulta_web_publica = false
+
   end
 end
