@@ -23,6 +23,7 @@ es:
         carpeta: Carpeta en nube
         nivelorganzorc: Nivel de organización
         tipoorganzorc: Tipo de organización
+        "{:actorsocial persona=>[]}": Contactos
       "tipoorganzorc": 
         Tipoorganzorc: Tipo de organización
         Tiposorganzorc: Tipos de organización
