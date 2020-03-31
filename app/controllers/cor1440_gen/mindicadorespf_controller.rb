@@ -5,7 +5,7 @@ module Cor1440Gen
 
     include Cor1440Gen::Concerns::Controllers::MindicadorespfController
 
-    def mideindicador_PNUD19(ind, fini, ffin)
+    def mideindicador_PNUD19(mind, ind, fini, ffin)
       res = ind.resultadopf
       relai = { 'PNUD19OB1R1I1' => 'PNUD19OB1R1A1',
                 'PNUD19OB1R1I2' => 'PNUD19OB1R1A1',
@@ -48,11 +48,11 @@ module Cor1440Gen
     end
 
 
-    def mideindicador_particular(ind, fini, ffin)
+    def mideindicador_particular(mind, ind, fini, ffin)
       if ind.numero =~ /^PNUD19O/
-        return mideindicador_PNUD19(ind, fini, ffin)
+        return mideindicador_PNUD19(mind, ind, fini, ffin)
       else
-        return mideindicador_cor1440_gen(ind,fini, ffin)
+        return mideindicador_cor1440_gen(mind, ind,fini, ffin)
       end
     end
 
