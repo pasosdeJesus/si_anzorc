@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     root 'sivel2_gen/hogar#index'
   end
   mount Sip::Engine, at: '/anzorc/si', as: 'sip'
+  mount Mr519Gen::Engine, at: '/anzorc/si', as: 'mr519_gen'
   mount Heb412Gen::Engine, at: '/anzorc/si', as: 'heb412_gen'
   mount Sivel2Gen::Engine, at: '/anzorc/si', as: 'sivel2_gen'
   mount Cor1440Gen::Engine, at: '/anzorc/si', as: 'cor1440_gen'
