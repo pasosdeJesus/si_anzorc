@@ -20,6 +20,9 @@ console.log('Hola Mundo desde Webpacker')
 require('@rails/ujs').start()   // Javascript no intrusivo segun rails
 require('turbolinks').start()   // Acelera carga de paginas
 
+var L = require('leaflet');
+var mc= require('leaflet.markercluster');
+
 import {$, jQuery} from 'jquery';
 import 'popper.js'              // Dialogos emergentes usados por bootstrap
 import 'bootstrap'              // Maquetacion y elementos de diseño
@@ -28,7 +31,6 @@ import 'bootstrap-datepicker'
 import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js'
 import 'jquery-ui'
 import 'jquery-ui/ui/widgets/autocomplete'
-
-var L = require('leaflet');
-var mc= require('leaflet.markercluster');
+import 'jquery-ui/ui/focusable'
+import 'jquery-ui/ui/data'
 

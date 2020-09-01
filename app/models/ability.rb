@@ -40,29 +40,13 @@ class Ability  < Sivel2Gen::Ability
 
   # Establece autorizaciones con CanCanCan
   def initialize(usuario = nil)
-    # Sin autenticación puede consultarse información geográfica 
-    can :read, [Sip::Pais, Sip::Departamento, Sip::Municipio, Sip::Clase]
+    initialize_sivel2_gen(usuario)
+
     if !usuario || usuario.fechadeshabilitacion
       return
     end
     can :nuevo, Cor1440Gen::Actividad
 
-    can :read, Heb412Gen::Doc
-    can :read, Heb412Gen::Plantilladoc
-    can :read, Heb412Gen::Plantillahcm
-    can :read, Heb412Gen::Plantillahcr
-
-    can :descarga_anexo, Sip::Anexo
-    can :contar, Sip::Ubicacion
-    can :nuevo, Sip::Ubicacion
-
-    can :contar, Sivel2Gen::Caso
-    can :buscar, Sivel2Gen::Caso
-    can :lista, Sivel2Gen::Caso
-    can :nuevo, Sivel2Gen::Presponsable
-    can :nuevo, Sivel2Gen::Victima
-    can :nuevo, Sivel2Gen::Victimacolectiva
-    can :nuevo, Sivel2Gen::Combatiente
     if usuario && usuario.rol then
       case usuario.rol 
       when Ability::ROLANALI
@@ -72,17 +56,6 @@ class Ability  < Sivel2Gen::Ability
           oficina: { id: usuario.oficina_id}
         can :read, Cor1440Gen::Informe
         can :read, Cor1440Gen::Proyectofinanciero
-
-        can [:new, :create, :read, :index, :edit, :update],
-          Sip::Actorsocial
-        can :manage, Sip::Persona
-
-        can :manage, Sivel2Gen::Acto
-        can :manage, Sivel2Gen::Actocolectivo
-        can :read, Sivel2Gen::Caso
-        can :new, Sivel2Gen::Caso
-        can [:update, :create, :destroy], Sivel2Gen::Caso
-        can :read, Sivel2Gen::Victima
 
         can :read, Nodo
         can :read, Zrc
@@ -99,29 +72,9 @@ class Ability  < Sivel2Gen::Ability
         can :manage, Cor1440Gen::Sectoractor
         can :manage, Cor1440Gen::Tipoindicador
 
-        can :manage, Heb412Gen::Doc
-        can :manage, Heb412Gen::Plantilladoc
-        can :manage, Heb412Gen::Plantillahcm
-        can :manage, Heb412Gen::Plantillahcr
-
-        can :manage, Sip::Actorsocial
-        can :manage, Sip::Respaldo7z
-        can :manage, Sip::Persona
-
-        can :manage, Sivel2Gen::Caso
-        can :manage, Sivel2Gen::Acto
-        can :manage, Sivel2Gen::Actocolectivo
-        can :read, Sivel2Gen::Victima
-
         can :manage, Nodo
         can :manage, Zrc
 
-        can :manage, Usuario
-        can :manage, :tablasbasicas
-        tablasbasicas.each do |t|
-          c = Ability.tb_clase(t)
-          can :manage, c
-        end
       end
     end
   end

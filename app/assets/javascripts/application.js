@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require sip/motor
+//= require mr519_gen/motor
 //= require heb412_gen/motor
 //= require sivel2_gen/motor
 //= require sivel2_gen/mapaosm
@@ -23,6 +24,7 @@ document.addEventListener('turbolinks:load', function() {
 		exports : window;
 
 	sip_prepara_eventos_comunes(root, false, false);
+	mr519_gen_prepara_eventos_comunes(root);
 	heb412_gen_prepara_eventos_comunes(root);
 	sivel2_gen_prepara_eventos_comunes(root);
 	cor1440_gen_prepara_eventos_comunes(root);
