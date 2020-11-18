@@ -24,6 +24,18 @@ module Admin
       ]
     end
 
+    def atributos_form
+      [
+        :id, 
+        :nombre, 
+        :observaciones, 
+        :fechacreacion_localizada, 
+        :habilitado,
+        :carpeta,
+        :geojson
+      ]
+    end
+
     def genclase
       'M'
     end
