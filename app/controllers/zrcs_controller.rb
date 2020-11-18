@@ -19,6 +19,7 @@ class ZrcsController < Heb412Gen::ModelosController
       :nombre, 
       :estadozrc,
       :carpeta,
+      :fresolucion,
       :geojson,
       :nresolucion,
       :habilitado
@@ -33,6 +34,7 @@ class ZrcsController < Heb412Gen::ModelosController
       :geojson,
       :nresolucion,
       :observaciones,
+      :fresolucion,
       :fechacreacion,
       :fechadeshabilitacion
     ]
