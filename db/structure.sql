@@ -4562,7 +4562,8 @@ CREATE TABLE public.zrc (
     fechacreacion date NOT NULL,
     fechadeshabilitacion date,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    nresolucion integer
 );
 
 
@@ -8607,6 +8608,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20200916022934'),
 ('20200919003430'),
 ('20200921123831'),
-('20201009004421');
+('20201009004421'),
+('20201117151458');
 
 
