@@ -2526,7 +2526,9 @@ CREATE TABLE public.nodo (
     fechacreacion date NOT NULL,
     fechadeshabilitacion date,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    carpeta character varying,
+    geojson character varying
 );
 
 
@@ -8611,6 +8613,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20200921123831'),
 ('20201009004421'),
 ('20201117151458'),
-('20201117175214');
+('20201117175214'),
+('20201117185948');
 
 
