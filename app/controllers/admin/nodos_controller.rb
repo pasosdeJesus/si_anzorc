@@ -20,19 +20,19 @@ module Admin
         :nombre, 
         :observaciones, 
         :fechacreacion_localizada, 
+        :carpeta,
+        :geojson,
         :habilitado
       ]
     end
 
     def atributos_form
       [
-        :id, 
         :nombre, 
         :observaciones, 
-        :fechacreacion_localizada, 
-        :habilitado,
         :carpeta,
-        :geojson
+        :geojson,
+        :habilitado
       ]
     end
 
