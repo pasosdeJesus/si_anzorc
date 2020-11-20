@@ -145,25 +145,25 @@ function agregarCapasNZ() {
   }
   function subirCapaNZ(arrayNZ, esnodo){
     arrayNZ.map(function(valor){
-      nombre = valor["nombre"]
-      ruta = valor["ruta"]
       if (esnodo) {
-        $.getJSON("/heb412/Nodos/" + ruta, function(datos){
-          nombreCapanueva = nombre;
-          var capaGeoJson = L.geoJSON(datos);
+        nombren = valor["nombre"]
+        rutan = valor["ruta"]
+        $.getJSON("/heb412/Nodos/" + rutan).done(function(datosn){
+          nombreCapanueva = nombren;
+          var capaGeoJson = L.geoJSON(datosn);
           mapa.addLayer(capaGeoJson);
           controlCapas.addOverlay(capaGeoJson, nombreCapanueva);
         })
-        .fail(function(){ alert("no se encontró el archivo " + ruta );})
       }
       else {
-        $.getJSON("/heb412/ZRC/" + ruta, function(datos){
-          nombreCapanueva = nombre;
-          var capaGeoJson = L.geoJSON(datos);
+        nombrez = valor["nombre"]
+        rutaz = valor["ruta"]
+        $.getJSON("/heb412/ZRC/" + rutaz).done(function(datosz){
+          nombreCapanueva = nombrez;
+          var capaGeoJson = L.geoJSON(datosz);
           mapa.addLayer(capaGeoJson);
           controlCapas.addOverlay(capaGeoJson, nombreCapanueva);
         })
-        .fail(function(){ alert("no se encontró el archivo " + ruta );})
       }
     })
   }
