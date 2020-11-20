@@ -1,33 +1,33 @@
 .navbar {
-	background-image: linear-gradient(rgb(255, 255, 255), rgb(189, 215, 75));
-	color: #356a00;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(189, 215, 75));
+  color: #356a00;
 }
 
 .navbar-default {
-	color: #356a00 !important;
+  color: #356a00 !important;
 }
 
 
 .boolean {
-	height: inherit;
+  height: inherit;
 }
 
 .nav-tabs > li > a {
-	padding: 10px 15px;
-	border-radius: 4px 4px 0 0;
-	line-height: 1.42857143;
-	margin-right: 2px;
-	background-color: rgb(189, 215, 75);
-	border: 1px solid #eee;
+  padding: 10px 15px;
+  border-radius: 4px 4px 0 0;
+  line-height: 1.42857143;
+  margin-right: 2px;
+  background-color: rgb(189, 215, 75);
+  border: 1px solid #eee;
 }
 
 .nav-tabs > li.active > a {
-	background-color: #eee;
-	border: 1px solid #aaa;
-	border-bottom-color: transparent;
+  background-color: #eee;
+  border: 1px solid #aaa;
+  border-bottom-color: transparent;
 }
 .panel-heading {
-	text-align: center;
+  text-align: center;
 }
 
 .btn-primary:hover,
@@ -90,4 +90,29 @@ div.field, div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+/* Todo al 100% */
+@media (min-width: 1200px) {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-lg, .container-md, .container-sm, .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-md, .container-sm, .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .container-sm, .container {
+    max-width: 100%;
+  }
 }
