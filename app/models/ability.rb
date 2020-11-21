@@ -1,6 +1,20 @@
 # encoding: UTF-8
 class Ability  < Sivel2Gen::Ability
 
+  ROLADMIN   = 1
+  ROLDIR     = 3
+  ROLSISTACT = 7
+
+  ROLES = [
+    ["Administrador", ROLADMIN], 
+    ["", 0], 
+    ["Directivo", ROLDIR], 
+    ["", 0], 
+    ["", 0 ],
+    ["", 0],
+    ["Sistematizador de Actividades", ROLSISTACT]
+  ]
+
   BASICAS_PROPIAS =  [
     ['', 'estadozrc'],
     ['', 'nodo'],
@@ -40,43 +54,44 @@ class Ability  < Sivel2Gen::Ability
 
   # Establece autorizaciones con CanCanCan
   def initialize(usuario = nil)
-    initialize_sivel2_gen(usuario)
-
     if !usuario || usuario.fechadeshabilitacion
       return
     end
-    can :nuevo, Cor1440Gen::Actividad
+    initialize_sivel2_gen(usuario)
+    initialize_cor1440_gen(usuario)
 
-    if usuario && usuario.rol then
-      case usuario.rol 
-      when Ability::ROLANALI
-        can :read, Cor1440Gen::Actividad
-        can :new, Cor1440Gen::Actividad
-        can [:update, :create, :destroy], Cor1440Gen::Actividad, 
-          oficina: { id: usuario.oficina_id}
-        can :read, Cor1440Gen::Informe
-        can :read, Cor1440Gen::Proyectofinanciero
-
-        can :read, Nodo
-        can :read, Zrc
-
-      when Ability::ROLADMIN
-
-        can :manage, Cor1440Gen::Actividad
-        can :manage, Cor1440Gen::Campotind
-        can :manage, Cor1440Gen::Financiador
-        can :manage, Cor1440Gen::Indicadorpf
-        can :manage, Cor1440Gen::Informe
-        can :manage, Cor1440Gen::Mindicadorpf
-        can :manage, Cor1440Gen::Proyectofinanciero
-        can :manage, Cor1440Gen::Sectoractor
-        can :manage, Cor1440Gen::Tipoindicador
-
-        can :manage, Nodo
-        can :manage, Zrc
-
-      end
-    end
+#    can :nuevo, Cor1440Gen::Actividad
+#
+#    if usuario && usuario.rol then
+#      case usuario.rol 
+#      when Ability::ROLANALI
+#        can :read, Cor1440Gen::Actividad
+#        can :new, Cor1440Gen::Actividad
+#        can [:update, :create, :destroy], Cor1440Gen::Actividad, 
+#          oficina: { id: usuario.oficina_id}
+#        can :read, Cor1440Gen::Informe
+#        can :read, Cor1440Gen::Proyectofinanciero
+#
+#        can :read, Nodo
+#        can :read, Zrc
+#
+#      when Ability::ROLADMIN
+#
+#        can :manage, Cor1440Gen::Actividad
+#        can :manage, Cor1440Gen::Campotind
+#        can :manage, Cor1440Gen::Financiador
+#        can :manage, Cor1440Gen::Indicadorpf
+#        can :manage, Cor1440Gen::Informe
+#        can :manage, Cor1440Gen::Mindicadorpf
+#        can :manage, Cor1440Gen::Proyectofinanciero
+#        can :manage, Cor1440Gen::Sectoractor
+#        can :manage, Cor1440Gen::Tipoindicador
+#
+#        can :manage, Nodo
+#        can :manage, Zrc
+#
+#      end
+#    end
   end
 end
 
