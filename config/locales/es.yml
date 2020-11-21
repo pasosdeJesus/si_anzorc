@@ -27,6 +27,9 @@ es:
       "tipoorganzorc": 
         Tipoorganzorc: Tipo de organización
         Tiposorganzorc: Tipos de organización
+      "usuario":
+        tdocumento: Tipo de documento
+        numerodocumento: Número de documento
       "zrc":
         Zrc: ZRC
         Zrcs: ZRCs
