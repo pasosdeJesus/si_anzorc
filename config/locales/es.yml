@@ -5,6 +5,8 @@ es:
     fechacreacion: Fecha de creación
   activerecord:
     attributes:
+      "cor1440_gen/proyectofinanciero":
+        responsable: Coordinador
       "estadozrc":
         Estadozrc: Estado de ZRC
         Estadoszrc: Estados de ZRC

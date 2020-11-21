@@ -12,6 +12,10 @@
           desplegable: true %>
         <%= opcion_menu 'Buscar repetidos', 
           sivel2_gen.buscarrepetidos_path, desplegable: true %>
+        <%= opcion_menu 'Importar relatos XRLAT', 
+          sivel2_gen.casos_importarrelatos_path, desplegable: true %>
+        <%= opcion_menu 'Geolocalización de casos sobre OpenStreetMap',
+          sivel2_gen.casos_mapaosm_path, desplegable: true %>
         <%= opcion_menu 'Listado de víctimas y casos', 
           sivel2_gen.victimas_path, desplegable: true %>
         <%= opcion_menu 'Conteo demografía víctimas', 
@@ -21,8 +25,6 @@
         <%= opcion_menu 'Conteo de victimizaciones individuales', 
           sivel2_gen.conteos_victimizaciones_path,
           desplegable: true %>
-        <%= opcion_menu 'Geolocalización de casos sobre OpenStreetMap',
-          sivel2_gen.casos_mapaosm_path, desplegable: true %>
       <% end %>
       <%= despliega_abajo 'Actividades' do %>
         <%= opcion_menu 'Listado', cor1440_gen.actividades_path,
@@ -31,8 +33,6 @@
           cor1440_gen.contar_actividades_path, desplegable: true %>
         <%= opcion_menu "Conteo por beneficiario y actividad de proyecto", 
           cor1440_gen.contar_actividades_beneficiarios_path, desplegable: true %>
-        <%= opcion_menu 'Participantes/Víctimas/Beneficiarios', sip.personas_path,
-          desplegable: true %>
       <% end %>
       <%= despliega_abajo 'Proyectos' do %>
         <%= opcion_menu 'Listado', cor1440_gen.proyectosfinancieros_path,
@@ -49,6 +49,8 @@
           desplegable: true %>
         <%= opcion_menu 'Organizaciones', sip.actoressociales_path,
           desplegable: true %>
+        <%= opcion_menu 'Participantes', 
+          sip.personas_path, desplegable: true %>
 
       <% end %>
 
@@ -61,6 +63,14 @@
         desplegable: true %>
       <%= opcion_menu 'Nube', heb412_gen.sisini_path,
         desplegable: true %>
+      <% if can? :manage, ::Heb412Gen::Plantillahcm %>
+        <%= opcion_menu 'Plantillas para listados en hojas de calculo',
+          heb412_gen.plantillashcm_path, desplegable: true %>
+      <% end %>
+      <% if can? :manage, ::Heb412Gen::Plantillahcr %>
+        <%= opcion_menu 'Plantillas para un registro en hoja de calculo',
+          heb412_gen.plantillashcr_path, desplegable: true %>
+      <% end %>
       <% if current_usuario.nil? %>
         <%= opcion_menu 'Acerca de', sivel2_gen.acercade_path,
           desplegable: true %>
@@ -80,18 +90,6 @@
             sivel2_gen.fichacasovertical_path,
             desplegable: true, id: 'fichacasovertical' 
           %>
-        <% end %>
-        <% if can? :manage, ::Heb412Gen::Plantillahcm %>
-          <%= opcion_menu 'Plantillas para listados en hojas de calculo',
-            heb412_gen.plantillashcm_path, desplegable: true %>
-        <% end %>
-        <% if can? :manage, ::Heb412Gen::Plantillahcr %>
-          <%= opcion_menu 'Plantillas para un registro en hoja de calculo',
-            heb412_gen.plantillashcr_path, desplegable: true %>
-        <% end %>
-        <% if can? :manage, ::Heb412Gen::Plantilladoc %>
-          <%= opcion_menu 'Plantillas para un registro en documento',
-            heb412_gen.plantillasdoc_path, desplegable: true %>
         <% end %>
         <% if can? :manage, Mr519Gen::Formulario %>
           <%= opcion_menu "Formularios", 

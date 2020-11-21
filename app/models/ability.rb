@@ -1,18 +1,17 @@
-# encoding: UTF-8
-class Ability  < Sivel2Gen::Ability
+class Ability  < Cor1440Gen::Ability
 
-  ROLADMIN   = 1
-  ROLDIR     = 3
-  ROLSISTACT = 7
+  ROLADMIN    = 1
+  ROLDIR      = 3
+  ROLOPERADOR = 5
 
   ROLES = [
     ["Administrador", ROLADMIN], 
     ["", 0], 
     ["Directivo", ROLDIR], 
     ["", 0], 
+    ["Operador", ROLOPERADOR],
     ["", 0 ],
-    ["", 0],
-    ["Sistematizador de Actividades", ROLSISTACT]
+    ["", 0]
   ]
 
   BASICAS_PROPIAS =  [
@@ -54,11 +53,22 @@ class Ability  < Sivel2Gen::Ability
 
   # Establece autorizaciones con CanCanCan
   def initialize(usuario = nil)
-    if !usuario || usuario.fechadeshabilitacion
+    if !usuario || !usuario.fechadeshabilitacion.nil?
       return
     end
-    initialize_sivel2_gen(usuario)
+    Sivel2Gen::Ability.initialize_sivel2_gen(self, usuario)
     initialize_cor1440_gen(usuario)
+    case usuario.rol
+    when Ability::ROLOPERADOR
+      can :index, Cor1440Gen::Proyectofinanciero
+      can :index, Cor1440Gen::Actividad
+      #can :read, Cor1440Gen::Actividad
+      #can :new, Cor1440Gen::Actividad
+      #can :read, Cor1440Gen::Proyectofinanciero
+
+      can [:index,:read], Nodo
+      can [:index,:read], Zrc
+    end
 
 #    can :nuevo, Cor1440Gen::Actividad
 #
