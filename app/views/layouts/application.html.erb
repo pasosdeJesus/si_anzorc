@@ -26,21 +26,17 @@
           sivel2_gen.conteos_victimizaciones_path,
           desplegable: true %>
       <% end %>
-      <%= despliega_abajo 'Actividades' do %>
-        <%= opcion_menu 'Listado', cor1440_gen.actividades_path,
+      <%= despliega_abajo 'Actividades y Proyectos' do %>
+        <%= opcion_menu 'Listado de Actividades', cor1440_gen.actividades_path,
           desplegable: true %>
+        <%= opcion_menu 'Listado de Proyectos', 
+          cor1440_gen.proyectosfinancieros_path, desplegable: true %>
         <%= opcion_menu "Conteo por actividad de proyecto", 
           cor1440_gen.contar_actividades_path, desplegable: true %>
         <%= opcion_menu "Conteo por beneficiario y actividad de proyecto", 
           cor1440_gen.contar_actividades_beneficiarios_path, desplegable: true %>
-      <% end %>
-      <%= despliega_abajo 'Proyectos' do %>
-        <%= opcion_menu 'Listado', cor1440_gen.proyectosfinancieros_path,
-          desplegable: true %>
-        <% if can?(:manage, Cor1440Gen::Mindicadorpf) %>
-          <%= opcion_menu 'Medición de indicadores', 
-            cor1440_gen.mindicadorespf_path, desplegable: true %>
-        <% end %>
+        <%= opcion_menu 'Medición de indicadores', 
+          cor1440_gen.mindicadorespf_path, desplegable: true %>
       <% end %>
       <%= despliega_abajo 'ZRC' do %>
         <%= opcion_menu 'Nodos', main_app.admin_nodos_path,
