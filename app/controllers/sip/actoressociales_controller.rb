@@ -2,9 +2,12 @@
 require_dependency "sip/concerns/controllers/actoressociales_controller"
 
 module Sip
-  class ActoressocialesController < Sip::ModelosController
+  class ActoressocialesController < Heb412Gen::ModelosController
     include Sip::Concerns::Controllers::ActoressocialesController
 
+    def vistas_manejadas
+      ['Actorsocial']
+    end
 
     def atributos_index
       [ :id, 
