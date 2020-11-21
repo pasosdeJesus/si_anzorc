@@ -79,24 +79,23 @@ gem 'heb412_gen',  # Motor de nube y llenado de plantillas
   #path: '../heb412_gen'
 
 gem 'cor1440_gen', # Motor para manejo de actividades y proyectos con marco lógico
-  #git: 'https://github.com/pasosdeJesus/cor1440_gen.git', branch: :sincoord
-  path: '../cor1440_gen'
+  git: 'https://github.com/pasosdeJesus/cor1440_gen.git', branch: :sincoord
+  #path: '../cor1440_gen'
 
 gem 'sivel2_gen', # Motor para manejo de casos
-  #git: 'https://github.com/pasosdeJesus/sivel2_gen.git'
-  path: '../sivel2_gen'
+  git: 'https://github.com/pasosdeJesus/sivel2_gen.git'
+  #path: '../sivel2_gen'
 
 
 
 group :development do
   gem 'web-console'  # Consola irb en páginas con excepciones o usando <%= console %> en vistas
-
 end
 
 
 group :development, :test do
   
-  gem 'byebug' # Depurar
+  #gem 'byebug' # Depurar
 
   gem 'colorize' # Color en terminal
 
