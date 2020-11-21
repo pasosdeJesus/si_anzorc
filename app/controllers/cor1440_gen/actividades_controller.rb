@@ -41,12 +41,11 @@ module Cor1440Gen
     end
 
     def atributos_form
-      atributos_show - [:id, 'id']
+      atributos_show - [:id, 'id', :actividadpf]
     end
 
     def edit
       edit_cor1440_gen
-      @listadoasistencia = true
       render layout: 'application'
     end
 
