@@ -66,8 +66,11 @@ class Ability  < Cor1440Gen::Ability
       #can :new, Cor1440Gen::Actividad
       #can :read, Cor1440Gen::Proyectofinanciero
 
-      can [:index,:read], Nodo
-      can [:index,:read], Zrc
+      can [:index,:read], ::Nodo
+      can [:index,:read], ::Zrc
+    when Ability::ROLADMIN | Ability::ROLDIR
+      can :manage, ::Nodo
+      can :manage, ::Zrc
     end
 
 #    can :nuevo, Cor1440Gen::Actividad
