@@ -1,0 +1,69 @@
+<tr class='nested-fields'>
+  <td>
+    <%= f.input :fecha_localizada,
+      label: false, 
+      input_html: {
+        readonly: 'readonly',
+        class: 'em8'
+      }, as: :string %>
+  </td><td>
+    <%= f.input :finicio_localizada,
+      label: false, 
+      input_html: {
+        "data-behaviour" => "datepicker",
+        class: 'em8'
+      }, as: :string %>
+  </td><td>
+    <%= f.input :ffin_localizada,
+      label: false, 
+      input_html: {
+        "data-behaviour" => "datepicker",
+        class: 'em8'
+      }, as: :string %>
+  </td><td>
+    <%= f.input :restiempo,
+      label: false,
+      input_html: {
+        class: 'em8'
+      }  %>
+  </td>
+  <%= f.simple_fields_for :datointermedioti_pmindicadorpf,
+    f.object.datointermedioti_pmindicadorpf.order(:datointermedioti_id) do |di| %>
+    <td>
+      <%= render 'datointermedioti_pmindicadorpf_campos', :f => di %>
+    </td>
+  <% end %>
+  <td>
+    <%= f.input :resind,
+      input_html: { readonly: 'readonly' },
+      label: false %>
+    <%= f.input :rutaevidencia, 
+      label: false, as: :hidden %>
+  </td>
+  <td>
+    <%= f.input :meta,
+      label: false,
+      input_html: {
+        class: 'em8'
+      }  %>
+  </td>
+  <td> 
+    <%= f.input :porcump, 
+      input_html: { readonly: 'readonly' },
+      label: false %> 
+  </td>
+  <td> 
+    <%= f.input :observaciones, as: :text,
+      label: false %>
+  </td>
+  <!--td> <%= f.input :analisis, label: false %> </td><td> <%= f.input :acciones, label: false %> </td><td> <%= f.input :responsables, label: false %> </td><td> <%= f.input :plazo, label: false %> </td-->
+  <td>
+    <%= f.input :id, as: :hidden %>
+    <%= link_to t('Calcular'), '#',
+                  class: 'btn btn-sm', 
+                  onclick: 'cor1440_gen_calcula_pmindicadorpf(this, event)' %>
+    <%= link_to_remove_association "Eliminar", f, 
+      :class => 'btn-danger' %>
+    <div><%= f.error_notification %></div>
+  </td>
+</tr>
