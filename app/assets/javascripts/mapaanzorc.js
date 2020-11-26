@@ -5,7 +5,12 @@ function leerCapasSuperpuestas(){
   return {}
 }
 function agregarCapasNZ() {
-  $.getJSON("/anzorc/si/admin/nodos.json", obtenerNodos)
+  var root = window;
+  if (typeof root.puntomontaje == "undefined") {
+    sip_prepara_eventos_comunes(root, false, false);
+  }
+  sip_arregla_puntomontaje(root)
+  $.getJSON(root.puntomontaje + "admin/nodos.json", obtenerNodos)
   function obtenerNodos(datos){
     var geoNodos = [] 
     $.map( datos, function( valor, i ) {
@@ -18,7 +23,7 @@ function agregarCapasNZ() {
     });
     subirCapaNZ(geoNodos, nodo = true)
   }
-  $.getJSON("/anzorc/si/zrcs.json", obtenerZRCs)
+  $.getJSON(root.puntomontaje + "zrcs.json", obtenerZRCs)
   function obtenerZRCs(datos){
     var geoZRCs = [] 
     $.map( datos, function( valor, i ) {
@@ -34,9 +39,9 @@ function agregarCapasNZ() {
   function subirCapaNZ(arrayNZ, esnodo){
     arrayNZ.map(function(valor){
       if (esnodo) {
-        nombren = valor["nombre"]
+        let nombren = valor["nombre"]
         rutan = valor["ruta"]
-        $.getJSON("/heb412/Nodos/" + rutan).done(function(datosn){
+        $.getJSON(root.puntomontaje + "heb412/Nodos/" + rutan).done(function(datosn){
           nombreCapanueva = nombren;
           var capaGeoJson = L.geoJSON(datosn, {
             style: function (feature) {
@@ -49,7 +54,7 @@ function agregarCapasNZ() {
       else {
         nombrez = valor["nombre"]
         rutaz = valor["ruta"]
-        $.getJSON("/heb412/ZRC/" + rutaz).done(function(datosz){
+        $.getJSON(root.puntomontaje + "heb412/ZRC/" + rutaz).done(function(datosz){
           nombreCapanueva = nombrez;
           var capaGeoJson = L.geoJSON(datosz, {
             style: function (feature) {
