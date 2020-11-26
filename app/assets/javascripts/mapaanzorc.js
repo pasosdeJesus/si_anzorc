@@ -40,10 +40,12 @@ function agregarCapasNZ() {
     arrayNZ.map(function(valor){
       if (esnodo) {
         let nombren = valor["nombre"]
-        rutan = valor["ruta"]
-        $.getJSON(root.puntomontaje + "heb412/Nodos/" + rutan).done(function(datosn){
-          nombreCapanueva = nombren;
-          var capaGeoJson = L.geoJSON(datosn, {
+        let rutan = valor["ruta"]
+        let p = rutan.split('/')
+        let noma = p.pop()
+        $.getJSON(root.puntomontaje + "sis/arch/Nodos/" + p.join('/') + '?descarga=' + noma).done(function(datosn){
+          let nombreCapanueva = nombren;
+          let capaGeoJson = L.geoJSON(datosn, {
             style: function (feature) {
               return {color: "#31a354"};
             }
@@ -52,11 +54,13 @@ function agregarCapasNZ() {
         })
       }
       else {
-        nombrez = valor["nombre"]
-        rutaz = valor["ruta"]
-        $.getJSON(root.puntomontaje + "heb412/ZRC/" + rutaz).done(function(datosz){
-          nombreCapanueva = nombrez;
-          var capaGeoJson = L.geoJSON(datosz, {
+        let nombrez = valor["nombre"]
+        let rutaz = valor["ruta"]
+        let p = rutaz.split('/')
+        let noma = p.pop()
+        $.getJSON(root.puntomontaje + "sis/arch/ZRC/" + p.join('/') + '?descarga=' + noma).done(function(datosz){
+          let nombreCapanueva = nombrez;
+          let capaGeoJson = L.geoJSON(datosz, {
             style: function (feature) {
               return {color: "#d95f0e"};
             }
