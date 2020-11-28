@@ -31,3 +31,10 @@ config/initializers/sip.rb
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+.byebug_history
+.env
+config/application.rb
+config/initializers/punto_montaje.rb
+config/routes.rb
+coverage/
+public/heb412/
