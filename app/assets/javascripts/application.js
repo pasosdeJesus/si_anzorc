@@ -30,4 +30,6 @@ document.addEventListener('turbolinks:load', function() {
   cor1440_gen_prepara_eventos_comunes(root);
   sivel2_gen_prepara_eventos_unicos(root);
 
+  cor1440_gen_instala_recalcula_poblacion()
+
 });
