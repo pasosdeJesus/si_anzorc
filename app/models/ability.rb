@@ -77,6 +77,7 @@ class Ability  < Cor1440Gen::Ability
     end
     Sivel2Gen::Ability.initialize_sivel2_gen(self, usuario)
     initialize_cor1440_gen(usuario)
+    cannot :pestanadesaparicion, Sivel2Gen::Caso
     case usuario.rol
     when Ability::ROLOPERADOR
       can :index, Cor1440Gen::Proyectofinanciero
