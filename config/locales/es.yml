@@ -7,6 +7,8 @@ es:
     attributes:
       "cor1440_gen/proyectofinanciero":
         responsable: Coordinador
+      "cor1440_gen/pmindicadorpf":
+        resind: Avance
       "estadozrc":
         Estadozrc: Estado de ZRC
         Estadoszrc: Estados de ZRC
