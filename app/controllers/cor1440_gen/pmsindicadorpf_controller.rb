@@ -4,13 +4,14 @@ module Cor1440Gen
   class PmsindicadorpfController < ApplicationController
 
 
-    def self.crea_pmindicadorpf(mind, fini, ffin, restiempo, meta)
+    def self.crea_pmindicadorpf(mind, fini, ffin, restiempo, meta, observaciones)
       pm = Cor1440Gen::Pmindicadorpf.create(
         mindicadorpf_id: mind.id,
         finicio: fini,
         ffin: ffin,
         restiempo: restiempo,
-        meta: meta)
+        meta: meta,
+        observaciones: observaciones)
       pm.save(validate: false)
       if mind.indicadorpf.tipoindicador && 
           mind.indicadorpf.tipoindicador.datointermedioti 
@@ -35,12 +36,14 @@ module Cor1440Gen
         ffin = fini + 1.month
         restiempo = 'Mes'
         meta = 1
+        observaciones = ''
         @pmindicadorpf = Cor1440Gen::Pmindicadorpf.create(
           mindicadorpf_id: mind.id,
           finicio: fini,
           ffin: ffin,
           restiempo: restiempo,
-          meta: meta)
+          meta: meta,
+          observaciones: observaciones)
         if @pmindicadorpf.save
           respond_to do |format|
             format.js { render text: @pmindicadorpf.id.to_s }
