@@ -594,46 +594,6 @@
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">tabla-grupos</td></tr>
-</thead>
-<tbody>
-<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//div[@id='navbarSupportedContent']/ul[2]/li[2]/div/a[7]</option><option>//a[contains(@href, '/anzorc/si/tablasbasicas')]</option><option>//li[2]/div/a[7]</option></datalist></td><td>74,9</td>
-</tr>
-<tr><td>clickAt</td><td>link=Grupos<datalist><option>link=Grupos</option><option>//a[contains(text(),'Grupos')]</option><option>//a[contains(@href, 'admin/grupos')]</option><option>//li[16]/a</option></datalist></td><td>42,8</td>
-</tr>
-<tr><td>clickAt</td><td>link=Nuevo<datalist><option>link=Nuevo</option><option>css=a.btn.btn-primary</option><option>//a[contains(text(),'Nuevo')]</option><option>//a[contains(@href, '/anzorc/si/admin/grupos/nueva')]</option><option>//div[2]/a</option></datalist></td><td>26,21</td>
-</tr>
-<tr><td>clickAt</td><td>id=grupo_nombre<datalist><option>id=grupo_nombre</option><option>name=grupo[nombre]</option><option>css=#grupo_nombre</option><option>//input[@id='grupo_nombre']</option><option>//form[@id='new_grupo']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>72,19</td>
-</tr>
-<tr><td>type</td><td>id=grupo_nombre<datalist><option>id=grupo_nombre</option><option>name=grupo[nombre]</option><option>css=#grupo_nombre</option><option>//input[@id='grupo_nombre']</option><option>//form[@id='new_grupo']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
-</tr>
-<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
-</tr>
-<tr><td>addSelection</td><td>id=grupo_usuario_ids<datalist><option>id=grupo_usuario_ids</option><option>css=#grupo_usuario_ids</option><option>//select[@id='grupo_usuario_ids']</option><option>//form[@id='new_grupo']/div[3]/select</option><option>//select</option></datalist></td><td>label=anzorc - anzorc</td>
-</tr>
-<tr><td>clickAt</td><td>css=option[value="2"]<datalist><option>css=option[value="2"]</option><option>//option[@value='2']</option><option>//select[@id='grupo_usuario_ids']/option</option><option>//option</option></datalist></td><td>26,16</td>
-</tr>
-<tr><td>clickAt</td><td>id=grupo_observaciones<datalist><option>id=grupo_observaciones</option><option>name=grupo[observaciones]</option><option>css=#grupo_observaciones</option><option>//textarea[@id='grupo_observaciones']</option><option>//form[@id='new_grupo']/div[4]/textarea</option><option>//textarea</option></datalist></td><td>39,18</td>
-</tr>
-<tr><td>type</td><td>id=grupo_observaciones<datalist><option>id=grupo_observaciones</option><option>name=grupo[observaciones]</option><option>css=#grupo_observaciones</option><option>//textarea[@id='grupo_observaciones']</option><option>//form[@id='new_grupo']/div[4]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
-</tr>
-<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_grupo']/div[7]/input</option><option>//div[7]/input</option></datalist></td><td>43,16</td>
-</tr>
-<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/anzorc/ensayo/admin/grupos/105/edita')]</option><option>//div/div/a[2]</option></datalist></td><td>33,21</td>
-</tr>
-<tr><td>clickAt</td><td>css=a.search-choice-close<datalist><option>css=a.search-choice-close</option><option>//div[@id='grupo_usuario_ids_chosen']/ul/li/a</option><option>//div[3]/div/ul/li/a</option></datalist></td><td>11,8</td>
-</tr>
-<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_grupo_105']/div[7]/input</option><option>//div[7]/input</option></datalist></td><td>72,16</td>
-</tr>
-<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
-</tr>
-<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/anzorc/si/admin/grupos/101')])[2]</option><option>//div[4]/a</option></datalist></td><td>52,6</td>
-</tr>
-<tr><td>clickAt</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Grupos</td>
-</tr>
-</tbody></table>
-<table cellpadding="1" cellspacing="1" border="1">
-<thead>
 <tr><td rowspan="1" colspan="3">tabla-iglesias</td></tr>
 </thead>
 <tbody>
@@ -1828,6 +1788,46 @@
 <tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/anzorc/sivel2/admin/vinculosestado/101')])[2]</option><option>//a[3]</option></datalist></td><td>33,7</td>
 </tr>
 <tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Vínculos con el Estado</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tabla-grupos</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Tablas Básicas<datalist><option>link=Tablas Básicas</option><option>//a[contains(text(),'Tablas Básicas')]</option><option>//div[@id='navbarSupportedContent']/ul[2]/li[2]/div/a[7]</option><option>//a[contains(@href, '/anzorc/si/tablasbasicas')]</option><option>//li[2]/div/a[7]</option></datalist></td><td>74,9</td>
+</tr>
+<tr><td>clickAt</td><td>link=Grupos<datalist><option>link=Grupos</option><option>//a[contains(text(),'Grupos')]</option><option>//a[contains(@href, 'admin/grupos')]</option><option>//li[16]/a</option></datalist></td><td>42,8</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nuevo<datalist><option>link=Nuevo</option><option>css=a.btn.btn-primary</option><option>//a[contains(text(),'Nuevo')]</option><option>//a[contains(@href, '/anzorc/si/admin/grupos/nueva')]</option><option>//div[2]/a</option></datalist></td><td>26,21</td>
+</tr>
+<tr><td>clickAt</td><td>id=grupo_nombre<datalist><option>id=grupo_nombre</option><option>name=grupo[nombre]</option><option>css=#grupo_nombre</option><option>//input[@id='grupo_nombre']</option><option>//form[@id='new_grupo']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>72,19</td>
+</tr>
+<tr><td>type</td><td>id=grupo_nombre<datalist><option>id=grupo_nombre</option><option>name=grupo[nombre]</option><option>css=#grupo_nombre</option><option>//input[@id='grupo_nombre']</option><option>//form[@id='new_grupo']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
+</tr>
+<tr><td>addSelection</td><td>id=grupo_usuario_ids<datalist><option>id=grupo_usuario_ids</option><option>css=#grupo_usuario_ids</option><option>//select[@id='grupo_usuario_ids']</option><option>//form[@id='new_grupo']/div[3]/select</option><option>//select</option></datalist></td><td>label=anzorc - anzorc</td>
+</tr>
+<tr><td>clickAt</td><td>css=option[value="2"]<datalist><option>css=option[value="2"]</option><option>//option[@value='2']</option><option>//select[@id='grupo_usuario_ids']/option</option><option>//option</option></datalist></td><td>26,16</td>
+</tr>
+<tr><td>clickAt</td><td>id=grupo_observaciones<datalist><option>id=grupo_observaciones</option><option>name=grupo[observaciones]</option><option>css=#grupo_observaciones</option><option>//textarea[@id='grupo_observaciones']</option><option>//form[@id='new_grupo']/div[4]/textarea</option><option>//textarea</option></datalist></td><td>39,18</td>
+</tr>
+<tr><td>type</td><td>id=grupo_observaciones<datalist><option>id=grupo_observaciones</option><option>name=grupo[observaciones]</option><option>css=#grupo_observaciones</option><option>//textarea[@id='grupo_observaciones']</option><option>//form[@id='new_grupo']/div[4]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_grupo']/div[7]/input</option><option>//div[7]/input</option></datalist></td><td>43,16</td>
+</tr>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/anzorc/ensayo/admin/grupos/105/edita')]</option><option>//div/div/a[2]</option></datalist></td><td>33,21</td>
+</tr>
+<tr><td>clickAt</td><td>css=a.search-choice-close<datalist><option>css=a.search-choice-close</option><option>//div[@id='grupo_usuario_ids_chosen']/ul/li/a</option><option>//div[3]/div/ul/li/a</option></datalist></td><td>11,8</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_grupo_105']/div[7]/input</option><option>//div[7]/input</option></datalist></td><td>72,16</td>
+</tr>
+<tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/anzorc/si/admin/grupos/101')])[2]</option><option>//div[4]/a</option></datalist></td><td>52,6</td>
+</tr>
+<tr><td>clickAt</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Grupos</td>
 </tr>
 </tbody></table>
 </body>
