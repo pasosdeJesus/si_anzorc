@@ -189,6 +189,40 @@ END;
 $$;
 
 
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: actividad_observacion; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.actividad_observacion (
+    id bigint NOT NULL,
+    actividad_id integer NOT NULL,
+    observacion_id integer NOT NULL
+);
+
+
+--
+-- Name: actividad_observacion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.actividad_observacion_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: actividad_observacion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.actividad_observacion_id_seq OWNED BY public.actividad_observacion.id;
+
+
 --
 -- Name: acto_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
@@ -212,10 +246,6 @@ CREATE SEQUENCE public.anexo_seq
     NO MAXVALUE
     CACHE 1;
 
-
-SET default_tablespace = '';
-
-SET default_table_access_method = heap;
 
 --
 -- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: -
@@ -1461,7 +1491,8 @@ CREATE TABLE public.cor1440_gen_pmindicadorpf (
     urlev3 character varying(4096),
     rutaevidencia character varying(4096),
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    observaciones character varying
 );
 
 
@@ -1898,6 +1929,40 @@ CREATE VIEW public.cvt1 AS
      JOIN public.sivel2_gen_supracategoria supracategoria ON ((categoria.supracategoria_id = supracategoria.id)))
      JOIN public.sivel2_gen_victima victima ON (((victima.id_persona = acto.id_persona) AND (victima.id_caso = caso.id))))
      JOIN public.sip_persona persona ON ((persona.id = acto.id_persona)));
+
+
+--
+-- Name: estadoobs; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.estadoobs (
+    id bigint NOT NULL,
+    nombre character varying(500) NOT NULL COLLATE public.es_co_utf_8,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: estadoobs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.estadoobs_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: estadoobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.estadoobs_id_seq OWNED BY public.estadoobs.id;
 
 
 --
@@ -2573,6 +2638,40 @@ CREATE SEQUENCE public.nodo_id_seq
 --
 
 ALTER SEQUENCE public.nodo_id_seq OWNED BY public.nodo.id;
+
+
+--
+-- Name: observacion; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.observacion (
+    id bigint NOT NULL,
+    usuario_id integer NOT NULL,
+    fecha date NOT NULL,
+    observacion character varying(5000),
+    estado_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: observacion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.observacion_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: observacion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.observacion_id_seq OWNED BY public.observacion.id;
 
 
 --
@@ -4572,6 +4671,16 @@ ALTER SEQUENCE public.tipoorganzorc_id_seq OWNED BY public.tipoorganzorc.id;
 
 
 --
+-- Name: usuarionotificar_observacion; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.usuarionotificar_observacion (
+    usuarionotificar_id integer,
+    observacion_id integer
+);
+
+
+--
 -- Name: vvictimasoundexesp; Type: MATERIALIZED VIEW; Schema: public; Owner: -
 --
 
@@ -4625,6 +4734,13 @@ CREATE SEQUENCE public.zrc_id_seq
 --
 
 ALTER SEQUENCE public.zrc_id_seq OWNED BY public.zrc.id;
+
+
+--
+-- Name: actividad_observacion id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.actividad_observacion ALTER COLUMN id SET DEFAULT nextval('public.actividad_observacion_id_seq'::regclass);
 
 
 --
@@ -4838,6 +4954,13 @@ ALTER TABLE ONLY public.cor1440_gen_valorcampotind ALTER COLUMN id SET DEFAULT n
 
 
 --
+-- Name: estadoobs id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.estadoobs ALTER COLUMN id SET DEFAULT nextval('public.estadoobs_id_seq'::regclass);
+
+
+--
 -- Name: estadozrc id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4971,6 +5094,13 @@ ALTER TABLE ONLY public.nodo ALTER COLUMN id SET DEFAULT nextval('public.nodo_id
 
 
 --
+-- Name: observacion id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.observacion ALTER COLUMN id SET DEFAULT nextval('public.observacion_id_seq'::regclass);
+
+
+--
 -- Name: sip_actorsocial id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -5087,6 +5217,14 @@ ALTER TABLE ONLY public.tipoorganzorc ALTER COLUMN id SET DEFAULT nextval('publi
 --
 
 ALTER TABLE ONLY public.zrc ALTER COLUMN id SET DEFAULT nextval('public.zrc_id_seq'::regclass);
+
+
+--
+-- Name: actividad_observacion actividad_observacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.actividad_observacion
+    ADD CONSTRAINT actividad_observacion_pkey PRIMARY KEY (id);
 
 
 --
@@ -5490,6 +5628,14 @@ ALTER TABLE ONLY public.sivel2_gen_estadocivil
 
 
 --
+-- Name: estadoobs estadoobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.estadoobs
+    ADD CONSTRAINT estadoobs_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: estadozrc estadozrc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5703,6 +5849,14 @@ ALTER TABLE ONLY public.nivelorganzorc
 
 ALTER TABLE ONLY public.nodo
     ADD CONSTRAINT nodo_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: observacion observacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.observacion
+    ADD CONSTRAINT observacion_pkey PRIMARY KEY (id);
 
 
 --
@@ -6269,6 +6423,20 @@ CREATE UNIQUE INDEX cor1440_gen_datointermedioti_pmindicadorpf_llaves_idx ON pub
 
 
 --
+-- Name: index_actividad_observacion_on_actividad_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_actividad_observacion_on_actividad_id ON public.actividad_observacion USING btree (actividad_id);
+
+
+--
+-- Name: index_actividad_observacion_on_observacion_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_actividad_observacion_on_observacion_id ON public.actividad_observacion USING btree (observacion_id);
+
+
+--
 -- Name: index_cor1440_gen_actividad_on_usuario_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -6427,6 +6595,20 @@ CREATE INDEX index_usuario_on_regionsjr_id ON public.usuario USING btree (oficin
 --
 
 CREATE UNIQUE INDEX index_usuario_on_reset_password_token ON public.usuario USING btree (reset_password_token);
+
+
+--
+-- Name: index_usuarionotificar_observacion_on_observacion_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_usuarionotificar_observacion_on_observacion_id ON public.usuarionotificar_observacion USING btree (observacion_id);
+
+
+--
+-- Name: index_usuarionotificar_observacion_on_usuarionotificar_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_usuarionotificar_observacion_on_usuarionotificar_id ON public.usuarionotificar_observacion USING btree (usuarionotificar_id);
 
 
 --
@@ -6941,6 +7123,14 @@ ALTER TABLE ONLY public.cor1440_gen_anexo_efecto
 
 
 --
+-- Name: actividad_observacion fk_rails_05f65435db; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.actividad_observacion
+    ADD CONSTRAINT fk_rails_05f65435db FOREIGN KEY (observacion_id) REFERENCES public.observacion(id);
+
+
+--
 -- Name: cor1440_gen_mindicadorpf fk_rails_06564b910d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7002,6 +7192,14 @@ ALTER TABLE ONLY public.cor1440_gen_efecto_respuestafor
 
 ALTER TABLE ONLY public.cor1440_gen_financiador_proyectofinanciero
     ADD CONSTRAINT fk_rails_0cd09d688c FOREIGN KEY (financiador_id) REFERENCES public.cor1440_gen_financiador(id);
+
+
+--
+-- Name: actividad_observacion fk_rails_0d3de20bab; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.actividad_observacion
+    ADD CONSTRAINT fk_rails_0d3de20bab FOREIGN KEY (actividad_id) REFERENCES public.cor1440_gen_actividad(id);
 
 
 --
@@ -7106,6 +7304,14 @@ ALTER TABLE ONLY public.heb412_gen_campohc
 
 ALTER TABLE ONLY public.cor1440_gen_caracterizacionpersona
     ADD CONSTRAINT fk_rails_240640f30e FOREIGN KEY (persona_id) REFERENCES public.sip_persona(id);
+
+
+--
+-- Name: observacion fk_rails_24615f9c38; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.observacion
+    ADD CONSTRAINT fk_rails_24615f9c38 FOREIGN KEY (estado_id) REFERENCES public.estadoobs(id);
 
 
 --
@@ -7453,6 +7659,14 @@ ALTER TABLE ONLY public.sip_grupo_usuario
 
 
 --
+-- Name: usuarionotificar_observacion fk_rails_798728a770; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.usuarionotificar_observacion
+    ADD CONSTRAINT fk_rails_798728a770 FOREIGN KEY (usuarionotificar_id) REFERENCES public.usuario(id);
+
+
+--
 -- Name: sip_actorsocial fk_rails_7bc2a60574; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7605,6 +7819,14 @@ ALTER TABLE ONLY public.sip_ubicacion
 
 
 --
+-- Name: usuarionotificar_observacion fk_rails_a2745aecdb; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.usuarionotificar_observacion
+    ADD CONSTRAINT fk_rails_a2745aecdb FOREIGN KEY (observacion_id) REFERENCES public.observacion(id);
+
+
+--
 -- Name: cor1440_gen_actividad_proyectofinanciero fk_rails_a8489e0d62; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7690,6 +7912,14 @@ ALTER TABLE ONLY public.sivel2_gen_combatiente
 
 ALTER TABLE ONLY public.cor1440_gen_informe
     ADD CONSTRAINT fk_rails_c02831dd89 FOREIGN KEY (filtroactividadarea) REFERENCES public.cor1440_gen_actividadarea(id);
+
+
+--
+-- Name: observacion fk_rails_c076bc4b48; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.observacion
+    ADD CONSTRAINT fk_rails_c076bc4b48 FOREIGN KEY (usuario_id) REFERENCES public.usuario(id);
 
 
 --
@@ -8722,5 +8952,11 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20201128144729'),
 ('20201130020715'),
 ('20201201015501');
+('20201123164710'),
+('20201124035715'),
+('20201124050637'),
+('20201124142002'),
+('20201124145625'),
+('20201201164343');
 
 

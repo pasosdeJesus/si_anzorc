@@ -16,6 +16,7 @@ class Ability  < Cor1440Gen::Ability
 
   BASICAS_PROPIAS =  [
     ['', 'estadozrc'],
+    ['', 'estadoobs'],
     ['', 'nodo'],
     ['', 'tipoorganzorc'],
     ['', 'nivelorganzorc']
@@ -85,9 +86,11 @@ class Ability  < Cor1440Gen::Ability
 
       can [:index,:read], Nodo
       can [:index,:read], Zrc
+      can [:index,:read], Observacion
     when Ability::ROLADMIN, Ability::ROLDIR
       can :manage, Nodo
       can :manage, Zrc
+      can :manage, Observacion
     end
 
   end
