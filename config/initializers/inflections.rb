@@ -23,6 +23,7 @@ ActiveSupport::Inflector.inflections do |inflect|
 	inflect.irregular 'zx', 'zsx'
   inflect.irregular 'nivelorganzorc', 'nivelesorganzorc'
   inflect.irregular 'tipoorganzorc', 'tiposorganzorc'
+  inflect.irregular 'estadoobs', 'estadosobs'
 
   # No se puso en orden porque la rregla de zrc estaba teniendo precedencia
 	inflect.irregular 'estadozrc', 'estadoszrc'

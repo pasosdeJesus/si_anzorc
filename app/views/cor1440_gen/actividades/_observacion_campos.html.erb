@@ -1,0 +1,56 @@
+<tr class='nested-fields'>
+  <% if f.object.observacion.nil? %>
+    <% f.object.observacion = Observacion.new %>
+  <% end %>
+  <%= f.simple_fields_for :observacion do |ob| %>
+  <td>
+    <%= ob.association :usuario,
+      collection: Usuario.habilitados,
+      label_method: :nusuario,
+      value_method: :id,
+      wrapper_html: {style: "width: 12em"},
+      label: false,
+      input_html: {
+        class: 'chosen-select'
+      }
+    %>
+  </td>
+  <td>
+    <%= ob.input :fecha, 
+      label: false,
+      :input_html => { "data-behaviour" => "datepicker" },
+      :as => :string %>
+  </td>
+  <td>
+    <%= ob.input :observacion,
+      label: false %>
+  </td>
+  <td>
+    <%= ob.association :estadoobs,
+      collection: Estadoobs.habilitados,
+      label_method: :nombre,
+      value_method: :id,
+      wrapper_html: {style: "width: 8em"},
+      label: false
+    %>
+  </td> 
+  <td>
+    <%= ob.association :usuarionotificar,
+      collection: Usuario.habilitados,
+      label_method: :nusuario,
+      value_method: :id,
+      wrapper_html: {style: "width: 8em"},
+      label: false,
+      input_html: {
+        class: 'chosen-select'
+      }
+    %>
+  </td>
+  <% end %>
+  <td>
+    <%= link_to_remove_association "Eliminar", f, 
+      :class => 'btn-danger',
+      :'data-existing' => true
+    %>
+  </td>
+</tr>

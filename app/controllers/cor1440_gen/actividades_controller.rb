@@ -11,6 +11,10 @@ module Cor1440Gen
       exclude: [:contar]
     load_and_authorize_resource class: Cor1440Gen::Actividad
 
+    def update
+      update_gen
+    end
+
     def atributos_show
       [ :id, 
         :fecha_localizada, 
@@ -23,7 +27,8 @@ module Cor1440Gen
         :actorsocial,
         :listadoasistencia,
         :poblacion,
-        :anexos
+        :anexos,
+        :observacion
       ]
     end
 
@@ -44,9 +49,36 @@ module Cor1440Gen
       atributos_show - [:id, 'id', :actividadpf]
     end
 
+    def lista_params
+      lista_params_cor1440_gen + 
+        [
+          :actividad_observacion_attributes => [
+            :id,
+            :_destroy,
+            :observacion_attributes => [
+              :id,
+              :usuario_id, 
+              :fecha,
+              :observacion,
+              :estado_id,
+              :usuarionotificar_ids => []
+            ]
+          ]
+        ]
+    end
+
     def edit
       edit_cor1440_gen
       render layout: 'application'
+    end
+
+    def destroy
+      aobs = ActividadObservacion.where(actividad_id: @actividad.id)
+      aobs.each do |ao|
+        ao.destroy!
+      end
+      @actividad.destroy!
+      redirect_to actividades_path,  :flash => { :success => "Actividad eliminada!" }
     end
 
   end
