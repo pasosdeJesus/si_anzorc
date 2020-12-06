@@ -6,7 +6,15 @@ es:
   activerecord:
     attributes:
       "cor1440_gen/proyectofinanciero":
-        responsable: Coordinador
+        fechaaprobacion: "Fecha de aprobación"
+        fechaaprobacion_localizada: "Fecha de aprobación"
+        fechaliquidacion: "Fecha de liquidación"
+        fechaformulacion: "Fecha de formulación"
+        fechaformulacion_anio: "Año de formulación"
+        fechaformulacion_mes: "Mes de formulación"
+        fechaformulacion_localizada: "Fecha de formulación"
+        fechaliquidacion: "Fecha de liquidación"
+        fechaliquidacion_localizada: "Fecha de liquidación"
       "cor1440_gen/pmindicadorpf":
         resind: Avance
       "estadozrc":
