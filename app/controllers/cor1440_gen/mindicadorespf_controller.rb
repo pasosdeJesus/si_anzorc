@@ -46,7 +46,44 @@ module Cor1440Gen
       end
       [resind, urlevrind, -1, '#', -1, '#', -1, '#']
     end
-
+    
+    def mindicadorpf_params
+      params.require(:mindicadorpf).permit(
+        atributos_form - ["pmindicadorpf", :actividadpf] +
+        [:actividadpf_ids => []] +
+        [
+          'pmindicadorpf_attributes' => [
+            'fecha_localizada', 
+            'finicio_localizada', 
+            'ffin_localizada', 
+            'restiempo', 
+            'dmed1', 
+            'urlev1', 
+            'dmed2', 
+            'urlev2', 
+            'dmed3', 
+            'urlev3', 
+            'resind', 
+            'rutaevidencia', 
+            'meta', 
+            'observaciones',
+            'porcump', 
+            'analisis', 
+            'acciones', 
+            'responsables', 
+            'plazo', 
+            'id', 
+            '_destroy',
+            'datointermedioti_pmindicadorpf_attributes' => [
+              :valor,
+              :rutaevidencia,
+              :datointermedioti_id,
+              :id
+            ]
+          ]
+        ]
+      ) 
+    end
 
     def mideindicador_particular(mind, ind, fini, ffin)
       if ind.numero =~ /^PNUD19O/
