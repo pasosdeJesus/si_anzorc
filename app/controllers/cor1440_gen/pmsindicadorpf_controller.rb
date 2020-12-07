@@ -1,32 +1,9 @@
 # encoding: UTF-8
+require 'cor1440_gen/concerns/controllers/pmsindicadorpf_controller'
 
 module Cor1440Gen
   class PmsindicadorpfController < ApplicationController
-
-
-    def self.crea_pmindicadorpf(mind, fini, ffin, restiempo, meta, observaciones)
-      pm = Cor1440Gen::Pmindicadorpf.create(
-        mindicadorpf_id: mind.id,
-        finicio: fini,
-        ffin: ffin,
-        restiempo: restiempo,
-        meta: meta,
-        observaciones: observaciones)
-      pm.save(validate: false)
-      if mind.indicadorpf.tipoindicador && 
-          mind.indicadorpf.tipoindicador.datointermedioti 
-        dids = mind.indicadorpf.tipoindicador.datointermedioti.
-          map(&:id)
-        dids.each do |di|
-          dp = Cor1440Gen::DatointermediotiPmindicadorpf.create(
-            pmindicadorpf_id: pm.id,
-            datointermedioti_id: di
-          )
-          dp.save(validate: false)
-        end
-      end
-      return pm
-    end
+  include Cor1440Gen::Concerns::Controllers::PmsindicadorpfController
 
     # GET /pmsindicadorpf/new
     def new
@@ -57,18 +34,6 @@ module Cor1440Gen
       else
         render inline: 'Faltó identificación de mindicadorpf', 
           status: :unprocessable_entity 
-      end
-    end
-
-    def destroy
-      if params[:id]
-        @pmindicadorpf = Cor1440Gen::Pmindicadorpf.find(params[:id])
-        @pmindicadorpf.destroy
-        respond_to do |format|
-          format.html { render inline: 'No implementado', 
-                        status: :unprocessable_entity }
-          format.json { head :no_content }
-        end
       end
     end
   end
