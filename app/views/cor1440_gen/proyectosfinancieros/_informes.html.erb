@@ -1,0 +1,19 @@
+<%= f.association :caracterizacion,
+  collection: Mr519Gen::Formulario.all,
+  value_method: :id,
+  label_method: :presenta_nombre,
+  input_html: {class: 'chosen-select'}
+%>
+<%= f.association :beneficiario,
+  collection: Sip::Persona.all,
+  value_method: :id,
+  label_method: :presenta_nombre,
+  input_html: {class: 'chosen-select'}
+%>
+<%= f.association :plantillahcm,
+  collection: Heb412Gen::Plantillahcm.all,
+  value_method: :id,
+  label_method: :presenta_nombre,
+  input_html: {class: 'chosen-select'}
+
+%>
