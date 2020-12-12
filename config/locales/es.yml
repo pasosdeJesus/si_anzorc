@@ -5,6 +5,11 @@ es:
     fechacreacion: Fecha de creación
   activerecord:
     attributes:
+      "cor1440_gen/actividad":
+        actividadpf: Actividad de marco lógico
+        poblacion_hombres_r: Población hombres
+        poblacion_mujeres_r: Población mujeres
+        poblacion_sinsexo: Otros
       "cor1440_gen/proyectofinanciero":
         fechaaprobacion: "Fecha de aprobación"
         fechaaprobacion_localizada: "Fecha de aprobación"

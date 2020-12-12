@@ -18,5 +18,16 @@ module Cor1440Gen
     accepts_nested_attributes_for :actividad_observacion,
       allow_destroy: true, reject_if: :all_blank
 
+    def presenta(atr)
+      total= 0
+      case atr.to_s
+      when 'poblacion_total'
+        total = poblacion_hombres_r_solore +
+            poblacion_mujeres_r_solore +
+            poblacion_sinsexo_solore
+        return total
+      end
+      presenta_actividad(atr)
+    end
   end
 end

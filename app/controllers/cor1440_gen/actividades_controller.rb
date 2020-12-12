@@ -16,7 +16,8 @@ module Cor1440Gen
     end
 
     def atributos_show
-      [ :id, 
+      [ 
+        :id, 
         :fecha_localizada, 
         :nombre, 
         :responsable,
@@ -33,14 +34,19 @@ module Cor1440Gen
     end
 
     def atributos_index
-      [ :id, 
+      [ 
+        :actividadpf, 
+        :id, 
         :fecha_localizada, 
         :nombre, 
         :responsable,
         :proyectofinanciero,
-        :actividadpf, 
         :objetivo,
-        :poblacion,
+        :resultado,
+        :poblacion_hombres_r,
+        :poblacion_mujeres_r,
+        :poblacion_sinsexo,
+        :poblacion_total,
         :anexos
       ]
     end
