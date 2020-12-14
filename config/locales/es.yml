@@ -3,8 +3,15 @@ es:
   attributes:
     fechadeshabilitacion: Fecha de deshabilitación
     fechacreacion: Fecha de creación
+    proyecto: Aspecto Programático
+    proyectos: Aspectos Programáticos
   activerecord:
     attributes:
+      "cor1440_gen/actividad":
+        proyecto: Aspecto Programático
+      "cor1440_gen/proyecto":
+        Proyecto: Aspecto Programático
+        Proyectos: Aspectos Programáticos
       "cor1440_gen/proyectofinanciero":
         fechaaprobacion: "Fecha de aprobación"
         fechaaprobacion_localizada: "Fecha de aprobación"
@@ -15,6 +22,10 @@ es:
         fechaformulacion_localizada: "Fecha de formulación"
         fechaliquidacion: "Fecha de liquidación"
         fechaliquidacion_localizada: "Fecha de liquidación"
+        proyecto: Aspecto Programático
+        proyectos: Aspectos Programáticos
+        proyecto_ids: Aspectos Programáticos
+        "{:proyecto_ids=>[]}": Aspectos Programáticos
       "cor1440_gen/pmindicadorpf":
         resind: Avance
       "estadozrc":
