@@ -73,11 +73,11 @@ class Ability  < Cor1440Gen::Ability
 
   # Establece autorizaciones con CanCanCan
   def initialize(usuario = nil)
+    Sivel2Gen::Ability.initialize_sivel2_gen(self, usuario)
+    initialize_cor1440_gen(usuario)
     if !usuario || !usuario.fechadeshabilitacion.nil?
       return
     end
-    Sivel2Gen::Ability.initialize_sivel2_gen(self, usuario)
-    initialize_cor1440_gen(usuario)
     cannot :pestanadesaparicion, Sivel2Gen::Caso
     case usuario.rol
     when Ability::ROLOPERADOR

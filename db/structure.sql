@@ -1531,7 +1531,8 @@ CREATE TABLE public.cor1440_gen_pmindicadorpf (
     urlev3 character varying(4096),
     rutaevidencia character varying(4096),
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    observaciones character varying
 );
 
 
@@ -9058,6 +9059,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20201119125643'),
 ('20201119162625'),
 ('20201121162913'),
+('20201123164710'),
 ('20201124035715'),
 ('20201124050637'),
 ('20201124142002'),

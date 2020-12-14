@@ -8,9 +8,10 @@ Sistema de Información de ANZORC
 
 
 ### Requerimientos
-* Ruby version >= 2.5
-* PostgreSQL >= 10 con extensión unaccent disponible
-* Recomendado sobre adJ 6.3 (que incluye todos los componentes mencionados).  
+* Ruby version >= 2.7
+* PostgreSQL >= 12 con extensión unaccent disponible
+* node.js >= 12
+* Recomendado sobre adJ 6.7 (que incluye todos los componentes mencionados).  
   Las siguientes instrucciones suponen que opera en este ambiente.
 
 Puede consultar como instalar estos componentes en: 
