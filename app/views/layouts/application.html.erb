@@ -1,5 +1,5 @@
 <% content_for :titulo do %>
-    <%= Sivel2Gen.titulo %>
+  <%= Sivel2Gen.titulo %>
 <% end %>
 
 <% content_for :menu do %>
@@ -8,12 +8,14 @@
       <%= despliega_abajo 'Casos' do %>
         <%= opcion_menu 'Listado', sivel2_gen.casos_path,
           desplegable: true %>
-        <%= opcion_menu 'Validaciones', sivel2_gen.validarcasos_path,
-          desplegable: true %>
-        <%= opcion_menu 'Buscar repetidos', 
-          sivel2_gen.buscarrepetidos_path, desplegable: true %>
-        <%= opcion_menu 'Importar relatos XRLAT', 
-          sivel2_gen.casos_importarrelatos_path, desplegable: true %>
+        <% if can?(:new, Sivel2Gen::Caso) %>
+          <%= opcion_menu 'Validaciones', sivel2_gen.validarcasos_path,
+            desplegable: true %>
+          <%= opcion_menu 'Buscar repetidos', 
+            sivel2_gen.buscarrepetidos_path, desplegable: true %>
+          <%= opcion_menu 'Importar relatos XRLAT', 
+            sivel2_gen.casos_importarrelatos_path, desplegable: true %>
+        <% end %>
         <%= opcion_menu 'Geolocalización de casos sobre OpenStreetMap',
           sivel2_gen.casos_mapaosm_path, desplegable: true %>
         <%= opcion_menu 'Listado de víctimas y casos', 
@@ -47,11 +49,10 @@
           desplegable: true %>
         <%= opcion_menu 'Participantes', 
           sip.personas_path, desplegable: true %>
-
       <% end %>
-
     <% end %>
   <% end %>
+
   <%= grupo_menus :pull => :right do %>
     <%= despliega_abajo 'Documentos' do %>
       <%= opcion_menu 'Manual', 'https://docs.google.com/document/d/1fpwDBcbjAj0faDA0IREYTbQj2BnPivkViGEuFELkwGk/edit?usp=sharing',
@@ -79,13 +80,11 @@
         <% if session[:capturacaso_acordeon] %>
           <%= opcion_menu 'Ficha caso vertical ✓', 
             sivel2_gen.fichacasovertical_path,
-            desplegable: true, id: 'fichacasovertical' 
-          %>
+            desplegable: true, id: 'fichacasovertical' %>
         <% else %>
           <%= opcion_menu 'Ficha caso vertical', 
             sivel2_gen.fichacasovertical_path,
-            desplegable: true, id: 'fichacasovertical' 
-          %>
+            desplegable: true, id: 'fichacasovertical' %>
         <% end %>
         <% if can? :manage, Mr519Gen::Formulario %>
           <%= opcion_menu "Formularios", 
