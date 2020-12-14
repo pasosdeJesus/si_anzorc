@@ -8,6 +8,10 @@ es:
   activerecord:
     attributes:
       "cor1440_gen/actividad":
+        actividadpf: Actividad de marco lógico
+        poblacion_hombres_r: Población hombres
+        poblacion_mujeres_r: Población mujeres
+        poblacion_sinsexo: Otros
         proyecto: Aspecto Programático
       "cor1440_gen/proyecto":
         Proyecto: Aspecto Programático
