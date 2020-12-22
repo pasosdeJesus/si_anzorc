@@ -67,23 +67,23 @@ gem 'will_paginate' # Listados en páginas
 # lógico y no alfabetico como las gemas anteriores) 
 
 gem 'sip', # Motor generico
-  git: 'https://github.com/pasosdeJesus/sip.git', branch: 'rails6.1'
+  git: 'https://github.com/pasosdeJesus/sip.git'
   #path: '../sip'
 
 gem 'mr519_gen', # Motor de gestion de formularios y encuestas
-  git: 'https://github.com/pasosdeJesus/mr519_gen.git', branch: 'rails6.1'
+  git: 'https://github.com/pasosdeJesus/mr519_gen.git'
   #path: '../mr519_gen'
 
 gem 'heb412_gen',  # Motor de nube y llenado de plantillas
-  git: 'https://github.com/pasosdeJesus/heb412_gen.git', branch: 'rails6.1'
+  git: 'https://github.com/pasosdeJesus/heb412_gen.git'
   #path: '../heb412_gen'
 
 gem 'cor1440_gen', # Motor para manejo de actividades y proyectos con marco lógico
-  git: 'https://github.com/pasosdeJesus/cor1440_gen.git', branch: 'rails6.1'
+  git: 'https://github.com/pasosdeJesus/cor1440_gen.git'
   #path: '../cor1440_gen'
 
 gem 'sivel2_gen', # Motor para manejo de casos
-  git: 'https://github.com/pasosdeJesus/sivel2_gen.git', branch: 'rails6.1'
+  git: 'https://github.com/pasosdeJesus/sivel2_gen.git'
   #path: '../sivel2_gen'
 
 
