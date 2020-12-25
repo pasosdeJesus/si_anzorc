@@ -1,6 +1,5 @@
-# encoding: UTF-8
-
-require_relative 'application'
+# Load the Rails application.
+require_relative "application"
 
 ActiveRecord::Base.pluralize_table_names=false
 
