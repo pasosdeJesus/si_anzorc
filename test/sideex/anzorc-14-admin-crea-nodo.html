@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>anzorc-14-admin-crea-nodo</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">nodo-nombre</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>id=navbarDropdownZRC<datalist><option>id=navbarDropdownZRC</option><option>link=ZRC</option><option>css=#navbarDropdownZRC</option><option>xpath=(//a[contains(text(),'ZRC')])[2]</option><option>//a[@id='navbarDropdownZRC']</option><option>//div[@id='navbarSupportedContent']/ul/li[3]/a</option><option>xpath=(//a[contains(@href, '#')])[3]</option><option>//li[3]/a</option></datalist></td><td>22,22</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nodos<datalist><option>link=Nodos</option><option>css=div.dropdown-menu.show &gt; a.dropdown-item</option><option>//a[contains(text(),'Nodos')]</option><option>//div[@id='navbarSupportedContent']/ul/li[3]/div/a</option><option>//a[contains(@href, '/anzorc/ensayo/admin/nodos')]</option><option>//li[3]/div/a</option></datalist></td><td>53,17</td>
+</tr>
+<tr><td>clickAt</td><td>link=Nuevo<datalist><option>link=Nuevo</option><option>css=a.btn.btn-primary</option><option>//a[contains(text(),'Nuevo')]</option><option>//a[contains(@href, '/anzorc/ensayo/admin/nodos/nueva')]</option><option>//div/div/a</option></datalist></td><td>38,28</td>
+</tr>
+<tr><td>clickAt</td><td>id=nodo_nombre<datalist><option>id=nodo_nombre</option><option>name=nodo[nombre]</option><option>css=#nodo_nombre</option><option>//input[@id='nodo_nombre']</option><option>//form[@id='new_nodo']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>54,25</td>
+</tr>
+<tr><td>type</td><td>id=nodo_nombre<datalist><option>id=nodo_nombre</option><option>name=nodo[nombre]</option><option>css=#nodo_nombre</option><option>//input[@id='nodo_nombre']</option><option>//form[@id='new_nodo']/div[2]/input</option><option>//div[2]/input</option></datalist></td><td>aaa</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='new_nodo']/div[7]/input</option><option>//div[7]/input</option></datalist></td><td>38,26</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Nodo</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">nodo-observaciones</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/anzorc/ensayo/admin/nodos/107/edita')]</option><option>//div/div/a[2]</option></datalist></td><td>23,19</td>
+</tr>
+<tr><td>clickAt</td><td>id=nodo_observaciones<datalist><option>id=nodo_observaciones</option><option>name=nodo[observaciones]</option><option>css=#nodo_observaciones</option><option>//textarea[@id='nodo_observaciones']</option><option>//form[@id='edit_nodo_107']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>105,36</td>
+</tr>
+<tr><td>type</td><td>id=nodo_observaciones<datalist><option>id=nodo_observaciones</option><option>name=nodo[observaciones]</option><option>css=#nodo_observaciones</option><option>//textarea[@id='nodo_observaciones']</option><option>//form[@id='edit_nodo_107']/div[3]/textarea</option><option>//textarea</option></datalist></td><td>bbb</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_nodo_107']/div[7]/input</option><option>//div[7]/input</option></datalist></td><td>58,22</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Nodo</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">nodo-carpeta</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/anzorc/ensayo/admin/nodos/107/edita')]</option><option>//div/div/a[2]</option></datalist></td><td>26,23</td>
+</tr>
+<tr><td>select</td><td>id=nodo_carpeta<datalist><option>id=nodo_carpeta</option><option>name=nodo[carpeta]</option><option>css=#nodo_carpeta</option><option>//select[@id='nodo_carpeta']</option><option>//form[@id='edit_nodo_107']/div[4]/select</option><option>//select</option></datalist></td><td>label=./Centro/</td>
+</tr>
+<tr><td>clickAt</td><td>id=nodo_carpeta<datalist><option>id=nodo_carpeta</option><option>name=nodo[carpeta]</option><option>css=#nodo_carpeta</option><option>//select[@id='nodo_carpeta']</option><option>//form[@id='edit_nodo_107']/div[4]/select</option><option>//select</option></datalist></td><td>-18,-277</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_nodo_107']/div[7]/input</option><option>//div[7]/input</option></datalist></td><td>70,23</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Nodo</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">nodo-geojson</td></tr>
+</thead>
+<tbody>
+<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/anzorc/ensayo/admin/nodos/107/edita')]</option><option>//div/div/a[2]</option></datalist></td><td>40,33</td>
+</tr>
+<tr><td>select</td><td>id=nodo_geojson<datalist><option>id=nodo_geojson</option><option>name=nodo[geojson]</option><option>css=#nodo_geojson</option><option>//select[@id='nodo_geojson']</option><option>//form[@id='edit_nodo_107']/div[5]/select</option><option>//div[5]/select</option></datalist></td><td>label=Centro/Nodo_Centro.geojson</td>
+</tr>
+<tr><td>clickAt</td><td>id=nodo_geojson<datalist><option>id=nodo_geojson</option><option>name=nodo[geojson]</option><option>css=#nodo_geojson</option><option>//select[@id='nodo_geojson']</option><option>//form[@id='edit_nodo_107']/div[5]/select</option><option>//div[5]/select</option></datalist></td><td>-18,-347</td>
+</tr>
+<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_nodo_107']/div[7]/input</option><option>//div[7]/input</option></datalist></td><td>77,24</td>
+</tr>
+<tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Nodo</td>
+</tr>
+</tbody></table>
+</body>
+</html>
