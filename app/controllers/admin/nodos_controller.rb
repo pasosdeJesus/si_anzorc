@@ -32,7 +32,7 @@ module Admin
         :observaciones, 
         :carpeta,
         :geojson,
-        :habilitado
+        :fechadeshabilitacion_localizada
       ]
     end
 
