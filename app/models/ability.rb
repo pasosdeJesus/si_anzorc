@@ -81,9 +81,6 @@ class Ability  < Cor1440Gen::Ability
     cannot :pestanadesaparicion, Sivel2Gen::Caso
     case usuario.rol
     when Ability::ROLOPERADOR
-      can :index, Cor1440Gen::Proyectofinanciero
-      can :index, Cor1440Gen::Actividad
-
       can [:index,:read], Nodo
       can [:index,:read], Zrc
       can [:index,:read], Observacion
