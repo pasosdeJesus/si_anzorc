@@ -15,8 +15,6 @@ module Cor1440Gen
 
     campofecha_mesanio :fechaformulacion
 
-    validates :fechaformulacion, presence: true  
-
     validate :fechainicio_posterior2000 
     def fechainicio_posterior2000
       if fechainicio && fechainicio < Date.new(2000,1,1)
