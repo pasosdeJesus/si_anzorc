@@ -125,6 +125,10 @@
     </div> <!-- form-inputs -->
 
     <div class="form-actions" style="text-align: center">
+      <% if controller.registrar_en_bitacora %>
+        <input class='bitacora_cambio' id='proyectofinanciero_bictacora_cambio' 
+               name='proyectofinanciero[bitacora_cambio]' type='hidden'>
+      <% end %>
       <%= f.button :submit, 'Validar y Guardar', :class => 'btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
         proyectosfinancieros_path, :class => 'btn' 

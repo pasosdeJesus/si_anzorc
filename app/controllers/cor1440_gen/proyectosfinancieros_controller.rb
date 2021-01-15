@@ -12,6 +12,10 @@ module Cor1440Gen
       only: [:new, :create, :destroy, :edit, :update, :index, :show,
              :objetivospf]
 
+    def registrar_en_bitacora
+      true
+    end
+
     def proyectofinanciero_params_si_anzorc
       proyectofinanciero_params_cor1440_gen - [
       ] + [

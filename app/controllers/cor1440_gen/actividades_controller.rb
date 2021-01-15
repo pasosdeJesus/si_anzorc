@@ -11,9 +11,6 @@ module Cor1440Gen
       exclude: [:contar]
     load_and_authorize_resource class: Cor1440Gen::Actividad
 
-    def update
-      update_gen
-    end
 
     def atributos_show
       [ 
@@ -54,6 +51,15 @@ module Cor1440Gen
     def atributos_form
       atributos_show - [:id, 'id', :actividadpf]
     end
+
+    def registrar_en_bitacora
+      true
+    end
+
+    def update
+      update_gen
+    end
+
 
     def lista_params
       lista_params_cor1440_gen + 
