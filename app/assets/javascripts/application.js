@@ -31,5 +31,7 @@ document.addEventListener('turbolinks:load', function() {
   sivel2_gen_prepara_eventos_unicos(root);
 
   cor1440_gen_instala_recalcula_poblacion()
+  cor1440_gen_eventos_duracion()
+  cor1440_gen_eventos_montospesos()
 
 });

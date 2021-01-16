@@ -62,7 +62,16 @@ class Ability  < Cor1440Gen::Ability
       BASICAS_PRIO
   end
 
-  CAMPOS_PLANTILLAS_PROPIAS = {}
+  CAMPOS_PLANTILLAS_PROPIAS = {
+    'Actividad' => {
+      campos: Cor1440Gen::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone['Actividad'][:campos] + 
+      [ 'responsable_cedula',
+        'proyecto_centro_de_costo' 
+    ],
+    controlador: 'Cor1440Gen::ActividadesController',
+    ruta: '/actividades'
+    }
+  }
 
   def campos_plantillas
     Heb412Gen::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone.

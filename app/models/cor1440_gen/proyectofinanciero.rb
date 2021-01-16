@@ -8,12 +8,30 @@ module Cor1440Gen
 
 
     attr_accessor :semestreformulacion
+    attr_accessor :montoejp_localizado
+    attr_accessor :aportepropioejp_localizado
+    attr_accessor :aportecinepejp_localizado
+    attr_accessor :aporteotrosejp_localizado
+    attr_accessor :presupuestototalejp_localizado
+
+    cattr_accessor :current_usuario
 
     campofecha_localizado :fechaaprobacion
     campofecha_localizado :fechaformulacion
     campofecha_localizado :fechaliquidacion
 
+    flotante_localizado :aportepropioej
+    flotante_localizado :aporteotrosej
+    flotante_localizado :montoej
+    flotante_localizado :presupuestototalej
+    flotante_localizado :saldoaejecutarp
+    flotante_localizado :tasaej
+
+
     campofecha_mesanio :fechaformulacion
+
+    belongs_to :tipomoneda, class_name: '::Tipomoneda',
+      foreign_key: 'tipomoneda_id', optional: true
 
     validate :fechainicio_posterior2000 
     def fechainicio_posterior2000
@@ -48,6 +66,38 @@ module Cor1440Gen
       end
     end
 
+    def montoejp_localizado
+      r = 0
+      r = montoej * tasaej if montoej && tasaej
+      r.a_decimal_localizado
+    end
+
+    def aportepropioejp_localizado
+      r = 0
+      r = aportepropioej * tasaej if aportepropioej && tasaej
+      r.a_decimal_localizado
+    end
+
+    def aporteotrosejp_localizado
+      r = 0
+      r = aporteotrosej * tasaej if aporteotrosej && tasaej
+      r.a_decimal_localizado
+    end
+
+    def presupuestototalej_localizado=(val)
+      self[:presupuestototalej] = 0
+      if self.montoej && self.aportepropioej && self.aporteotrosej
+        self[:presupuestototalej] = self.montoej + self.aportepropioej +
+          self.aporteotrosej 
+      end
+    end
+
+    def presupuestototalejp_localizado
+      r = 0
+      r = presupuestototalej * tasaej if presupuestototalej && tasaej
+      r.a_decimal_localizado
+    end
+ 
     scope :filtro_fechaformulacionini, lambda { |f|
       where('cor1440_gen_proyectofinanciero.fechaformulacion >= ?', f)
     }

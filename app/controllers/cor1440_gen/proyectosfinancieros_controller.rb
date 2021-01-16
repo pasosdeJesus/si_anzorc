@@ -16,9 +16,30 @@ module Cor1440Gen
       true
     end
 
+
+    def validar_registro(registro, detalle)
+      detalleini = detalle.clone
+      if !registro.fechainicio && 
+        ::ApplicationHelper::ESTADOS_APROBADO.include?(registro.estado)
+        detalle << "No tiene fecha de inicio"
+      elsif registro.fechainicio && registro.fechainicio < Date.new(2000, 1, 1)
+        detalle << "Fecha de inicio anterior al 1.Ene.2000"
+      end
+      if !registro.fechacierre && 
+        ::ApplicationHelper::ESTADOS_APROBADO.include?(registro.estado)
+        detalle << "No tiene fecha de terminación"
+      elsif registro.fechacierre && registro.fechainicio &&
+        registro.fechacierre <= registro.fechainicio
+        detalle << "Fecha de terminación posterior o igual a la de inicio"
+      end
+      validar_mas_registro(registro, detalle)
+      return detalleini == detalle
+    end
+
     def proyectofinanciero_params_si_anzorc
       proyectofinanciero_params_cor1440_gen - [
       ] + [
+        :centrocosto,
         :estado,
         :dificultad,
         :fechaaprobacion_localizada,
@@ -26,7 +47,14 @@ module Cor1440Gen
         :fechaformulacion_localizada,
         :fechaformulacion_anio,
         :fechaformulacion_mes,
-        :fechaliquidacion_localizada
+        :fechaliquidacion_localizada,
+        :tasaej_localizado,
+        :montoej_localizado,
+        :aportepropioej_localizado,
+        :aporteotrosej_localizado,
+        :presupuestototalej_localizado,
+        :saldoaejecutarp_localizado,
+        :tipomoneda_id
       ]
     end
 

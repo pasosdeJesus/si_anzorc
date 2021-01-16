@@ -17,6 +17,9 @@ es:
         Proyecto: Aspecto Programático
         Proyectos: Aspectos Programáticos
       "cor1440_gen/proyectofinanciero":
+        aportepropioej: Aporte de ANZORC
+        aporteotrosej: Aporte de otros donantes
+        centrocosto: Centro de costos
         fechaaprobacion: "Fecha de aprobación"
         fechaaprobacion_localizada: "Fecha de aprobación"
         fechaliquidacion: "Fecha de liquidación"
@@ -26,12 +29,17 @@ es:
         fechaformulacion_localizada: "Fecha de formulación"
         fechaliquidacion: "Fecha de liquidación"
         fechaliquidacion_localizada: "Fecha de liquidación"
+        montoej: Aporte del financiador
+        presupuestototalej: Presupuesto total
         proyecto: Aspecto Programático
         proyectos: Aspectos Programáticos
         proyecto_ids: Aspectos Programáticos
         "{:proyecto_ids=>[]}": Aspectos Programáticos
         responsable_id: Coordinador
         responsable: Coordinador
+        saldoaejecutarp: Saldo por ejecutar en pesos
+        semestreformulacion: Semestre de formulación
+        tasaej: Tasa de cambio
       "cor1440_gen/pmindicadorpf":
         resind: Avance
       "estadozrc":
