@@ -1,4 +1,4 @@
-class QuitaNotNullFechaformulacion < ActiveRecord::Migration[6.1]
+class QuitaNotNullFechaformulacion < ActiveRecord::Migration[6.0]
   def up
     execute <<-SQL
       ALTER TABLE cor1440_gen_proyectofinanciero 
