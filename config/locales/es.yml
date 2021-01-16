@@ -30,6 +30,8 @@ es:
         proyectos: Aspectos Programáticos
         proyecto_ids: Aspectos Programáticos
         "{:proyecto_ids=>[]}": Aspectos Programáticos
+        responsable_id: Coordinador
+        responsable: Coordinador
       "cor1440_gen/pmindicadorpf":
         resind: Avance
       "estadozrc":
