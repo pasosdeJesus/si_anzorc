@@ -15,25 +15,17 @@
 </tr>
 <tr><td>clickAt</td><td>link=Usuarios<datalist><option>link=Usuarios</option><option>//a[contains(text(),'Usuarios')]</option><option>xpath=(//a[contains(@href, '/usuarios')])[2]</option><option>//ul[2]/li[2]/ul/li[3]/a</option></datalist></td><td>92,20</td>
 </tr>
-<tr><td>clickAt</td><td>id=filtro_busnombre<datalist><option>id=filtro_busnombre</option><option>name=filtro[busnombre]</option><option>css=#filtro_busnombre</option><option>//input[@id='filtro_busnombre']</option><option>//td[3]/div/input</option></datalist></td><td>13,21</td>
+<tr><td>runScript</td><td>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')<datalist><option>$('.chosen-select').removeAttr('style'); $('.chosen-container').remove(); $('.chosen-select').removeClass('chosen-select')</option></datalist></td><td></td>
 </tr>
-<tr><td>type</td><td>id=filtro_busnombre<datalist><option>id=filtro_busnombre</option><option>name=filtro[busnombre]</option><option>css=#filtro_busnombre</option><option>//input[@id='filtro_busnombre']</option><option>//td[3]/div/input</option></datalist></td><td>aaa</td>
+<tr><td>select</td><td>id=filtro_busnusuario<datalist><option>id=filtro_busnusuario</option><option>name=filtro[busnusuario]</option><option>css=#filtro_busnusuario</option><option>//select[@id='filtro_busnusuario']</option><option>//select</option></datalist></td><td>label=aaa</td>
 </tr>
-<tr><td>sendKeys</td><td>id=filtro_busnombre<datalist><option>id=filtro_busnombre</option><option>name=filtro[busnombre]</option><option>css=#filtro_busnombre</option><option>//input[@id='filtro_busnombre']</option><option>//td[3]/div/input</option></datalist></td><td>${KEY_ENTER}</td>
+<tr><td>clickAt</td><td>id=filtro_busnusuario<datalist><option>id=filtro_busnusuario</option><option>name=filtro[busnusuario]</option><option>css=#filtro_busnusuario</option><option>//select[@id='filtro_busnusuario']</option><option>//select</option></datalist></td><td>-124,-257</td>
 </tr>
-<tr><td>clickAt</td><td>name=filtrar<datalist><option>name=filtrar</option><option>css=input[name="filtrar"]</option><option>//input[@name='filtrar']</option><option>//td[11]/input</option></datalist></td><td>41,11</td>
-</tr>
-<tr><td></td><td><datalist><option></option></datalist></td><td></td>
-</tr>
-<tr><td>clickAt</td><td>link=Editar<datalist><option>link=Editar</option><option>css=a.btn.btn-sm</option><option>//a[contains(text(),'Editar')]</option><option>//a[contains(@href, '/anzorc/ensayo/usuarios/105/edita')]</option><option>//td[11]/a</option></datalist></td><td>14,16</td>
-</tr>
-<tr><td>clickAt</td><td>css=a.search-choice-close<datalist><option>css=a.search-choice-close</option><option>//div[@id='usuario_sip_grupo_ids_chosen']/ul/li/a</option><option>//div[10]/div/ul/li/a</option></datalist></td><td>9,6</td>
-</tr>
-<tr><td>clickAt</td><td>name=commit<datalist><option>name=commit</option><option>css=input[name="commit"]</option><option>//input[@name='commit']</option><option>//form[@id='edit_usuario_2']/div[18]/input</option><option>//div[18]/input</option></datalist></td><td>39,12</td>
+<tr><td>clickAt</td><td>name=filtrar<datalist><option>name=filtrar</option><option>css=input[name="filtrar"]</option><option>//input[@name='filtrar']</option><option>//td[11]/input</option></datalist></td><td>31,20</td>
 </tr>
 <tr><td>chooseOkOnNextConfirmation</td><td><datalist><option></option></datalist></td><td></td>
 </tr>
-<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/anzorc/sivel2/usuarios/2')])[2]</option><option>//a[3]</option></datalist></td><td>16,20</td>
+<tr><td>clickAt</td><td>link=Eliminar<datalist><option>link=Eliminar</option><option>css=a.btn.btn-sm.btn-danger</option><option>//a[contains(text(),'Eliminar')]</option><option>xpath=(//a[contains(@href, '/iap/si/usuarios/2')])[3]</option><option>//td[11]/a[2]</option></datalist></td><td>51,10</td>
 </tr>
 <tr><td>assertText</td><td>css=h1<datalist><option>css=h1</option><option>//h1</option></datalist></td><td>Usuarios</td>
 </tr>
