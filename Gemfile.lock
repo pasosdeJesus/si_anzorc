@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: da098e31e92813218e4920df405c8427c53047a4
+  revision: 6a470aaeb96afadbdead1e26a63555b57d4f6523
   specs:
     cor1440_gen (1.0b3)
       devise
@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 0370c31678a871b3e44684cfc3f48325b2c94759
+  revision: b17d3adc615ce1ba8c24687b468f709ad2510ecb
   specs:
     heb412_gen (1.0.b6)
       mr519_gen
@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/mr519_gen.git
-  revision: 851cfe37ac356ee373bed2a9254ab04bd85af183
+  revision: 113df2e35940eea10001cde87c868ebd50b2f551
   specs:
     mr519_gen (0.2.0)
       rails
@@ -31,7 +31,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: dee5d7db1a7b8ad7d2e23dad117658b8b5319b94
+  revision: db95f6a73ad229c3cbe65d1ecd8542c675d9f721
   specs:
     sip (2.0.b10)
       cancancan
@@ -49,7 +49,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: 1053999bd18e9fd8273cfb93eafd184ae150bf29
+  revision: acf5c197686f40defc12b6546a316c86a04d8eea
   specs:
     sivel2_gen (2.0b13)
       devise
@@ -127,18 +127,18 @@ GEM
     bcrypt (3.1.16)
     bigdecimal (3.0.0)
     bindex (0.8.1)
-    bootsnap (1.5.1)
+    bootsnap (1.6.0)
       msgpack (~> 1.0)
     builder (3.2.4)
     camertron-eprun (1.1.1)
     cancancan (3.2.1)
-    capybara (3.34.0)
+    capybara (3.35.3)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
-      regexp_parser (~> 1.5)
+      regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (3.0.0)
     chosen-rails (1.9.0)
@@ -155,7 +155,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     colorize (0.8.1)
-    concurrent-ruby (1.1.7)
+    concurrent-ruby (1.1.8)
     crass (1.0.6)
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -173,7 +173,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.7)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.10.1)
+    jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     jquery-rails (4.4.0)
       rails-dom-testing (>= 1, < 3)
@@ -199,7 +199,7 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.3)
-    msgpack (1.3.3)
+    msgpack (1.4.2)
     nio4r (2.5.4)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
@@ -226,7 +226,7 @@ GEM
       prawn (>= 1.0.0)
       rails (>= 3.2)
     public_suffix (4.0.6)
-    puma (5.1.1)
+    puma (5.2.0)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -266,7 +266,7 @@ GEM
     raindrops (0.19.1)
     rake (13.0.3)
     redcarpet (3.5.1)
-    regexp_parser (1.8.2)
+    regexp_parser (2.0.3)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -304,7 +304,7 @@ GEM
       sprockets (>= 3.0.0)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
-    thor (1.0.1)
+    thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
     tiny-color-rails (0.0.2)
