@@ -145,3 +145,28 @@
 </div>
 
 
+<table border=1 width="100%">
+  <thead>
+    <tr>
+      <th>Detalle</th>
+      <th>Fecha</th>
+      <th>Valor en Pesos</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="desembolso">
+    <%= f.simple_fields_for :desembolso do |d| %>
+      <%= render 'desembolso_campos', :f => d %>
+    <% end %>
+  </tbody>
+</table>
+<div class="links">
+  <%= link_to_add_association 'Añadir Desembolso', f, 
+    :desembolso,
+    :"data-association-insertion-node" => "tbody#desembolso", 
+    :"data-association-insertion-method" => "append", 
+    partial: 'desembolso_campos',
+    :class => 'btn-primary'
+  %>
+</div>
+

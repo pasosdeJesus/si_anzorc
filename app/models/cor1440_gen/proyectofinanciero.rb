@@ -30,8 +30,15 @@ module Cor1440Gen
 
     campofecha_mesanio :fechaformulacion
 
-    belongs_to :tipomoneda, class_name: '::Tipomoneda',
+    belongs_to :tipomoneda, class_name: 'Cor1440Gen::Tipomoneda',
       foreign_key: 'tipomoneda_id', optional: true
+
+
+    has_many :desembolso, dependent: :delete_all,
+      class_name: 'Cor1440Gen::Desembolso',
+      foreign_key: 'proyectofinanciero_id', validate: true
+    accepts_nested_attributes_for :desembolso, 
+      allow_destroy: true, reject_if: :all_blank
 
     validate :fechainicio_posterior2000 
     def fechainicio_posterior2000

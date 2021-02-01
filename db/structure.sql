@@ -1203,6 +1203,40 @@ ALTER SEQUENCE public.cor1440_gen_datointermedioti_pmindicadorpf_id_seq OWNED BY
 
 
 --
+-- Name: cor1440_gen_desembolso; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.cor1440_gen_desembolso (
+    id bigint NOT NULL,
+    proyectofinanciero_id integer NOT NULL,
+    detalle character varying(5000),
+    fecha date,
+    valorpesos numeric(20,2),
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: cor1440_gen_desembolso_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.cor1440_gen_desembolso_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: cor1440_gen_desembolso_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.cor1440_gen_desembolso_id_seq OWNED BY public.cor1440_gen_desembolso.id;
+
+
+--
 -- Name: cor1440_gen_efecto; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1593,7 +1627,8 @@ CREATE TABLE public.cor1440_gen_proyectofinanciero (
     montoej double precision,
     aportepropioej double precision,
     aporteotrosej double precision,
-    presupuestototalej double precision
+    presupuestototalej double precision,
+    titulo character varying(1000)
 );
 
 
@@ -4934,6 +4969,13 @@ ALTER TABLE ONLY public.cor1440_gen_datointermedioti_pmindicadorpf ALTER COLUMN 
 
 
 --
+-- Name: cor1440_gen_desembolso id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_desembolso ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_desembolso_id_seq'::regclass);
+
+
+--
 -- Name: cor1440_gen_efecto id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -5588,6 +5630,14 @@ ALTER TABLE ONLY public.cor1440_gen_datointermedioti
 
 ALTER TABLE ONLY public.cor1440_gen_datointermedioti_pmindicadorpf
     ADD CONSTRAINT cor1440_gen_datointermedioti_pmindicadorpf_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: cor1440_gen_desembolso cor1440_gen_desembolso_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_desembolso
+    ADD CONSTRAINT cor1440_gen_desembolso_pkey PRIMARY KEY (id);
 
 
 --
@@ -8094,6 +8144,14 @@ ALTER TABLE ONLY public.sip_ubicacionpre
 
 
 --
+-- Name: cor1440_gen_desembolso fk_rails_c858edd00a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_desembolso
+    ADD CONSTRAINT fk_rails_c858edd00a FOREIGN KEY (proyectofinanciero_id) REFERENCES public.cor1440_gen_proyectofinanciero(id);
+
+
+--
 -- Name: cor1440_gen_financiador_proyectofinanciero fk_rails_ca93eb04dc; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9106,6 +9164,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210108202122'),
 ('20210116090353'),
 ('20210116104426'),
-('20210117234541');
+('20210117234541'),
+('20210201101144'),
+('20210201112227');
 
 

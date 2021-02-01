@@ -17,6 +17,39 @@ module Cor1440Gen
     end
 
 
+    def atributos_show
+      [ 
+        :id,
+        :nombre,
+        :titulo
+      ] +
+      [ :financiador_ids =>  [] ] +
+      [ :sectorapc_ids =>  [] ] +
+      [ 
+        :fechainicio_localizada,
+        :fechacierre_localizada,
+        :duracion,
+        :anioformulacion,
+        :mesformulacion,
+        :fechaaprobacion_localizada,
+        :fechaliquidacion_localizada,
+        :estado,
+        :dificultad,
+        :responsable,
+        :proyectofinanciero_usuario,
+      ] +
+      [ :tipomoneda,
+        :tasaej,
+        :desembolso, 
+        :marcologico,
+        :anexo_proyectofinanciero,
+        :observaciones, 
+        :caracterizacion, 
+        :beneficiario,
+        :plantillahcm,
+      ]
+    end
+
     def validar_registro(registro, detalle)
       detalleini = detalle.clone
       if !registro.fechainicio && 
@@ -54,7 +87,40 @@ module Cor1440Gen
         :aporteotrosej_localizado,
         :presupuestototalej_localizado,
         :saldoaejecutarp_localizado,
-        :tipomoneda_id
+        :tipomoneda_id,
+        :desembolso_attributes => [
+          :id,
+          :detalle,
+          :fecha_localizada,
+          :valorpesos_localizado,
+          :_destroy
+        ],
+        :informeauditoria_attributes => [
+          :detalle,
+          :fechaplaneada_localizada,
+          :fechareal_localizada,
+          :seguimiento,
+          :id,
+          :_destroy
+        ],
+        :informefinanciero_attributes => [
+          :detalle,
+          :fechaplaneada_localizada,
+          :fechareal_localizada,
+          :devoluciones,
+          :seguimiento,
+          :id,
+          :_destroy
+        ],
+        :informenarrativo_attributes => [
+          :detalle,
+          :fechaplaneada_localizada,
+          :fechareal_localizada,
+          :devoluciones,
+          :seguimiento,
+          :id,
+          :_destroy
+        ]
       ]
     end
 
