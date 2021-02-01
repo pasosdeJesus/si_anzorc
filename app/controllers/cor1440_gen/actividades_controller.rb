@@ -57,7 +57,7 @@ module Cor1440Gen
     end
 
     def update
-      update_gen
+      update_cor1440_gen
     end
 
 
