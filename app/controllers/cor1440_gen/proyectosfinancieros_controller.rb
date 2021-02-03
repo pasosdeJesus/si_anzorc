@@ -100,6 +100,7 @@ module Cor1440Gen
         :informeauditoria_attributes => [
           :detalle,
           :fecha_localizada,
+          :devoluciones,
           :seguimiento,
           :id,
           :_destroy

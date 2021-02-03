@@ -11,7 +11,7 @@
 require 'fileutils'
 #require 'byebug'
 
-# ENV.each {|l,v| puts "#{l}=#{v}" } # Depuración
+#ENV.each {|l,v| puts "#{l}=#{v}" } # Depuración
 
 # Ruta a directorio raíz de aplicación
 RAIZ_AP = File.expand_path('..', __dir__)
