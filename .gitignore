@@ -25,3 +25,5 @@ tmp/
 archivos/
 public/packs-test/
 app/controllers/application_controller.rb
+
+/config/master.key

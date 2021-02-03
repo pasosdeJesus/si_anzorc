@@ -9,5 +9,5 @@ Sip.setup do |config|
   if ENV["HEROKU_POSTGRESQL_MAUVE_URL"]
     config.ruta_anexos = "#{Rails.root}/tmp/"
   end
-  config.titulo = ENV['AP_TITULO'] + " " + Sivel2Gen::VERSION
+  config.titulo = "SINZRC #{Sivel2Gen::VERSION}"
 end
