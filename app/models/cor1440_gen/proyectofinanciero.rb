@@ -40,6 +40,25 @@ module Cor1440Gen
     accepts_nested_attributes_for :desembolso, 
       allow_destroy: true, reject_if: :all_blank
 
+
+    has_many :informeauditoria, dependent: :delete_all,
+      class_name: 'Cor1440Gen::Informeauditoria',
+      foreign_key: 'proyectofinanciero_id', validate: true
+    accepts_nested_attributes_for :informeauditoria, 
+      allow_destroy: true, reject_if: :all_blank
+
+    has_many :informefinanciero, dependent: :delete_all,
+      class_name: 'Cor1440Gen::Informefinanciero',
+      foreign_key: 'proyectofinanciero_id', validate: true
+    accepts_nested_attributes_for :informefinanciero, 
+      allow_destroy: true, reject_if: :all_blank
+
+    has_many :informenarrativo, dependent: :delete_all,
+      class_name: 'Cor1440Gen::Informenarrativo',
+      foreign_key: 'proyectofinanciero_id', validate: true
+    accepts_nested_attributes_for :informenarrativo, 
+      allow_destroy: true, reject_if: :all_blank
+
     validate :fechainicio_posterior2000 
     def fechainicio_posterior2000
       if fechainicio && fechainicio < Date.new(2000,1,1)

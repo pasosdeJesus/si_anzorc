@@ -1419,6 +1419,111 @@ ALTER SEQUENCE public.cor1440_gen_informe_id_seq OWNED BY public.cor1440_gen_inf
 
 
 --
+-- Name: cor1440_gen_informeauditoria; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.cor1440_gen_informeauditoria (
+    id bigint NOT NULL,
+    proyectofinanciero_id integer NOT NULL,
+    detalle character varying(5000),
+    fecha date,
+    devoluciones boolean,
+    seguimiento character varying(5000),
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: cor1440_gen_informeauditoria_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.cor1440_gen_informeauditoria_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: cor1440_gen_informeauditoria_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.cor1440_gen_informeauditoria_id_seq OWNED BY public.cor1440_gen_informeauditoria.id;
+
+
+--
+-- Name: cor1440_gen_informefinanciero; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.cor1440_gen_informefinanciero (
+    id bigint NOT NULL,
+    proyectofinanciero_id integer NOT NULL,
+    detalle character varying(5000),
+    fecha date,
+    devoluciones boolean,
+    seguimiento character varying(5000),
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: cor1440_gen_informefinanciero_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.cor1440_gen_informefinanciero_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: cor1440_gen_informefinanciero_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.cor1440_gen_informefinanciero_id_seq OWNED BY public.cor1440_gen_informefinanciero.id;
+
+
+--
+-- Name: cor1440_gen_informenarrativo; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.cor1440_gen_informenarrativo (
+    id bigint NOT NULL,
+    proyectofinanciero_id integer NOT NULL,
+    detalle character varying(5000),
+    fecha date,
+    devoluciones boolean,
+    seguimiento character varying(5000),
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: cor1440_gen_informenarrativo_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.cor1440_gen_informenarrativo_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: cor1440_gen_informenarrativo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.cor1440_gen_informenarrativo_id_seq OWNED BY public.cor1440_gen_informenarrativo.id;
+
+
+--
 -- Name: cor1440_gen_mindicadorpf; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -5004,6 +5109,27 @@ ALTER TABLE ONLY public.cor1440_gen_informe ALTER COLUMN id SET DEFAULT nextval(
 
 
 --
+-- Name: cor1440_gen_informeauditoria id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_informeauditoria ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_informeauditoria_id_seq'::regclass);
+
+
+--
+-- Name: cor1440_gen_informefinanciero id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_informefinanciero ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_informefinanciero_id_seq'::regclass);
+
+
+--
+-- Name: cor1440_gen_informenarrativo id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_informenarrativo ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_informenarrativo_id_seq'::regclass);
+
+
+--
 -- Name: cor1440_gen_mindicadorpf id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -5670,6 +5796,30 @@ ALTER TABLE ONLY public.cor1440_gen_indicadorpf
 
 ALTER TABLE ONLY public.cor1440_gen_informe
     ADD CONSTRAINT cor1440_gen_informe_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: cor1440_gen_informeauditoria cor1440_gen_informeauditoria_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_informeauditoria
+    ADD CONSTRAINT cor1440_gen_informeauditoria_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: cor1440_gen_informefinanciero cor1440_gen_informefinanciero_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_informefinanciero
+    ADD CONSTRAINT cor1440_gen_informefinanciero_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: cor1440_gen_informenarrativo cor1440_gen_informenarrativo_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_informenarrativo
+    ADD CONSTRAINT cor1440_gen_informenarrativo_pkey PRIMARY KEY (id);
 
 
 --
@@ -7640,6 +7790,14 @@ ALTER TABLE ONLY public.cor1440_gen_actividad
 
 
 --
+-- Name: cor1440_gen_informeauditoria fk_rails_44cf03d3e2; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_informeauditoria
+    ADD CONSTRAINT fk_rails_44cf03d3e2 FOREIGN KEY (proyectofinanciero_id) REFERENCES public.cor1440_gen_proyectofinanciero(id);
+
+
+--
 -- Name: sip_actorsocial_persona fk_rails_4672f6cbcd; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7725,6 +7883,14 @@ ALTER TABLE ONLY public.cor1440_gen_objetivopf
 
 ALTER TABLE ONLY public.sivel2_gen_caso_presponsable
     ADD CONSTRAINT fk_rails_5a8abbdd31 FOREIGN KEY (id_caso) REFERENCES public.sivel2_gen_caso(id);
+
+
+--
+-- Name: cor1440_gen_informenarrativo fk_rails_629d2a2cb8; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_informenarrativo
+    ADD CONSTRAINT fk_rails_629d2a2cb8 FOREIGN KEY (proyectofinanciero_id) REFERENCES public.cor1440_gen_proyectofinanciero(id);
 
 
 --
@@ -7925,6 +8091,14 @@ ALTER TABLE ONLY public.cor1440_gen_actividad_actorsocial
 
 ALTER TABLE ONLY public.mr519_gen_valorcampo
     ADD CONSTRAINT fk_rails_8bb7650018 FOREIGN KEY (respuestafor_id) REFERENCES public.mr519_gen_respuestafor(id);
+
+
+--
+-- Name: cor1440_gen_informefinanciero fk_rails_8bd007af77; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_informefinanciero
+    ADD CONSTRAINT fk_rails_8bd007af77 FOREIGN KEY (proyectofinanciero_id) REFERENCES public.cor1440_gen_proyectofinanciero(id);
 
 
 --
@@ -9166,6 +9340,9 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210116104426'),
 ('20210117234541'),
 ('20210201101144'),
-('20210201112227');
+('20210201112227'),
+('20210202144410'),
+('20210202201520'),
+('20210202201530');
 
 

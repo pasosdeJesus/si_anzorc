@@ -53,8 +53,6 @@ gem 'sassc-rails' # CSS
 
 gem 'simple_form' # Formularios simples 
 
-gem 'tiny-color-rails'
-
 gem 'twitter_cldr' # ICU con CLDR
 
 gem 'tzinfo' # Zonas horarias
@@ -100,6 +98,8 @@ group :development, :test do
   #gem 'byebug' # Depurar
 
   gem 'colorize' # Color en terminal
+
+  gem 'dotenv-rails'
 
 end
 

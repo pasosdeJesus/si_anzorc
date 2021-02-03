@@ -21,11 +21,10 @@ module Cor1440Gen
       [ 
         :id,
         :nombre,
-        :titulo
+        :titulo 
       ] +
-      [ :financiador_ids =>  [] ] +
-      [ :sectorapc_ids =>  [] ] +
-      [ 
+      [ :financiador_ids =>  [] ] + [
+        :sectorapc,
         :fechainicio_localizada,
         :fechacierre_localizada,
         :duracion,
@@ -41,6 +40,9 @@ module Cor1440Gen
       [ :tipomoneda,
         :tasaej,
         :desembolso, 
+        :informenarrativo,
+        :informefinanciero,
+        :informeauditoria,
         :marcologico,
         :anexo_proyectofinanciero,
         :observaciones, 
@@ -97,16 +99,14 @@ module Cor1440Gen
         ],
         :informeauditoria_attributes => [
           :detalle,
-          :fechaplaneada_localizada,
-          :fechareal_localizada,
+          :fecha_localizada,
           :seguimiento,
           :id,
           :_destroy
         ],
         :informefinanciero_attributes => [
           :detalle,
-          :fechaplaneada_localizada,
-          :fechareal_localizada,
+          :fecha_localizada,
           :devoluciones,
           :seguimiento,
           :id,
@@ -114,8 +114,7 @@ module Cor1440Gen
         ],
         :informenarrativo_attributes => [
           :detalle,
-          :fechaplaneada_localizada,
-          :fechareal_localizada,
+          :fecha_localizada,
           :devoluciones,
           :seguimiento,
           :id,
