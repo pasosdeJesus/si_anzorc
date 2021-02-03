@@ -26,7 +26,8 @@ CXX=c++ yarn install
 echo "BD_USUARIO=${BD_USUARIO}"
 echo "BD_CLAVE=${BD_CLAVE}"
 echo "BD_DES=${BD_DES}"
-bin/rails db:prepare RAILS_ENV=${RAILS_ENV}
+bin/rails db:prepare RAILS_ENV=$RAILS_ENV BD_USUARIO=$BD_USUARIO \
+  BD_CLAVE=$BD_CLAVE BD_PRO=$BD_PRO BD_DES=$BD_DES BD_PRUEBA=$BD_PRUEBA
 if (test "$?" != "0") then { 
   echo "Problema con db:migrate"; 
   exit 1; 

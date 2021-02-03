@@ -37,6 +37,8 @@ $DOAS su - ${USUARIO_AP} -c "cd $DIRAP;
   ${defuroot} PUERTOUNICORN=${PUERTOUNICORN} CONFIG_HOSTS=${CONFIG_HOSTS}\
     DIRAP=$DIRAP RAILS_ENV=production SECRET_KEY_BASE=${SECRET_KEY_BASE} \
     BD_CLAVE=${BD_CLAVE} BD_USUARIO=${BD_USUARIO} \
+    BD_PRO=${BD_PRO} \
+    RUTA_RELATIVA=${RUTA_RELATIVA} \
     bundle exec /usr/local/bin/unicorn_rails \
     -c $DIRAP/config/unicorn.conf.minimal.rb  -E production -D"
 
