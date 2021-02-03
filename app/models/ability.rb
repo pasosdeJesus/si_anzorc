@@ -65,7 +65,7 @@ class Ability  < Cor1440Gen::Ability
   CAMPOS_PLANTILLAS_PROPIAS = {
     'Actividad' => {
       campos: Cor1440Gen::Ability::CAMPOS_PLANTILLAS_PROPIAS.clone['Actividad'][:campos] + 
-      [ 'responsable_cedula',
+      [ 'responsable_numerodocumento',
         'proyecto_centro_de_costo' 
     ],
     controlador: 'Cor1440Gen::ActividadesController',

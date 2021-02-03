@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: ffbcb39aa0120471e12fa2c3c38c713037f0371f
+  revision: 79d4fbdbcfba2be5702583469f73d19fc2c4c885
   specs:
     cor1440_gen (1.0b3)
       devise
@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: d31fdfc96888f331e11daf8b23f1daddbf35af50
+  revision: 0f0851e0fdc65be191d97aecd7891a4f9d2f26ec
   specs:
     heb412_gen (1.0.b6)
       mr519_gen
@@ -31,9 +31,10 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: ecee495d9869e5e38a397ad69136ac56c07b88c2
+  revision: b3aa915d1e609c6eec60677ac95222f3f80c3a71
+  branch: main
   specs:
-    sip (2.0.b10)
+    sip (2.0.b11)
       cancancan
       chosen-rails
       devise
@@ -342,7 +343,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  ruby
+  x86_64-openbsd
 
 DEPENDENCIES
   bcrypt
@@ -389,7 +390,7 @@ DEPENDENCIES
   will_paginate
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 3.0.0p0
 
 BUNDLED WITH
    2.2.3

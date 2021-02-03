@@ -7,7 +7,7 @@ default: &default
   pool: 5
   host: /var/www/var/run/postgresql
   username: <%= ENV['BD_USUARIO'] || 'sipdes' %>
-  password: <%= ENV['BD_CLAVE'] || 'xyz' %>
+  password: <%= ENV['BD_CLAVE'] %>
 
 development:
   <<: *default

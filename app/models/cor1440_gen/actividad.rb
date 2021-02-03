@@ -23,8 +23,14 @@ module Cor1440Gen
             poblacion_mujeres_r_solore +
             poblacion_sinsexo_solore
         return total
+      when 'responsable_numerodocumento'
+        self.responsable && self.responsable.numerodocumento ? 
+          self.responsable.numerodocumento : ''
+      when 'proyecto_centro_de_costo'
+        self.proyectofinanciero.map(&:centrocosto).join(';')
+      else
+        presenta_cor1440_gen(atr)
       end
-      presenta_actividad(atr)
     end
   end
 end
