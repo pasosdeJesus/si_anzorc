@@ -1,7 +1,31 @@
-<%= f.input :observaciones,
-  as: :text,
-  input_html: { rows: 3 }
-%>
+<div id="observacion" class="panel-body table-responsive" >
+  <table class="table table-bordered table-sm">
+    <thead class="thead-light">
+      <tr>
+        <th>Usuario</th>
+        <th>Fecha</th>
+        <th>Observación</th>
+        <th>Estado</th>
+        <th>Usuarios Notificados</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="filas_observacion">
+      <%= f.simple_fields_for :observacion_proyectofinanciero do |op| %>
+        <%= render partial: 'cor1440_gen/actividades/observacion_campos', 
+          locals: {f: op} %>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="links">
+    <%= link_to_add_association 'Añadir Observación', f,
+      :observacion_proyectofinanciero,
+      partial: 'cor1440_gen/actividades/observacion_campos',
+      "data-association-insertion-node" => "tbody#filas_observacion",
+      "data-association-insertion-method" => "append",
+      class: 'btn-primary' %>
+  </div>
+</div>
 
 <%= f.association :caracterizacion,
   collection: Mr519Gen::Formulario.all,

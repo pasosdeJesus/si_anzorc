@@ -120,6 +120,18 @@ module Cor1440Gen
           :seguimiento,
           :id,
           :_destroy
+        ],
+        :observacion_proyectofinanciero_attributes => [
+          :id,
+          :_destroy,
+          :observacion_attributes => [
+            :id,
+            :usuario_id, 
+            :fecha,
+            :observacion,
+            :estado_id,
+            :usuarionotificar_ids => []
+          ]
         ]
       ]
     end

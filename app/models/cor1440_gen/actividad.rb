@@ -8,7 +8,8 @@ module Cor1440Gen
     has_many :actividad_observacion, dependent: :delete_all,
       class_name: 'ActividadObservacion',
       foreign_key: 'actividad_id'
-    has_many :observacion, through: :actividad_observacion, dependent: :delete_all,
+    has_many :observacion, through: :actividad_observacion, 
+      dependent: :delete_all,
       class_name: 'Observacion'
     accepts_nested_attributes_for :observacion,
       allow_destroy: true, reject_if: :all_blank

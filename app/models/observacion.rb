@@ -12,4 +12,5 @@ class Observacion < ActiveRecord::Base
     class_name: 'Usuario'
   belongs_to :estadoobs, foreign_key: "estado_id", validate: true,
     class_name: "Estadoobs", optional: true
+
 end

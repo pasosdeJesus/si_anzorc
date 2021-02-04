@@ -2900,6 +2900,36 @@ ALTER SEQUENCE public.observacion_id_seq OWNED BY public.observacion.id;
 
 
 --
+-- Name: observacion_proyectofinanciero; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.observacion_proyectofinanciero (
+    id bigint NOT NULL,
+    proyectofinanciero_id integer NOT NULL,
+    observacion_id integer NOT NULL
+);
+
+
+--
+-- Name: observacion_proyectofinanciero_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.observacion_proyectofinanciero_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: observacion_proyectofinanciero_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.observacion_proyectofinanciero_id_seq OWNED BY public.observacion_proyectofinanciero.id;
+
+
+--
 -- Name: regimensalud_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -5368,6 +5398,13 @@ ALTER TABLE ONLY public.observacion ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
+-- Name: observacion_proyectofinanciero id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.observacion_proyectofinanciero ALTER COLUMN id SET DEFAULT nextval('public.observacion_proyectofinanciero_id_seq'::regclass);
+
+
+--
 -- Name: sip_actorsocial id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -6175,6 +6212,14 @@ ALTER TABLE ONLY public.observacion
 
 
 --
+-- Name: observacion_proyectofinanciero observacion_proyectofinanciero_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.observacion_proyectofinanciero
+    ADD CONSTRAINT observacion_proyectofinanciero_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: sivel2_gen_organizacion organizacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6791,6 +6836,20 @@ CREATE INDEX index_heb412_gen_doc_on_tdoc_type_and_tdoc_id ON public.heb412_gen_
 --
 
 CREATE UNIQUE INDEX index_mr519_gen_encuestapersona_on_adurl ON public.mr519_gen_encuestapersona USING btree (adurl);
+
+
+--
+-- Name: index_observacion_proyectofinanciero_on_observacion_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_observacion_proyectofinanciero_on_observacion_id ON public.observacion_proyectofinanciero USING btree (observacion_id);
+
+
+--
+-- Name: index_observacion_proyectofinanciero_on_proyectofinanciero_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_observacion_proyectofinanciero_on_proyectofinanciero_id ON public.observacion_proyectofinanciero USING btree (proyectofinanciero_id);
 
 
 --
@@ -7566,6 +7625,14 @@ ALTER TABLE ONLY public.cor1440_gen_actividad_rangoedadac
 
 
 --
+-- Name: observacion_proyectofinanciero fk_rails_182963c3d6; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.observacion_proyectofinanciero
+    ADD CONSTRAINT fk_rails_182963c3d6 FOREIGN KEY (observacion_id) REFERENCES public.observacion(id);
+
+
+--
 -- Name: mr519_gen_encuestausuario fk_rails_1b24d10e82; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7611,6 +7678,14 @@ ALTER TABLE ONLY public.cor1440_gen_caracterizacionpf
 
 ALTER TABLE ONLY public.heb412_gen_campohc
     ADD CONSTRAINT fk_rails_1e5f26c999 FOREIGN KEY (doc_id) REFERENCES public.heb412_gen_doc(id);
+
+
+--
+-- Name: observacion_proyectofinanciero fk_rails_1e83373719; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.observacion_proyectofinanciero
+    ADD CONSTRAINT fk_rails_1e83373719 FOREIGN KEY (proyectofinanciero_id) REFERENCES public.cor1440_gen_proyectofinanciero(id);
 
 
 --
@@ -9343,6 +9418,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210201112227'),
 ('20210202144410'),
 ('20210202201520'),
-('20210202201530');
+('20210202201530'),
+('20210204014948');
 
 
