@@ -13,7 +13,8 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 0f0851e0fdc65be191d97aecd7891a4f9d2f26ec
+  revision: f6d58eacc3fd78d089e13f4eb4cf460b2f7d675a
+  branch: main
   specs:
     heb412_gen (1.0.b6)
       mr519_gen
@@ -23,7 +24,8 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/mr519_gen.git
-  revision: 967f4f23ccfc7f84144826de419ee9ea2dce7913
+  revision: 95574dfe9e4a9b8bd83561b3771b69b9309bc10f
+  branch: main
   specs:
     mr519_gen (0.2.0)
       rails
@@ -31,7 +33,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: b3aa915d1e609c6eec60677ac95222f3f80c3a71
+  revision: e6f26cfe702045644950f1bc027b497e8caeb0bc
   branch: main
   specs:
     sip (2.0.b11)
@@ -50,7 +52,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: acf5c197686f40defc12b6546a316c86a04d8eea
+  revision: 12507e9d143bf84d16c9a1a531385719521f30fe
   specs:
     sivel2_gen (2.0b13)
       devise
@@ -128,7 +130,7 @@ GEM
     bcrypt (3.1.16)
     bigdecimal (3.0.0)
     bindex (0.8.1)
-    bootsnap (1.7.0)
+    bootsnap (1.7.1)
       msgpack (~> 1.0)
     builder (3.2.4)
     camertron-eprun (1.1.1)
@@ -205,7 +207,7 @@ GEM
     mini_portile2 (2.5.0)
     minitest (5.14.3)
     msgpack (1.4.2)
-    nio4r (2.5.4)
+    nio4r (2.5.5)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
@@ -231,7 +233,7 @@ GEM
       prawn (>= 1.0.0)
       rails (>= 3.2)
     public_suffix (4.0.6)
-    puma (5.2.0)
+    puma (5.2.1)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
