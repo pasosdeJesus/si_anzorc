@@ -3,29 +3,31 @@
     <% f.object.observacion = Observacion.new %>
   <% end %>
   <%= f.simple_fields_for :observacion do |ob| %>
-  <td>
+    <td>
     <%= ob.association :usuario,
       collection: Usuario.habilitados,
       label_method: :nusuario,
       value_method: :id,
+      readonly: true,
+      selected:  ob.object.usuario_id || current_usuario.id,
       wrapper_html: {style: "width: 12em"},
       label: false,
       input_html: {
-        class: 'chosen-select'
+        class: 'deshabilitado'
       }
     %>
-  </td>
-  <td>
+    </td>
+    <td>
     <%= ob.input :fecha, 
       label: false,
-      :input_html => { "data-behaviour" => "datepicker" },
+      :input_html => { "data-behaviour" => "datepicker", value: Date.today, class: 'deshabilitado' },
       :as => :string %>
-  </td>
-  <td>
+    </td>
+    <td>
     <%= ob.input :observacion,
       label: false %>
-  </td>
-  <td>
+    </td>
+    <td>
     <%= ob.association :estadoobs,
       collection: Estadoobs.habilitados,
       label_method: :nombre,
@@ -33,8 +35,8 @@
       wrapper_html: {style: "width: 8em"},
       label: false
     %>
-  </td> 
-  <td>
+    </td> 
+    <td>
     <%= ob.association :usuarionotificar,
       collection: Usuario.habilitados,
       label_method: :nusuario,
@@ -45,12 +47,14 @@
         class: 'chosen-select'
       }
     %>
-  </td>
+    </td>
+    <% if ob.object.usuario == current_usuario || ob.object.usuario.nil? %>
+    <td>
+      <%= link_to_remove_association "Eliminar", f, 
+        :class => 'btn-danger',
+        :'data-existing' => true
+      %>
+    </td>
+    <% end %>
   <% end %>
-  <td>
-    <%= link_to_remove_association "Eliminar", f, 
-      :class => 'btn-danger',
-      :'data-existing' => true
-    %>
-  </td>
 </tr>

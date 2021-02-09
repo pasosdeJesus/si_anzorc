@@ -116,3 +116,6 @@ div.field, div.actions {
     max-width: 100%;
   }
 }
+.deshabilitado {
+  pointer-events:none;
+}
