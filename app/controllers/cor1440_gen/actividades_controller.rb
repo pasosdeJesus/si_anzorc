@@ -62,21 +62,44 @@ module Cor1440Gen
 
 
     def lista_params
-      lista_params_cor1440_gen + 
-        [
-          :actividad_observacion_attributes => [
-            :id,
-            :_destroy,
-            :observacion_attributes => [
-              :id,
-              :usuario_id, 
-              :fecha,
-              :observacion,
-              :estado_id,
-              :usuarionotificar_ids => []
-            ]
-          ]
+      lista_params_cor1440_gen +
+       [
+        :asistencia_attributes => [
+        :actorsocial_id,
+        :externo,
+        :telefono,
+        :vereda,
+        :id,
+        :rangoedadac_id,
+        :perfilactorsocial_id,
+        :_destroy,
+        :persona_attributes => [
+          :apellidos, 
+          :id, 
+          :nombres, 
+          :numerodocumento, 
+          :sexo, 
+          :tdocumento_id,
+          :anionac,
+          :mesnac,
+          :dianac
+         ]
         ]
+       ] +
+       [
+         :actividad_observacion_attributes => [
+           :id,
+           :_destroy,
+           :observacion_attributes => [
+             :id,
+             :usuario_id, 
+             :fecha,
+             :observacion,
+             :estado_id,
+             :usuarionotificar_ids => []
+           ]
+         ]
+       ]
     end
 
     def edit

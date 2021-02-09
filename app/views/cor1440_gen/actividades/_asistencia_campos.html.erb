@@ -1,0 +1,91 @@
+<tr class='nested-fields'>
+  <% if f.object.persona.nil? %>
+    <% f.object.persona = Sip::Persona.new %>
+  <% end %>
+
+  <%= f.simple_fields_for :persona do |p| %>
+    <td>
+      <%= p.input :id, as: :hidden %>
+      <% ph = 'N'
+      ac = {'data-autocompleta' => 'no', style: 'width: 8em' }
+      if (!p.object.nombres || p.object.nombres == 'N' || p.object.nombres == '')
+        ph = 'Buscar'
+        ac = { style: 'width: 8em' }
+      end %>
+      <%= p.input :nombres, placeholder: ph,
+        value_method: lambda {|t| '' if t.nombres == 'N'},
+        label: false,
+        :input_html => ac %>
+    </td>
+    <td>
+      <%= p.input :apellidos, label: false,
+      input_html: { style: 'width: 8em' } %>
+    </td>
+    <td>
+      <%= p.input :tdocumento_id,
+        collection: Sip::Tdocumento.habilitados,
+        label_method: :sigla,
+        value_method: :id ,
+        label: false,
+        input_html: { style: 'width: 5em' }
+      %>
+    </td>
+    <td>
+      <%= p.input :numerodocumento, 
+        input_html: { style: 'width: 6em' },
+        label: false %>
+    </td>
+    <td>
+      <%= p.input :sexo, 
+        collection: [["F", :F], ["M", :M], ["S", :S]], 
+        label: false,
+        input_html: { style: 'width: 4em' },
+        include_blank: false %>
+    </td>
+    <td>
+      <%= p.input :anionac, 
+        input_html: { style: 'width: 4em', min: 0 },
+        label: false %>
+    </td>
+    <td>
+      <%= p.input :mesnac, 
+        input_html: { style: 'width: 4em', min: 0 },
+        label: false %>
+    </td>
+    <td>
+      <%= p.input :dianac, 
+        input_html: { style: 'width: 4em', min: 0 },
+        label: false %>
+    </td>
+  <% end %>
+  <td>
+    <%= f.association :actorsocial,
+      collection: Sip::Actorsocial.all,
+      label_method: :presenta_nombre,
+      value_method: :id,
+      label: false,
+      input_html: { style: 'width: 6em' } %>
+  </td>
+  <td>
+    <%= f.association :perfilactorsocial,
+      collection: Sip::Perfilactorsocial.habilitados,
+      label_method: :nombre,
+      value_method: :id,
+      input_html: { style: 'width: 6em' },
+      label: false
+    %>
+  </td>
+  <td>
+    <%= f.input :telefono, label: false %>
+  </td>
+  <td>
+    <%= f.input :vereda, label: false %>
+  </td>
+  <td>
+    <%= f.input :id, as: :hidden %>
+    <%= link_to_remove_association "Eliminar", f, 
+        :class => 'btn-danger' 
+    %>
+    <div><%= f.error_notification %></div>
+  </td>
+</tr>
