@@ -76,10 +76,16 @@
     %>
   </td>
   <td>
-    <%= f.input :telefono, label: false %>
+    <%= f.input :telefono,
+      label: false,
+      input_html: { style: 'width: 8em' } 
+    %>
   </td>
   <td>
-    <%= f.input :vereda, label: false %>
+    <%= f.input :vereda, 
+      label: false,
+      input_html: { style: 'width: 8em' } 
+    %>
   </td>
   <td>
     <%= f.input :id, as: :hidden %>

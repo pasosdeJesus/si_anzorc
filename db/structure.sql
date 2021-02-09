@@ -1002,7 +1002,9 @@ CREATE TABLE public.cor1440_gen_asistencia (
     rangoedadac_id integer,
     externo boolean,
     actorsocial_id integer,
-    perfilactorsocial_id integer
+    perfilactorsocial_id integer,
+    telefono character varying(1000),
+    vereda character varying(1000)
 );
 
 
@@ -9420,6 +9422,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210202201520'),
 ('20210202201530'),
 ('20210204014948'),
-('20210206191033');
+('20210206191033'),
+('20210209181450');
 
 
