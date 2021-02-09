@@ -21,7 +21,7 @@ class Ability  < Cor1440Gen::Ability
     ['', 'tipoorganzorc'],
     ['', 'nivelorganzorc']
   ]
-  
+
   def tablasbasicas 
     Sip::Ability::BASICAS_PROPIAS + 
       Heb412Gen::Ability::BASICAS_PROPIAS + 
