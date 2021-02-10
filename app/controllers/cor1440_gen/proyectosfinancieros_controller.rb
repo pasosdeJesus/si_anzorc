@@ -140,7 +140,7 @@ module Cor1440Gen
             :usuario_id, 
             :fecha,
             :observacion,
-            :estado_id,
+            :estadoobs_id,
             :usuarionotificar_ids => []
           ]
         ]
