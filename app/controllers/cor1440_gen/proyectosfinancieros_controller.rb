@@ -52,6 +52,17 @@ module Cor1440Gen
       ]
     end
 
+    def matriz_seguimiento
+      if !params || !params[:id] || Cor1440Gen::Proyectofinanciero.where(
+          id: params[:id]).count == 0
+        return
+      end
+      @registro = @proyectofinanciero = Cor1440Gen::Proyectofinanciero.find(
+        params[:id])
+
+      render :matriz_seguimiento, layout: 'application'
+    end
+
     def validar_registro(registro, detalle)
       detalleini = detalle.clone
       if !registro.fechainicio && 

@@ -1,0 +1,20 @@
+<%= 
+  props = {}
+  props['actividadespf'] = @proyectofinanciero.actividadpf.
+    map { |a| 
+        {
+          pf_id: a.proyectofinanciero_id, 
+          objetivopf_id: a.resultadopf_id ? 
+            a.resultadopf.objetivopf_id : '',
+          resultadopf_id: a.resultadopf_id,
+          resultadopf_codigo: a.resultadopf_id ?
+            a.resultadopf.codigo_completo : '',
+          resultadopf_titulo: a.resultadopf_id ?
+            a.resultadopf.resultado : '',
+          actividadpf_id: a.id,
+          codigo: a.nombrecorto,
+          titulo: a.titulo
+        }
+       }
+  react_component('MatrizSeguimiento', props) 
+%>

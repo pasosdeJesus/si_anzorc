@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: b0f199e8bcbb29560b455f3ac8f36ffd755ee1fe
+  revision: ed451d651845cbaf703c7e5ee13ee238dd2a40bc
   branch: main
   specs:
     heb412_gen (1.0.b6)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/mr519_gen.git
-  revision: bf5d67ab22fe5ab0869ad7570d541cd516e5c908
+  revision: 95332890845e7fb45aaddcf506126236033fce93
   branch: main
   specs:
     mr519_gen (0.2.0)
@@ -129,6 +129,10 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     andand (1.3.3)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.16)
     bigdecimal (3.0.0)
     bindex (0.8.1)
@@ -161,6 +165,7 @@ GEM
     coffee-script-source (1.12.2)
     colorize (0.8.1)
     concurrent-ruby (1.1.8)
+    connection_pool (2.2.3)
     crass (1.0.6)
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -274,6 +279,12 @@ GEM
       thor (>= 0.20.3, < 2.0)
     raindrops (0.19.1)
     rake (13.0.3)
+    react-rails (2.6.1)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     redcarpet (3.5.1)
     regexp_parser (2.0.3)
     responders (3.0.1)
@@ -377,6 +388,7 @@ DEPENDENCIES
   puma
   rails (~> 6.0.3.4)
   rails-i18n
+  react-rails
   redcarpet
   rspreadsheet
   rubyzip (>= 2.0.0)

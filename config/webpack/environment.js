@@ -21,4 +21,14 @@ environment.loaders.append('expose', {
                 ]
 })
 
+
+// Solucion de https://github.com/tannerlinsley/react-table/discussions/2048
+// para usar react-table con rails
+const nodeModulesLoader = environment.loaders.get('nodeModules');
+if (!Array.isArray(nodeModulesLoader.exclude)) {
+    nodeModulesLoader.exclude = nodeModulesLoader.exclude == null ? [] : [nodeModulesLoader.exclude];
+}
+
+nodeModulesLoader.exclude.push(/react-table/);
+
 module.exports = environment
