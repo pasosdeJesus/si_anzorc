@@ -20,6 +20,7 @@ es:
       "cor1440_gen/proyectofinanciero":
         aportepropioej: Aporte de ANZORC
         aporteotrosej: Aporte de otros donantes
+        aprobadoobs: Aprobado por directivos
         centrocosto: Centro de costos
         fechaaprobacion: "Fecha de aprobación"
         fechaaprobacion_localizada: "Fecha de aprobación"

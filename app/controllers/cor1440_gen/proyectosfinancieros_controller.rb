@@ -35,6 +35,7 @@ module Cor1440Gen
         :estado,
         :dificultad,
         :responsable,
+        :aprobadoobs,
         :proyectofinanciero_usuario,
       ] +
       [ :tipomoneda,
@@ -49,6 +50,32 @@ module Cor1440Gen
         :caracterizacion, 
         :beneficiario,
         :plantillahcm,
+      ]
+    end
+
+    def atributos_index
+      [ 
+        :id,
+        :nombre,
+        :titulo
+      ] +
+      [ :financiador_ids =>  [] ] +
+      [ 
+        :fechainicio_localizada,
+        :fechacierre_localizada,
+        :responsable,
+        :aprobadoobs,
+        :proyectofinanciero_usuario,
+      ] +
+      [ :proyecto_ids =>  [] ] +
+      [ :compromisos, 
+        :monto, 
+        :observaciones, 
+        :objetivopf,
+        :indicadorobjetivo,
+        :resultadopf,
+        :indicadorpf,
+        :actividadpf
       ]
     end
 
