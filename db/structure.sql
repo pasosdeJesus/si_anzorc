@@ -2876,7 +2876,7 @@ CREATE TABLE public.observacion (
     usuario_id integer NOT NULL,
     fecha date NOT NULL,
     observacion character varying(5000),
-    estado_id integer,
+    estadoobs_id integer,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -7703,7 +7703,7 @@ ALTER TABLE ONLY public.cor1440_gen_caracterizacionpersona
 --
 
 ALTER TABLE ONLY public.observacion
-    ADD CONSTRAINT fk_rails_24615f9c38 FOREIGN KEY (estado_id) REFERENCES public.estadoobs(id);
+    ADD CONSTRAINT fk_rails_24615f9c38 FOREIGN KEY (estadoobs_id) REFERENCES public.estadoobs(id);
 
 
 --
@@ -9423,6 +9423,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210202201530'),
 ('20210204014948'),
 ('20210206191033'),
-('20210209181450');
+('20210209181450'),
+('20210210134631'),
+('20210210142116');
 
 

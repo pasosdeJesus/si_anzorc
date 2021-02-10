@@ -18,6 +18,7 @@ module Cor1440Gen
         :fecha_localizada, 
         :nombre, 
         :responsable,
+        :aprobadoobs,
         :proyectofinanciero,
         :actividadpf, 
         :objetivo,
@@ -37,6 +38,7 @@ module Cor1440Gen
         :fecha_localizada, 
         :nombre, 
         :responsable,
+        :aprobadoobs,
         :proyectofinanciero,
         :objetivo,
         :resultado,
@@ -95,7 +97,7 @@ module Cor1440Gen
              :usuario_id, 
              :fecha,
              :observacion,
-             :estado_id,
+             :estadoobs_id,
              :usuarionotificar_ids => []
            ]
          ]

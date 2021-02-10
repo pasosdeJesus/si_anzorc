@@ -1,0 +1,26 @@
+<%
+  estado = :BIEN
+  @registro.proyectofinanciero.each do |p|
+    if p.responsable
+      if @registro.observacion.where(
+          usuario_id: p.responsable_id, estadoobs_id: Estadoobs::NOAPROBADO).
+          count >0
+        estado = :MAL
+      elsif estado != :MAL && (@registro.observacion.where(
+        usuario_id: p.responsable_id, estadoobs_id: nil).
+        count >0 || @registro.observacion.where(
+          usuario_id: p.responsable_id).count == 0)
+        estado = :VACIO
+      end
+    end
+  end
+%>
+
+<% if estado == :BIEN then %>
+  <span style="color: green">☑<span>
+<% elsif estado == :MAL %>
+  <span style="color: red">☒</span>
+<% else %>
+  <span style="color: orange">☐</span>
+<% end %>
+

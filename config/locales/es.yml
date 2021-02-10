@@ -9,6 +9,7 @@ es:
     attributes:
       "cor1440_gen/actividad":
         actividadpf: Actividad de marco lógico
+        aprobadoobs: Aprobado por coordinador
         poblacion_hombres_r: Población hombres
         poblacion_mujeres_r: Población mujeres
         poblacion_sinsexo: Otros
