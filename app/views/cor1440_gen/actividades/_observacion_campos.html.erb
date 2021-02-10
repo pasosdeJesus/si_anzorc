@@ -3,54 +3,96 @@
     <% f.object.observacion = Observacion.new %>
   <% end %>
   <%= f.simple_fields_for :observacion do |ob| %>
-  <td>
+    <% if ob.object.usuario == current_usuario || current_usuario.rol == 1 || ob.object.usuario.nil?%>
+      <% autorizado = true %>
+    <% else %>
+      <% autorizado = false %>
+    <% end%>
+    <td>
     <%= ob.association :usuario,
       collection: Usuario.habilitados,
       label_method: :nusuario,
       value_method: :id,
+      readonly: true,
+      selected:  ob.object.usuario_id || current_usuario.id,
       wrapper_html: {style: "width: 12em"},
       label: false,
       input_html: {
-        class: 'chosen-select'
+        class: 'deshabilitado'
       }
     %>
-  </td>
-  <td>
+    </td>
+    <td>
     <%= ob.input :fecha, 
       label: false,
-      :input_html => { "data-behaviour" => "datepicker" },
+      :input_html => { "data-behaviour" => "datepicker", 
+                       value: Date.today, class: 'deshabilitado'},
       :as => :string %>
-  </td>
-  <td>
-    <%= ob.input :observacion,
-      label: false %>
-  </td>
-  <td>
-    <%= ob.association :estadoobs,
-      collection: Estadoobs.habilitados,
-      label_method: :nombre,
-      value_method: :id,
-      wrapper_html: {style: "width: 8em"},
-      label: false
-    %>
-  </td> 
-  <td>
-    <%= ob.association :usuarionotificar,
-      collection: Usuario.habilitados,
-      label_method: :nusuario,
-      value_method: :id,
-      wrapper_html: {style: "width: 8em"},
-      label: false,
-      input_html: {
-        class: 'chosen-select'
-      }
-    %>
-  </td>
+    </td>
+    <td>
+      <% if autorizado %>
+        <%= ob.input :observacion,
+          label: false
+        %>
+      <% else %>
+        <%= ob.input :observacion,
+          label: false,
+          :input_html => { class: 'deshabilitado'}
+        %>
+      <% end %>
+    </td>
+    <td>
+      <% if autorizado %>
+        <%= ob.association :estadoobs,
+          collection: Estadoobs.habilitados,
+          label_method: :nombre,
+          value_method: :id,
+          wrapper_html: {style: "width: 8em"},
+          label: false
+        %>
+      <% else %>
+        <%= ob.association :estadoobs,
+          collection: Estadoobs.habilitados,
+          label_method: :nombre,
+          value_method: :id,
+          wrapper_html: {style: "width: 8em"},
+          label: false,
+          input_html: { class: 'deshabilitado'}
+        %>
+      <% end %>
+    </td> 
+    <td>
+      <% if autorizado %>
+        <%= ob.association :usuarionotificar,
+          collection: Usuario.habilitados,
+          label_method: :nusuario,
+          value_method: :id,
+          wrapper_html: {style: "width: 8em"},
+          label: false,
+          input_html: {
+            class: 'chosen-select'
+          }
+        %>
+      <% else %>
+        <%= ob.association :usuarionotificar,
+          collection: Usuario.habilitados,
+          label_method: :nusuario,
+          value_method: :id,
+          wrapper_html: {style: "width: 8em"},
+          label: false,
+          input_html: {
+            class: 'deshabilitado'
+          }
+        %>
+      <% end %>
+    </td>
+    <% if ob.object.usuario == current_usuario || ob.object.usuario.nil? || current_usuario.rol == 1 %>
+    <td>
+      <%= link_to_remove_association "Eliminar", f, 
+        :class => 'btn-danger',
+        :'data-existing' => true
+      %>
+    </td>
+    <% end %>
   <% end %>
-  <td>
-    <%= link_to_remove_association "Eliminar", f, 
-      :class => 'btn-danger',
-      :'data-existing' => true
-    %>
-  </td>
 </tr>
