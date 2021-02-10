@@ -62,29 +62,22 @@
       <% end %>
     </td> 
     <td>
-      <% if autorizado %>
-        <%= ob.association :usuarionotificar,
-          collection: Usuario.habilitados,
-          label_method: :nusuario,
-          value_method: :id,
-          wrapper_html: {style: "width: 8em"},
-          label: false,
-          input_html: {
-            class: 'chosen-select'
-          }
-        %>
-      <% else %>
-        <%= ob.association :usuarionotificar,
-          collection: Usuario.habilitados,
-          label_method: :nusuario,
-          value_method: :id,
-          wrapper_html: {style: "width: 8em"},
-          label: false,
-          input_html: {
-            class: 'deshabilitado'
-          }
-        %>
+      <% claseob = 'chosen-select' %>
+      <% if !autorizado %>
+        <% claseob << ' deshabilitado' %>
       <% end %>
+      <%= ob.association :usuarionotificar,
+        collection: Usuario.habilitados,
+        label_method: :nusuario,
+        value_method: :id,
+        wrapper_html: {style: "width: 8em"},
+        label: false,
+        input_html: {
+          class: claseob,
+          disabled: !autorizado
+        }
+      %>
+
     </td>
     <% if ob.object.usuario == current_usuario || ob.object.usuario.nil? || current_usuario.rol == 1 %>
     <td>
