@@ -4,8 +4,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.3
--- Dumped by pg_dump version 12.3
+-- Dumped from database version 13.2
+-- Dumped by pg_dump version 13.2
 
 SET statement_timeout = 0;
 
@@ -43,8 +43,8 @@ SELECT pg_catalog.setval('public.estadozrc_id_seq', 100, true);
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.3
--- Dumped by pg_dump version 12.3
+-- Dumped from database version 13.2
+-- Dumped by pg_dump version 13.2
 
 SET statement_timeout = 0;
 
@@ -61,8 +61,8 @@ SET row_security = off;
 -- Data for Name: estadoobs; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.estadoobs (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (1, 'POR REVISAR', NULL, '2020-11-24', NULL, '2020-11-24 00:00:00', '2020-11-24 00:00:00');
-INSERT INTO public.estadoobs (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (2, 'REVISADO', NULL, '2020-11-24', NULL, '2020-11-24 00:00:00', '2020-11-24 00:00:00');
+INSERT INTO public.estadoobs (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (1, 'NO CONFORMIDAD', NULL, '2020-11-24', NULL, '2020-11-24 00:00:00', '2020-11-24 00:00:00');
+INSERT INTO public.estadoobs (id, nombre, observaciones, fechacreacion, fechadeshabilitacion, created_at, updated_at) VALUES (2, 'APROBADO', NULL, '2020-11-24', NULL, '2020-11-24 00:00:00', '2020-11-24 00:00:00');
 
 
 --
@@ -80,8 +80,8 @@ SELECT pg_catalog.setval('public.estadoobs_id_seq', 100, true);
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.3
--- Dumped by pg_dump version 12.3
+-- Dumped from database version 13.2
+-- Dumped by pg_dump version 13.2
 
 SET statement_timeout = 0;
 
@@ -122,8 +122,8 @@ SELECT pg_catalog.setval('public.nodo_id_seq', 100, true);
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.3
--- Dumped by pg_dump version 12.3
+-- Dumped from database version 13.2
+-- Dumped by pg_dump version 13.2
 
 SET statement_timeout = 0;
 
@@ -164,8 +164,8 @@ SELECT pg_catalog.setval('public.tipoorganzorc_id_seq', 100, true);
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.3
--- Dumped by pg_dump version 12.3
+-- Dumped from database version 13.2
+-- Dumped by pg_dump version 13.2
 
 SET statement_timeout = 0;
 
