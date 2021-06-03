@@ -1151,7 +1151,10 @@ CREATE TABLE public.cor1440_gen_caracterizacionpf (
 CREATE TABLE public.cor1440_gen_datointermedioti (
     id bigint NOT NULL,
     nombre character varying(1024) NOT NULL,
-    tipoindicador_id integer NOT NULL
+    tipoindicador_id integer NOT NULL,
+    nombreinterno character varying(127),
+    filtro character varying(5000),
+    funcion character varying(5000)
 );
 
 
@@ -4218,6 +4221,16 @@ CREATE TABLE public.sivel2_gen_contextovictima_victima (
 
 
 --
+-- Name: sivel2_gen_departamento_region; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_gen_departamento_region (
+    departamento_id integer,
+    region_id integer
+);
+
+
+--
 -- Name: sivel2_gen_escolaridad_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -4551,6 +4564,16 @@ CREATE TABLE public.sivel2_gen_maternidad (
     updated_at timestamp without time zone,
     observaciones character varying(5000),
     CONSTRAINT maternidad_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+);
+
+
+--
+-- Name: sivel2_gen_municipio_region; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_gen_municipio_region (
+    municipio_id integer,
+    region_id integer
 );
 
 
@@ -9514,6 +9537,9 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210428143811'),
 ('20210430160739'),
 ('20210514201449'),
-('20210531223906');
+('20210524121112'),
+('20210531223906'),
+('20210601023450'),
+('20210601023557');
 
 
