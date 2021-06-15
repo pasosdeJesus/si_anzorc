@@ -1,4 +1,3 @@
-# encoding: UTF-8
 require_dependency "cor1440_gen/concerns/controllers/actividades_controller"
 
 module Cor1440Gen
@@ -23,7 +22,7 @@ module Cor1440Gen
         :actividadpf, 
         :objetivo,
         :respuestafor,
-        :actorsocial,
+        :orgsocial,
         :listadoasistencia,
         :poblacion,
         :anexos,
@@ -67,13 +66,13 @@ module Cor1440Gen
       lista_params_cor1440_gen +
        [
         :asistencia_attributes => [
-        :actorsocial_id,
+        :orgsocial_id,
         :externo,
         :telefono,
         :vereda,
         :id,
         :rangoedadac_id,
-        :perfilactorsocial_id,
+        :perfilorgsocial_id,
         :_destroy,
         :persona_attributes => [
           :apellidos, 

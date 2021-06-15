@@ -1,12 +1,12 @@
 # encoding: UTF-8
-require_dependency "sip/concerns/controllers/actoressociales_controller"
+require_dependency "sip/concerns/controllers/orgsociales_controller"
 
 module Sip
-  class ActoressocialesController < Heb412Gen::ModelosController
-    include Sip::Concerns::Controllers::ActoressocialesController
+  class OrgsocialesController < Heb412Gen::ModelosController
+    include Sip::Concerns::Controllers::OrgsocialesController
 
     def vistas_manejadas
-      ['Actorsocial']
+      ['Orgsocial']
     end
 
     def atributos_index
@@ -24,7 +24,7 @@ module Sip
         :numasociadas,
         :carpeta,
       ] +
-      [ :actorsocial_persona => [] ] +
+      [ :orgsocial_persona => [] ] +
       [
         :habilitado
       ]
@@ -50,9 +50,9 @@ module Sip
             :id,
             :nombre,
             :anotaciones ],
-          :actorsocial_persona_attributes => [
+          :orgsocial_persona_attributes => [
             :id,
-            :perfilactorsocial_id,
+            :perfilorgsocial_id,
             :correo,
             :_destroy,
             :persona_attributes => [
@@ -64,8 +64,8 @@ module Sip
         ] 
     end
 
-    def actorsocial_params
-      params.require(:actorsocial).permit(lista_params)
+    def orgsocial_params
+      params.require(:orgsocial).permit(lista_params)
     end
 
   end 

@@ -1,10 +1,10 @@
 # encoding: UTF-8
 
-require 'cor1440_gen/concerns/models/actorsocial'
+require 'cor1440_gen/concerns/models/orgsocial'
 
 module Sip
-  class Actorsocial < ActiveRecord::Base
-    include Cor1440Gen::Concerns::Models::Actorsocial
+  class Orgsocial < ActiveRecord::Base
+    include Cor1440Gen::Concerns::Models::Orgsocial
 
     belongs_to :zrc, optional: true
     belongs_to :nivelorganzorc, optional: true

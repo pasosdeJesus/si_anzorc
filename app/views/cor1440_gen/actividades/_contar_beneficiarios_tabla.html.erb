@@ -43,10 +43,10 @@
         ret }.join("; ") %>
       <tr>
         <td>
-          <% organizaciones = asg.where(persona_id: b.id).pluck(:actorsocial_id) %>
+          <% organizaciones = asg.where(persona_id: b.id).pluck(:orgsocial_id) %>
           <% if organizaciones.count > 0 %>
             <% id_organizacion = organizaciones[0] %>
-            <%= Sip::Actorsocial.find(id_organizacion).presenta_nombre if id_organizacion %>
+            <%= Sip::Orgsocial.find(id_organizacion).presenta_nombre if id_organizacion %>
           <% end %>
         </td>
         <td>

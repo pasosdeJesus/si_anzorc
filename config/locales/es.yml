@@ -56,16 +56,16 @@ es:
       "nodo":
         Nodo: Nodo
         Nodos: Nodos
-      "sip/actorsocial":
-        Actorsocial: Organización
-        Actoressociales: Organizaciones
+      "sip/orgsocial":
+        Orgsocial: Organización
+        Orgsociales: Organizaciones
         nit: Nit
         numasociados: Número de asociados (hombres)
         numasociadas: Número de asociadas (mujeres)
         carpeta: Carpeta en nube
         nivelorganzorc: Nivel de organización
         tipoorganzorc: Tipo de organización
-        "{:actorsocial persona=>[]}": Contactos
+        "{:orgsocial persona=>[]}": Contactos
       "tipoorganzorc": 
         Tipoorganzorc: Tipo de organización
         Tiposorganzorc: Tipos de organización

@@ -21,8 +21,8 @@
       <%= p.input :apellidos, label: false %>
     </td>
     <td>
-      <%= f.association :perfilactorsocial, 
-        collection: Sip::Perfilactorsocial.habilitados.order(:nombre),
+      <%= f.association :perfilorgsocial, 
+        collection: Sip::Perfilorgsocial.habilitados.order(:nombre),
         include_blank: false,
         label: false,
         label_method: :nombre,
