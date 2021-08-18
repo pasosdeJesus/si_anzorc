@@ -54,29 +54,7 @@ module Cor1440Gen
     end
 
     def atributos_index
-      [ 
-        :id,
-        :nombre,
-        :titulo
-      ] +
-      [ :financiador_ids =>  [] ] +
-      [ 
-        :fechainicio_localizada,
-        :fechacierre_localizada,
-        :responsable,
-        :aprobadoobs,
-        :proyectofinanciero_usuario,
-      ] +
-      [ :proyecto_ids =>  [] ] +
-      [ :compromisos, 
-        :monto, 
-        :observaciones, 
-        :objetivopf,
-        :indicadorobjetivo,
-        :resultadopf,
-        :indicadorpf,
-        :actividadpf
-      ]
+      atributos_index_cor1440
     end
 
     def matriz_seguimiento
@@ -112,53 +90,6 @@ module Cor1440Gen
     def proyectofinanciero_params_si_anzorc
       proyectofinanciero_params_cor1440_gen - [
       ] + [
-        :centrocosto,
-        :estado,
-        :dificultad,
-        :fechaaprobacion_localizada,
-        :fechacierre_localizada,
-        :fechaformulacion_localizada,
-        :fechaformulacion_anio,
-        :fechaformulacion_mes,
-        :fechaliquidacion_localizada,
-        :tasaej_localizado,
-        :montoej_localizado,
-        :aportepropioej_localizado,
-        :aporteotrosej_localizado,
-        :presupuestototalej_localizado,
-        :saldoaejecutarp_localizado,
-        :tipomoneda_id,
-        :desembolso_attributes => [
-          :id,
-          :detalle,
-          :fecha_localizada,
-          :valorpesos_localizado,
-          :_destroy
-        ],
-        :informeauditoria_attributes => [
-          :detalle,
-          :fecha_localizada,
-          :devoluciones,
-          :seguimiento,
-          :id,
-          :_destroy
-        ],
-        :informefinanciero_attributes => [
-          :detalle,
-          :fecha_localizada,
-          :devoluciones,
-          :seguimiento,
-          :id,
-          :_destroy
-        ],
-        :informenarrativo_attributes => [
-          :detalle,
-          :fecha_localizada,
-          :devoluciones,
-          :seguimiento,
-          :id,
-          :_destroy
-        ],
         :observacion_proyectofinanciero_attributes => [
           :id,
           :_destroy,

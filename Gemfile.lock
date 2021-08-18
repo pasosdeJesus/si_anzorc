@@ -10,20 +10,6 @@ GIT
       terrapin (~> 0.6.0)
 
 GIT
-  remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 2abdedabb307d3f3b7ecacd28ffea62aad368bec
-  branch: main
-  specs:
-    cor1440_gen (1.0b4)
-      devise
-      heb412_gen
-      jquery-rails
-      mr519_gen
-      paperclip
-      rails
-      sip
-
-GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
   revision: 5662ef728e62eeff3d8e5145389ad793880dc8c9
   branch: main
@@ -88,6 +74,18 @@ GIT
   branch: new_id_with_ajax
   specs:
     cocoon (1.2.11)
+
+PATH
+  remote: ../cor1440_gen
+  specs:
+    cor1440_gen (1.0b4)
+      devise
+      heb412_gen
+      jquery-rails
+      mr519_gen
+      paperclip
+      rails
+      sip
 
 GEM
   remote: https://rubygems.org/
