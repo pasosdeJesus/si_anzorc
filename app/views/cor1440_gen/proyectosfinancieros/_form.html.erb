@@ -27,86 +27,156 @@
         <ul class="nav nav-tabs" role="tablist">
           <% if can? :manage, @registro %>
             <li role="presentation" class="nav-item">
-              <a href="#basicos" class="enviarautomatico_y_repintapf nav-link active" aria-selected="true" aria-controls="basicos" role="tab" data-toggle="tab">
+              <button class="enviarautomatico_y_repintapf nav-link active" 
+                      id="basicos-pestana"
+                      aria-selected="true" 
+                      aria-controls="basicos" 
+                      role="tab" 
+                      data-bs-toggle="tab"
+                      data-bs-target="#basicos"
+                      type="button">
                 Datos básicos
-              </a>
+              </button>
             </li>
             <li role="presentation" class="nav-item">
-              <a href="#recursoshumanos" class="enviarautomatico_y_repintapf nav-link" aria-controls="recursoshumanos" role="tab" data-toggle="tab">
+              <button class="enviarautomatico_y_repintapf nav-link" 
+                      id="recursoshumanos-pestana"
+                      data-bs-target="#recursoshumanos" 
+                      aria-controls="recursoshumanos" 
+                      role="tab" 
+                      type="button"
+                      data-bs-toggle="tab">
                 Recursos humanos
-              </a>
+              </button>
             </li>
             <li role="presentation" class="nav-item">
-              <a href="#recursoseconomicos" class="enviarautomatico_y_repintapf nav-link" aria-controls="recursoseconomicos" role="tab" data-toggle="tab">
+              <button class="enviarautomatico_y_repintapf nav-link" 
+                      id="recursoseconomicos-pestana"
+                      data-bs-target="#recursoseconomicos" 
+                      aria-controls="recursoseconomicos" 
+                      role="tab"
+                      type="button"
+                      data-bs-toggle="tab">
                 Recursos económicos y desembolsos
-              </a>
+              </button>
             </li>
             <li role="presentation" class="nav-item">
-              <a href="#informes" class="enviarautomatico_y_repintapf nav-link" aria-controls="informes" role="tab" data-toggle="tab">
+              <button class="enviarautomatico_y_repintapf nav-link"
+                      id="informes-pestana"
+                      data-bs-target="#informes"  
+                      aria-controls="informes" 
+                      role="tab" 
+                      type="button"
+                      data-bs-toggle="tab">
                 Informes y auditorias
-              </a>
+              </button>
             </li>
           <% end %>
           <% if can? :edit, @registro %>
             <li role="presentation" class="nav-item">
-              <a href="#marcologico" class="enviarautomatico_y_repintapf nav-link" aria-controls="marcologico" role="tab" data-toggle="tab">
+              <button class="enviarautomatico_y_repintapf nav-link"
+                      id="marcologico-pestana"
+                      data-bs-target="#marcologico"  
+                      aria-controls="marcologico" 
+                      role="tab" 
+                      type="button"
+                      data-bs-toggle="tab">
                 Marco Lógico
-              </a>
+              </button>
             </li>
           <% end %>
           <% if can? :manage, @registro%>
             <li role="presentation" class="nav-item">
-              <a href="#anexos" class="enviarautomatico_y_repintapf nav-link" aria-controls="anexos" role="tab" data-toggle="tab">
+              <button class="enviarautomatico_y_repintapf nav-link"
+                      id="anexos-pestana"
+                      data-bs-target="#anexos"  
+                      aria-controls="anexos" 
+                      role="tab" 
+                      type="button"
+                      data-bs-toggle="tab">
                 Anexos
-              </a>
+              </button>
             </li>
             <li role="presentation" class="nav-item">
-              <a href="#pobservaciones" class="enviarautomatico_y_repintapf nav-link" aria-controls="pobservaciones" role="tab" data-toggle="tab">
+              <button class="enviarautomatico_y_repintapf nav-link"
+                      id="pobservaciones-pestana"
+                      data-bs-target="#pobservaciones" 
+                      aria-controls="pobservaciones" 
+                      role="tab" 
+                      type="button"
+                      data-bs-toggle="tab">
                 Observaciones / Otros
-              </a>
+              </button>
             </li>
           <% end %>
         </ul>
         <div class="tab-content">
           <% if can? :manage, @registro%>
-            <div role="tabpanel" class="tab-pane fade active show" id="basicos">
+            <div class="tab-pane fade active show"
+                 role="tabpanel"  
+                 aria-labelledby="basicos-pestana"
+                 id="basicos">
               <%= render 'basicos', :f => f %>
             </div> 
 
-            <div role="tabpanel" class="tab-pane fade" id="recursoshumanos">
+            <div class="tab-pane fade" 
+                 role="tabpanel" 
+                 aria-labelledby="recursoshumanos-pestana"
+                 id="recursoshumanos">
               <%= render 'recursoshumanos', :f => f %>
             </div>
 
-            <div role="tabpanel" class="tab-pane fade" id="recursoseconomicos">
+            <div class="tab-pane fade" 
+                 role="tabpanel" 
+                 aria-labelledby="recursoseconomicos-pestana"
+                 id="recursoseconomicos">
               <%= render 'recursoseconomicos', :f => f %>
             </div>
 
-            <div role="tabpanel" class="tab-pane fade" id="informes">
+            <div class="tab-pane fade" 
+                 role="tabpanel" 
+                 aria-labelledby="informes-pestana"
+                 id="informes">
               <%= render 'informes', :f => f %>
             </div>
 
-            <div role="tabpanel" class="tab-pane fade" id="contabilidad">
+            <div class="tab-pane fade" 
+                 role="tabpanel" 
+                 aria-labelledby="contabilidad-pestana"
+                 id="contabilidad">
               <%= render 'contabilidad', :f => f %>
             </div>
 
-            <div role="tabpanel" class="tab-pane fade" id="datosfinanciador">
+            <div class="tab-pane fade" 
+                 role="tabpanel" 
+                 aria-labelledby="datosfinanciador-pestana"
+                 id="datosfinanciador">
               <%= render 'datosfinanciador', :f => f %>
             </div>
           <% end %> 
           <% if can? :edit, @registro %>
-            <div role="tabpanel" class="tab-pane fade" id="marcologico">
+            <div class="tab-pane fade" 
+                 role="tabpanel" 
+                 aria-labelledby="marcologico-pestana"
+                 id="marcologico">
               <%= render 'marcologico', :f => f %>
             </div>
           <% end %> 
           <% if can? :manage, @registro%>
-            <div role="tabpanel" class="tab-pane fade" id="anexos">
+            <div class="tab-pane fade" 
+                 role="tabpanel" 
+                 aria-labelledby="anexos-pestana"
+                 id="anexos">
               <% if f.object.id.nil? %>
                 <p>Antes de agregar anexos se debe guardar el compromiso institucional</p>
               <% else %>
                 <%= render 'anexos', :f => f %> 
               <% end %>
             </div>
-            <div role="tabpanel" class="tab-pane fade" id="pobservaciones">
+            <div class="tab-pane fade" 
+                 role="tabpanel" 
+                 aria-labelledby="pobservaciones-pestana"
+                 id="pobservaciones">
               <%= render 'pobservaciones', :f => f %>
             </div>
           <% end %> 
