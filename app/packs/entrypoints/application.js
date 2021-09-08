@@ -23,6 +23,9 @@ Rails.start()
 import Turbolinks from "turbolinks"
 Turbolinks.start()
 
+import ApexCharts from 'apexcharts'
+window.ApexCharts = ApexCharts
+
 import $ from "expose-loader?exposes=$,jQuery!jquery"
 
 var L = require('leaflet');
