@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 module Admin
   class NivelesorganzorcController < Sip::Admin::BasicasController
     before_action :set_nivelorganzorc, 

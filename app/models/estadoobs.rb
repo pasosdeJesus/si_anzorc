@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class Estadoobs < ActiveRecord::Base
 
   NOAPROBADO = 1

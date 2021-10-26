@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class ObservacionesController < Heb412Gen::ModelosController
   before_action :set_observacion,
     only: [:show, :edit, :update, :destroy]

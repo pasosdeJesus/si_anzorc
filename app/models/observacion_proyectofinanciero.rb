@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class ObservacionProyectofinanciero < ActiveRecord::Base
   include Sip::Modelo 
 

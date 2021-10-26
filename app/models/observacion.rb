@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class Observacion < ActiveRecord::Base
   include Sip::Modelo
 

@@ -2,6 +2,9 @@ require_dependency "cor1440_gen/concerns/controllers/proyectosfinancieros_contro
 
 module Cor1440Gen
   class ProyectosfinancierosController < Heb412Gen::ModelosController
+
+    # No requiere autorización por ser clase a incluir en otras
+    
     include Cor1440Gen::Concerns::Controllers::ProyectosfinancierosController
 
     before_action :set_proyectofinanciero,

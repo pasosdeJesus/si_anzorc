@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class ZrcsController < Heb412Gen::ModelosController
   before_action :set_zrc, 
     only: [:show, :edit, :update, :destroy]
