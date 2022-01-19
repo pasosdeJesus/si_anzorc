@@ -31,8 +31,9 @@ module Cor1440
 
     config.active_record.schema_format = :sql
 
-    config.hosts <<  ENV.fetch('CONFIG_HOSTS', 'defensor.info').downcase
-    puts "OJO application.rb config.hosts='#{config.hosts}'"
+    puts "CONFIG_HOSTS="+ENV.fetch('CONFIG_HOSTS', 'defensor.info').to_s
+    config.hosts.concat(
+      ENV.fetch('CONFIG_HOSTS', 'defensor.info').downcase.split(";"))
 
     config.relative_url_root = ENV.fetch('RUTA_RELATIVA', "/anzorc/si")
     puts "OJO application.rb config.relative_url_root="\
