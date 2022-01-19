@@ -34,3 +34,4 @@ app/controllers/application_controller.rb
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+app/assets/builds

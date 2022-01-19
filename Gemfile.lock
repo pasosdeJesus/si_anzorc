@@ -234,6 +234,8 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jsbundling-rails (1.0.0)
+      railties (>= 6.0.0)
     json (2.6.1)
     kgio (2.11.4)
     libxml-ruby (3.2.1)
@@ -277,8 +279,6 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
-    rack-proxy (0.7.0)
-      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (7.0.0)
@@ -342,7 +342,6 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
-    semantic_range (3.0.0)
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -360,11 +359,15 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    stimulus-rails (1.0.2)
+      railties (>= 6.0.0)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (1.2.1)
     tilt (2.0.10)
     ttfunk (1.7.0)
+    turbo-rails (7.1.1)
+      rails (>= 6.0.0)
     twitter_cldr (6.11.0)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.1)
@@ -381,11 +384,6 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webpacker (6.0.0.rc.6)
-      activesupport (>= 5.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 5.2)
-      semantic_range (>= 2.3.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -399,6 +397,7 @@ PLATFORMS
 
 DEPENDENCIES
   apexcharts
+  babel-transpiler
   bcrypt
   bigdecimal
   bootsnap (>= 1.1.0)
@@ -414,6 +413,7 @@ DEPENDENCIES
   dotenv-rails
   heb412_gen!
   jbuilder
+  jsbundling-rails
   kt-paperclip!
   libxml-ruby
   mr519_gen!
@@ -438,11 +438,13 @@ DEPENDENCIES
   sip!
   sivel2_gen!
   spring
+  sprockets-rails
+  stimulus-rails
+  turbo-rails
   twitter_cldr
   tzinfo
   unicorn
   web-console
-  webpacker (~> 6.0.0.rc.1)
   will_paginate
 
 RUBY VERSION
