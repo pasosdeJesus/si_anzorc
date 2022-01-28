@@ -32,9 +32,12 @@ var L = require('leaflet');
 var mc= require('leaflet.markercluster');
 
 // Para experimento estilo hoja de cálculo con react
-var componentRequireContext = require.context("components", true);
+/*var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");
-ReactRailsUJS.useContext(componentRequireContext);
+ReactRailsUJS.useContext(componentRequireContext);*/
+
+import {AutocompletaAjaxExpreg} from '@pasosdejesus/autocompleta_ajax'
+window.AutocompletaAjaxExpreg = AutocompletaAjaxExpreg
 
 let esperarRecursosSprocketsYDocumento = function (resolver) {
   if (typeof window.puntomontaje == 'undefined') {
@@ -56,8 +59,17 @@ let promesaRecursosSprocketsYDocumento = new Promise((resolver, rechazar) => {
 promesaRecursosSprocketsYDocumento.then((mensaje) => {
   console.log(mensaje)
   var root = window;
-  sip_prepara_eventos_comunes(root);
-  // Agregar más inicializaciones a continuación
+
+  sip_prepara_eventos_comunes(root, false, false);
+  mr519_gen_prepara_eventos_comunes(root);
+  heb412_gen_prepara_eventos_comunes(root);
+  sivel2_gen_prepara_eventos_comunes(root);
+  cor1440_gen_prepara_eventos_comunes(root);
+  sivel2_gen_prepara_eventos_unicos(root);
+
+  cor1440_gen_instala_recalcula_poblacion()
+  cor1440_gen_eventos_duracion()
+  cor1440_gen_eventos_montospesos()
 })
 
 

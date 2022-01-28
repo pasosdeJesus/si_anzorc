@@ -18,19 +18,4 @@
 //= require cor1440_gen/motor
 //= require_tree .
 
-document.addEventListener('turbo:load', function() {
-  var root;
-  root = window;
 
-  sip_prepara_eventos_comunes(root, false, false);
-  mr519_gen_prepara_eventos_comunes(root);
-  heb412_gen_prepara_eventos_comunes(root);
-  sivel2_gen_prepara_eventos_comunes(root);
-  cor1440_gen_prepara_eventos_comunes(root);
-  sivel2_gen_prepara_eventos_unicos(root);
-
-  cor1440_gen_instala_recalcula_poblacion()
-  cor1440_gen_eventos_duracion()
-  cor1440_gen_eventos_montospesos()
-
-});
