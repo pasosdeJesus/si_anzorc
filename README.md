@@ -1,6 +1,7 @@
 # si_anzorc
 
-[![Revisado por Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com) [![Estado Construcción](https://gitlab.com/pasosdeJesus/si_anzorc/badges/main/pipeline.svg)](https://gitlab.com/pasosdeJesus/si_anzorc/-/pipelines)[![Clima del Código](https://codeclimate.com/github/pasosdeJesus/si_anzorc/badges/gpa.svg)](https://codeclimate.com/github/pasosdeJesus/si_anzorc) [![Cobertura de Pruebas](https://codeclimate.com/github/pasosdeJesus/si_anzorc/badges/coverage.svg)](https://codeclimate.com/github/pasosdeJesus/si_anzorc) [![security](https://hakiri.io/github/pasosdeJesus/si_anzorc/master.svg)](https://hakiri.io/github/pasosdeJesus/si_anzorc/master)
+
+[![Revisado por Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com) Pruebas y seguridad:[![Estado Construcción](https://gitlab.com/pasosdeJesus/si_anzorc/badges/main/pipeline.svg)](https://gitlab.com/pasosdeJesus/si_anzorc/-/pipelines?page=1&scope=all&ref=main) [![Clima del Código](https://codeclimate.com/github/pasosdeJesus/si_anzorc/badges/gpa.svg)](https://codeclimate.com/github/pasosdeJesus/si_anzorc) [![Cobertura de Pruebas](https://codeclimate.com/github/pasosdeJesus/si_anzorc/badges/coverage.svg)](https://codeclimate.com/github/pasosdeJesus/si_anzorc)
 
 
 Sistema de Información de ANZORC
