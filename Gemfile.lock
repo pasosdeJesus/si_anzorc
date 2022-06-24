@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: a7fcb50cb42e4a9c9de7bed52d1539a078d06291
+  revision: cac2cc682c72da527e3984522a8a0f970dfb9a39
   branch: main
   specs:
     cor1440_gen (2.1a1)
@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: f31a843b5c070776a17a47e17c4e2be9f2a60ffa
+  revision: f85ab4009163c181a16e3433cfc7d8d04dc9c6cc
   branch: main
   specs:
     heb412_gen (2.1a1)
@@ -35,7 +35,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/mr519_gen.git
-  revision: 34359db0238f29f4da1865dcc62a386c187b3690
+  revision: 065560910f610d3ed2f5eb744923a29e925433cf
   branch: main
   specs:
     mr519_gen (2.1a1)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: bbecba8f71e0bfbf6adec38fa1b6a5a4d768bf00
+  revision: 15066e523a1e36e7644c26b3a8a30158ebbaf70c
   branch: main
   specs:
     sip (2.1a1)
@@ -62,7 +62,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: da499ec1c4ad781bdf058b8b4cdc4a0bff0bfcc5
+  revision: 8c555e7ff02a6362cc4af0980b45d1f8801b71a4
   branch: main
   specs:
     sivel2_gen (2.1a1)
@@ -269,7 +269,7 @@ GEM
     orm_adapter (0.5.0)
     parslet (2.0.0)
     pdf-core (0.9.0)
-    pg (1.4.0)
+    pg (1.4.1)
     prawn (2.4.0)
       pdf-core (~> 0.9.0)
       ttfunk (~> 1.7)
@@ -342,7 +342,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.2.1)
+    selenium-webdriver (4.3.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
