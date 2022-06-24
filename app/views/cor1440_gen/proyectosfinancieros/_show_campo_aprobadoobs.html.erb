@@ -1,7 +1,7 @@
 <%
     estado = :INDEF
     gd = Usuario.where(rol: Ability::ROLDIR)
-    @registro.observacion.where(usuario_id: gd.pluck(:id)).each do |o|
+    @registro.solicitud.where(usuario_id: gd.pluck(:id)).each do |o|
       if o.estadosol_id == Sip::Estadosol::NOAPROBADO
         estado = :MAL
       elsif o.estadosol_id == nil && estado != :MAL

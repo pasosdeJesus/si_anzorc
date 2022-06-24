@@ -1,6 +1,6 @@
-<div class='accordion' id="acordeon_observaciones">
+<div class='accordion' id="acordeon_solicitudes">
   <%= item_acordeon_bs(
-    'acordeon_observaciones', 'observaciones', 
+    'acordeon_solicitudes', 'solicitudes', 
     t('Observaciones'), false, {
       'estilo_accordion-header' => 'text-align: center',
       'estilo_accordion-body' => 'anexos-div anexosdiv'
@@ -17,9 +17,9 @@
             <th>Acciones</th>
           </tr>
         </thead>
-        <tbody id="filas_observacion">
-          <%= f.simple_fields_for :actividad_observacion do |ao| %>
-            <%= render partial: 'observacion_campos', 
+        <tbody id="filas_solicitud">
+          <%= f.simple_fields_for :actividad_solicitud do |ao| %>
+            <%= render partial: 'solicitud_campos', 
               locals: {f: ao} %>
           <% end %>
         </tbody>
@@ -27,9 +27,9 @@
     </div>
     <div class="links">
       <%= link_to_add_association 'Añadir Observación', f, 
-        :actividad_observacion,
-        partial: 'cor1440_gen/actividades/observacion_campos',
-        "data-association-insertion-node" => "tbody#filas_observacion", 
+        :actividad_solicitud,
+        partial: 'cor1440_gen/actividades/solicitud_campos',
+        "data-association-insertion-node" => "tbody#filas_solicitud", 
         "data-association-insertion-method" => "append", 
         class: 'btn-primary' %>
     </div>

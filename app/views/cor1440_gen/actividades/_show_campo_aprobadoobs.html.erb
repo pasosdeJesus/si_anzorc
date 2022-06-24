@@ -2,13 +2,13 @@
   estado = :BIEN
   @registro.proyectofinanciero.each do |p|
     if p.responsable
-      if @registro.observacion.where(
+      if @registro.solicitud.where(
           usuario_id: p.responsable_id, estadosol_id: Sip::Estadosol::NOAPROBADO).
           count >0
         estado = :MAL
-      elsif estado != :MAL && (@registro.observacion.where(
+      elsif estado != :MAL && (@registro.solicitud.where(
         usuario_id: p.responsable_id, estadosol_id: nil).
-        count >0 || @registro.observacion.where(
+        count >0 || @registro.solicitud.where(
           usuario_id: p.responsable_id).count == 0)
         estado = :VACIO
       end

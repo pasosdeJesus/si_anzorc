@@ -226,21 +226,21 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: actividad_observacion; Type: TABLE; Schema: public; Owner: -
+-- Name: actividad_solicitud; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.actividad_observacion (
+CREATE TABLE public.actividad_solicitud (
     id bigint NOT NULL,
     actividad_id integer NOT NULL,
-    observacion_id integer NOT NULL
+    solicitud_id integer NOT NULL
 );
 
 
 --
--- Name: actividad_observacion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: actividad_solicitud_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE public.actividad_observacion_id_seq
+CREATE SEQUENCE public.actividad_solicitud_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -249,10 +249,10 @@ CREATE SEQUENCE public.actividad_observacion_id_seq
 
 
 --
--- Name: actividad_observacion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: actividad_solicitud_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE public.actividad_observacion_id_seq OWNED BY public.actividad_observacion.id;
+ALTER SEQUENCE public.actividad_solicitud_id_seq OWNED BY public.actividad_solicitud.id;
 
 
 --
@@ -2919,55 +2919,21 @@ ALTER SEQUENCE public.nodo_id_seq OWNED BY public.nodo.id;
 
 
 --
--- Name: observacion; Type: TABLE; Schema: public; Owner: -
+-- Name: proyectofinanciero_solicitud; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.observacion (
-    id bigint NOT NULL,
-    usuario_id integer NOT NULL,
-    fecha date NOT NULL,
-    observacion character varying(5000),
-    estadosol_id integer,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
---
--- Name: observacion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.observacion_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: observacion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.observacion_id_seq OWNED BY public.observacion.id;
-
-
---
--- Name: observacion_proyectofinanciero; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.observacion_proyectofinanciero (
+CREATE TABLE public.proyectofinanciero_solicitud (
     id bigint NOT NULL,
     proyectofinanciero_id integer NOT NULL,
-    observacion_id integer NOT NULL
+    solicitud_id integer NOT NULL
 );
 
 
 --
--- Name: observacion_proyectofinanciero_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: proyectofinanciero_solicitud_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE public.observacion_proyectofinanciero_id_seq
+CREATE SEQUENCE public.proyectofinanciero_solicitud_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -2976,10 +2942,10 @@ CREATE SEQUENCE public.observacion_proyectofinanciero_id_seq
 
 
 --
--- Name: observacion_proyectofinanciero_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: proyectofinanciero_solicitud_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE public.observacion_proyectofinanciero_id_seq OWNED BY public.observacion_proyectofinanciero.id;
+ALTER SEQUENCE public.proyectofinanciero_solicitud_id_seq OWNED BY public.proyectofinanciero_solicitud.id;
 
 
 --
@@ -3570,6 +3536,50 @@ CREATE SEQUENCE public.sip_sectororgsocial_id_seq
 --
 
 ALTER SEQUENCE public.sip_sectororgsocial_id_seq OWNED BY public.sip_sectororgsocial.id;
+
+
+--
+-- Name: sip_solicitud; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sip_solicitud (
+    id bigint NOT NULL,
+    usuario_id integer NOT NULL,
+    fecha date NOT NULL,
+    solicitud character varying(5000),
+    estadosol_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: sip_solicitud_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sip_solicitud_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sip_solicitud_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.sip_solicitud_id_seq OWNED BY public.sip_solicitud.id;
+
+
+--
+-- Name: sip_solicitud_usuarionotificar; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sip_solicitud_usuarionotificar (
+    usuarionotificar_id integer,
+    solicitud_id integer
+);
 
 
 --
@@ -5105,16 +5115,6 @@ ALTER SEQUENCE public.tipoorganzorc_id_seq OWNED BY public.tipoorganzorc.id;
 
 
 --
--- Name: usuarionotificar_observacion; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.usuarionotificar_observacion (
-    usuarionotificar_id integer,
-    observacion_id integer
-);
-
-
---
 -- Name: vvictimasoundexesp; Type: MATERIALIZED VIEW; Schema: public; Owner: -
 --
 
@@ -5171,10 +5171,10 @@ ALTER SEQUENCE public.zrc_id_seq OWNED BY public.zrc.id;
 
 
 --
--- Name: actividad_observacion id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: actividad_solicitud id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.actividad_observacion ALTER COLUMN id SET DEFAULT nextval('public.actividad_observacion_id_seq'::regclass);
+ALTER TABLE ONLY public.actividad_solicitud ALTER COLUMN id SET DEFAULT nextval('public.actividad_solicitud_id_seq'::regclass);
 
 
 --
@@ -5549,17 +5549,10 @@ ALTER TABLE ONLY public.nodo ALTER COLUMN id SET DEFAULT nextval('public.nodo_id
 
 
 --
--- Name: observacion id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: proyectofinanciero_solicitud id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.observacion ALTER COLUMN id SET DEFAULT nextval('public.observacion_id_seq'::regclass);
-
-
---
--- Name: observacion_proyectofinanciero id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.observacion_proyectofinanciero ALTER COLUMN id SET DEFAULT nextval('public.observacion_proyectofinanciero_id_seq'::regclass);
+ALTER TABLE ONLY public.proyectofinanciero_solicitud ALTER COLUMN id SET DEFAULT nextval('public.proyectofinanciero_solicitud_id_seq'::regclass);
 
 
 --
@@ -5633,6 +5626,13 @@ ALTER TABLE ONLY public.sip_sectororgsocial ALTER COLUMN id SET DEFAULT nextval(
 
 
 --
+-- Name: sip_solicitud id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_solicitud ALTER COLUMN id SET DEFAULT nextval('public.sip_solicitud_id_seq'::regclass);
+
+
+--
 -- Name: sip_tdocumento id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -5703,11 +5703,11 @@ ALTER TABLE ONLY public.zrc ALTER COLUMN id SET DEFAULT nextval('public.zrc_id_s
 
 
 --
--- Name: actividad_observacion actividad_observacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: actividad_solicitud actividad_solicitud_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.actividad_observacion
-    ADD CONSTRAINT actividad_observacion_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.actividad_solicitud
+    ADD CONSTRAINT actividad_solicitud_pkey PRIMARY KEY (id);
 
 
 --
@@ -6383,22 +6383,6 @@ ALTER TABLE ONLY public.nodo
 
 
 --
--- Name: observacion observacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.observacion
-    ADD CONSTRAINT observacion_pkey PRIMARY KEY (id);
-
-
---
--- Name: observacion_proyectofinanciero observacion_proyectofinanciero_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.observacion_proyectofinanciero
-    ADD CONSTRAINT observacion_proyectofinanciero_pkey PRIMARY KEY (id);
-
-
---
 -- Name: sivel2_gen_organizacion organizacion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6444,6 +6428,14 @@ ALTER TABLE ONLY public.sivel2_gen_presponsable
 
 ALTER TABLE ONLY public.sivel2_gen_profesion
     ADD CONSTRAINT profesion_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: proyectofinanciero_solicitud proyectofinanciero_solicitud_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.proyectofinanciero_solicitud
+    ADD CONSTRAINT proyectofinanciero_solicitud_pkey PRIMARY KEY (id);
 
 
 --
@@ -6676,6 +6668,14 @@ ALTER TABLE ONLY public.sip_persona_trelacion
 
 ALTER TABLE ONLY public.sip_sectororgsocial
     ADD CONSTRAINT sip_sectororgsocial_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sip_solicitud sip_solicitud_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_solicitud
+    ADD CONSTRAINT sip_solicitud_pkey PRIMARY KEY (id);
 
 
 --
@@ -7114,17 +7114,17 @@ CREATE UNIQUE INDEX cor1440_gen_datointermedioti_pmindicadorpf_llaves_idx ON pub
 
 
 --
--- Name: index_actividad_observacion_on_actividad_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_actividad_solicitud_on_actividad_id; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_actividad_observacion_on_actividad_id ON public.actividad_observacion USING btree (actividad_id);
+CREATE INDEX index_actividad_solicitud_on_actividad_id ON public.actividad_solicitud USING btree (actividad_id);
 
 
 --
--- Name: index_actividad_observacion_on_observacion_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_actividad_solicitud_on_solicitud_id; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_actividad_observacion_on_observacion_id ON public.actividad_observacion USING btree (observacion_id);
+CREATE INDEX index_actividad_solicitud_on_solicitud_id ON public.actividad_solicitud USING btree (solicitud_id);
 
 
 --
@@ -7177,17 +7177,17 @@ CREATE UNIQUE INDEX index_mr519_gen_encuestapersona_on_adurl ON public.mr519_gen
 
 
 --
--- Name: index_observacion_proyectofinanciero_on_observacion_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_proyectofinanciero_solicitud_on_proyectofinanciero_id; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_observacion_proyectofinanciero_on_observacion_id ON public.observacion_proyectofinanciero USING btree (observacion_id);
+CREATE INDEX index_proyectofinanciero_solicitud_on_proyectofinanciero_id ON public.proyectofinanciero_solicitud USING btree (proyectofinanciero_id);
 
 
 --
--- Name: index_observacion_proyectofinanciero_on_proyectofinanciero_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_proyectofinanciero_solicitud_on_solicitud_id; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_observacion_proyectofinanciero_on_proyectofinanciero_id ON public.observacion_proyectofinanciero USING btree (proyectofinanciero_id);
+CREATE INDEX index_proyectofinanciero_solicitud_on_solicitud_id ON public.proyectofinanciero_solicitud USING btree (solicitud_id);
 
 
 --
@@ -7202,6 +7202,20 @@ CREATE INDEX index_sip_orgsocial_on_grupoper_id ON public.sip_orgsocial USING bt
 --
 
 CREATE INDEX index_sip_orgsocial_on_pais_id ON public.sip_orgsocial USING btree (pais_id);
+
+
+--
+-- Name: index_sip_solicitud_usuarionotificar_on_solicitud_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_sip_solicitud_usuarionotificar_on_solicitud_id ON public.sip_solicitud_usuarionotificar USING btree (solicitud_id);
+
+
+--
+-- Name: index_sip_solicitud_usuarionotificar_on_usuarionotificar_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_sip_solicitud_usuarionotificar_on_usuarionotificar_id ON public.sip_solicitud_usuarionotificar USING btree (usuarionotificar_id);
 
 
 --
@@ -7279,20 +7293,6 @@ CREATE INDEX index_usuario_on_regionsjr_id ON public.usuario USING btree (oficin
 --
 
 CREATE UNIQUE INDEX index_usuario_on_reset_password_token ON public.usuario USING btree (reset_password_token);
-
-
---
--- Name: index_usuarionotificar_observacion_on_observacion_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_usuarionotificar_observacion_on_observacion_id ON public.usuarionotificar_observacion USING btree (observacion_id);
-
-
---
--- Name: index_usuarionotificar_observacion_on_usuarionotificar_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_usuarionotificar_observacion_on_usuarionotificar_id ON public.usuarionotificar_observacion USING btree (usuarionotificar_id);
 
 
 --
@@ -7987,11 +7987,11 @@ ALTER TABLE ONLY public.cor1440_gen_anexo_efecto
 
 
 --
--- Name: actividad_observacion fk_rails_05f65435db; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: actividad_solicitud fk_rails_05f65435db; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.actividad_observacion
-    ADD CONSTRAINT fk_rails_05f65435db FOREIGN KEY (observacion_id) REFERENCES public.observacion(id);
+ALTER TABLE ONLY public.actividad_solicitud
+    ADD CONSTRAINT fk_rails_05f65435db FOREIGN KEY (solicitud_id) REFERENCES public.sip_solicitud(id);
 
 
 --
@@ -8059,10 +8059,10 @@ ALTER TABLE ONLY public.cor1440_gen_financiador_proyectofinanciero
 
 
 --
--- Name: actividad_observacion fk_rails_0d3de20bab; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: actividad_solicitud fk_rails_0d3de20bab; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.actividad_observacion
+ALTER TABLE ONLY public.actividad_solicitud
     ADD CONSTRAINT fk_rails_0d3de20bab FOREIGN KEY (actividad_id) REFERENCES public.cor1440_gen_actividad(id);
 
 
@@ -8131,11 +8131,11 @@ ALTER TABLE ONLY public.cor1440_gen_actividadpf
 
 
 --
--- Name: observacion_proyectofinanciero fk_rails_182963c3d6; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: proyectofinanciero_solicitud fk_rails_182963c3d6; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.observacion_proyectofinanciero
-    ADD CONSTRAINT fk_rails_182963c3d6 FOREIGN KEY (observacion_id) REFERENCES public.observacion(id);
+ALTER TABLE ONLY public.proyectofinanciero_solicitud
+    ADD CONSTRAINT fk_rails_182963c3d6 FOREIGN KEY (solicitud_id) REFERENCES public.sip_solicitud(id);
 
 
 --
@@ -8179,10 +8179,10 @@ ALTER TABLE ONLY public.heb412_gen_campohc
 
 
 --
--- Name: observacion_proyectofinanciero fk_rails_1e83373719; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: proyectofinanciero_solicitud fk_rails_1e83373719; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.observacion_proyectofinanciero
+ALTER TABLE ONLY public.proyectofinanciero_solicitud
     ADD CONSTRAINT fk_rails_1e83373719 FOREIGN KEY (proyectofinanciero_id) REFERENCES public.cor1440_gen_proyectofinanciero(id);
 
 
@@ -8195,10 +8195,10 @@ ALTER TABLE ONLY public.cor1440_gen_caracterizacionpersona
 
 
 --
--- Name: observacion fk_rails_24615f9c38; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_solicitud fk_rails_24615f9c38; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.observacion
+ALTER TABLE ONLY public.sip_solicitud
     ADD CONSTRAINT fk_rails_24615f9c38 FOREIGN KEY (estadosol_id) REFERENCES public.sip_estadosol(id);
 
 
@@ -8579,10 +8579,10 @@ ALTER TABLE ONLY public.sip_grupo_usuario
 
 
 --
--- Name: usuarionotificar_observacion fk_rails_798728a770; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_solicitud_usuarionotificar fk_rails_798728a770; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.usuarionotificar_observacion
+ALTER TABLE ONLY public.sip_solicitud_usuarionotificar
     ADD CONSTRAINT fk_rails_798728a770 FOREIGN KEY (usuarionotificar_id) REFERENCES public.usuario(id);
 
 
@@ -8755,11 +8755,11 @@ ALTER TABLE ONLY public.sip_ubicacion
 
 
 --
--- Name: usuarionotificar_observacion fk_rails_a2745aecdb; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_solicitud_usuarionotificar fk_rails_a2745aecdb; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.usuarionotificar_observacion
-    ADD CONSTRAINT fk_rails_a2745aecdb FOREIGN KEY (observacion_id) REFERENCES public.observacion(id);
+ALTER TABLE ONLY public.sip_solicitud_usuarionotificar
+    ADD CONSTRAINT fk_rails_a2745aecdb FOREIGN KEY (solicitud_id) REFERENCES public.sip_solicitud(id);
 
 
 --
@@ -8843,10 +8843,10 @@ ALTER TABLE ONLY public.cor1440_gen_informe
 
 
 --
--- Name: observacion fk_rails_c076bc4b48; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: sip_solicitud fk_rails_c076bc4b48; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.observacion
+ALTER TABLE ONLY public.sip_solicitud
     ADD CONSTRAINT fk_rails_c076bc4b48 FOREIGN KEY (usuario_id) REFERENCES public.usuario(id);
 
 
@@ -10019,6 +10019,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220428145059'),
 ('20220601111520'),
 ('20220613224844'),
-('20220623161800');
+('20220623161800'),
+('20220624165439'),
+('20220624174111');
 
 

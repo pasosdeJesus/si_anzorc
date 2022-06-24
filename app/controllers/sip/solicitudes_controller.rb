@@ -1,14 +1,15 @@
-class ObservacionesController < Heb412Gen::ModelosController
-  before_action :set_observacion,
+module Sip
+  class SolicitudesController < Heb412Gen::ModelosController
+  before_action :set_solicitud,
     only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource  class: ::Observacion
+  load_and_authorize_resource  class: Sip::Solicitud
 
   def clase 
-    "::Observacion"
+    "::Solicitud"
   end
 
-  def set_observacion
-    @basica = Observacion.find(params[:id])
+  def set_solicitud
+    @basica = Sip::Solicitud.find(params[:id])
   end
 
   def atributos_index
@@ -16,7 +17,7 @@ class ObservacionesController < Heb412Gen::ModelosController
       :id, 
       :usuario_id, 
       :fecha,
-      :observacion,
+      :solicitud,
       :estadosol_id,
       :usuarionotificar_ids
     ]
@@ -27,7 +28,7 @@ class ObservacionesController < Heb412Gen::ModelosController
       :id, 
       :usuario_id, 
       :fecha,
-      :observacion,
+      :solicitud,
       :estadosol_id,
       :usuarionotificar_ids
     ]
@@ -41,8 +42,8 @@ class ObservacionesController < Heb412Gen::ModelosController
     atributos_form
   end
 
-  def observacion_params
-    params.require(:observacion).permit(params_lista)
+  def solicitud_params
+    params.require(:solicitud).permit(params_lista)
   end
 
 end

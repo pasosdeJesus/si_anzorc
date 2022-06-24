@@ -5,15 +5,15 @@ module Cor1440Gen
     include Cor1440Gen::Concerns::Models::Actividad
     include Sip::Localizacion
 
-    has_many :actividad_observacion, dependent: :delete_all,
-      class_name: 'ActividadObservacion',
+    has_many :actividad_solicitud, dependent: :delete_all,
+      class_name: 'ActividadSolicitud',
       foreign_key: 'actividad_id'
-    has_many :observacion, through: :actividad_observacion, 
+    has_many :solicitud, through: :actividad_solicitud, 
       dependent: :delete_all,
-      class_name: 'Observacion'
-    accepts_nested_attributes_for :observacion,
+      class_name: 'Sip::Solicitud'
+    accepts_nested_attributes_for :solicitud,
       allow_destroy: true, reject_if: :all_blank
-    accepts_nested_attributes_for :actividad_observacion,
+    accepts_nested_attributes_for :actividad_solicitud,
       allow_destroy: true, reject_if: :all_blank
 
     def presenta(atr)

@@ -91,11 +91,11 @@ class Ability  < Cor1440Gen::Ability
     when Ability::ROLOPERADOR
       can [:index,:read], Nodo
       can [:index,:read], Zrc
-      can [:index,:read], Observacion
+      can [:index,:read], Sip::Solicitud 
     when Ability::ROLADMIN, Ability::ROLDIR
       can :manage, Nodo
       can :manage, Zrc
-      can :manage, Observacion
+      can :manage, Sip::Solicitud 
     end
 
   end

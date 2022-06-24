@@ -26,7 +26,7 @@ module Cor1440Gen
         :listadoasistencia,
         :poblacion,
         :anexos,
-        :observacion
+        :solicitud
       ]
     end
 
@@ -88,14 +88,14 @@ module Cor1440Gen
         ]
        ] +
        [
-         :actividad_observacion_attributes => [
+         :actividad_solicitud_attributes => [
            :id,
            :_destroy,
-           :observacion_attributes => [
+           :solicitud_attributes => [
              :id,
              :usuario_id, 
              :fecha,
-             :observacion,
+             :solicitud,
              :estadosol_id,
              :usuarionotificar_ids => []
            ]
@@ -109,7 +109,7 @@ module Cor1440Gen
     end
 
     def destroy
-      aobs = ActividadObservacion.where(actividad_id: @actividad.id)
+      aobs = ActividadSolicitud.where(actividad_id: @actividad.id)
       aobs.each do |ao|
         ao.destroy!
       end

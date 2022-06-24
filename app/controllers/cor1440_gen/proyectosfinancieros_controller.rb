@@ -49,7 +49,7 @@ module Cor1440Gen
         :informeauditoria,
         :marcologico,
         :anexo_proyectofinanciero,
-        :observaciones, 
+        :solicitudes, 
         :caracterizacion, 
         :beneficiario,
         :plantillahcm,
@@ -93,14 +93,14 @@ module Cor1440Gen
     def proyectofinanciero_params_si_anzorc
       proyectofinanciero_params_cor1440_gen - [
       ] + [
-        :observacion_proyectofinanciero_attributes => [
+        :solicitud_proyectofinanciero_attributes => [
           :id,
           :_destroy,
-          :observacion_attributes => [
+          :solicitud_attributes => [
             :id,
             :usuario_id, 
             :fecha,
-            :observacion,
+            :solicitud,
             :estadosol_id,
             :usuarionotificar_ids => []
           ]

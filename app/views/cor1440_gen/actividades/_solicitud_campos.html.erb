@@ -1,8 +1,8 @@
 <tr class='nested-fields'>
-  <% if f.object.observacion.nil? %>
-    <% f.object.observacion = Observacion.new %>
+  <% if f.object.solicitud.nil? %>
+    <% f.object.solicitud = Sip::Solicitud.new %>
   <% end %>
-  <%= f.simple_fields_for :observacion do |ob| %>
+  <%= f.simple_fields_for :solicitud do |ob| %>
     <% if ob.object.usuario == current_usuario || current_usuario.rol == 1 || ob.object.usuario.nil?%>
       <% autorizado = true %>
     <% else %>
@@ -31,11 +31,11 @@
     </td>
     <td>
       <% if autorizado %>
-        <%= ob.input :observacion,
+        <%= ob.input :solicitud,
           label: false
         %>
       <% else %>
-        <%= ob.input :observacion,
+        <%= ob.input :solicitud,
           label: false,
           :input_html => { class: 'deshabilitado'}
         %>
