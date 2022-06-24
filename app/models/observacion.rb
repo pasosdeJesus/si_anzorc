@@ -3,8 +3,8 @@ class Observacion < ActiveRecord::Base
 
   belongs_to :usuario, foreign_key: 'usuario_id', dependent: :destroy,
     class_name: 'Usuario', optional: false
-  belongs_to :estadoobs, foreign_key: "estadoobs_id", validate: true,
-    class_name: "Estadoobs", optional: true
+  belongs_to :estadosol, foreign_key: "estadosol_id", validate: true,
+    class_name: "Siṕ::Estadosol", optional: true
 
   has_and_belongs_to_many :usuarionotificar, 
     class_name: 'Usuario',

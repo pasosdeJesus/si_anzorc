@@ -1,23 +1,37 @@
-<div class="panel panel-default">
-  <div id="acordeon_observaciones">
-    <div class="card">
-      <div class="card-header" id="observaciones">
-        <h6 class="mb-0" style='text-align: center'>
-          <a class="collapsed" data-toggle="collapse" data-target="#colapsa_observaciones" aria-expanded= "false" aria-controls="colapsa_observaciones">
-            Observaciones
-          </a>
-        </h6>
-      </div>
-      <div id="colapsa_observaciones" class="collapse" aria-labelledby="encabezado_observaciones" data-parent="#acordeon_observaciones">
-        <div class="card-body">
-          <div class="panel-body table-responsive" style="overflow-x:scroll;">
-
-            <%= render partial: 'tabla_observaciones', 
-              locals: {f: f, con_label: false} %>
-
-          </div> <!-- panel-body -->
-        </div> <!-- card-body-->
-      </div> <!-- colapsa-observaciones-->
-    </div> <!-- card -->
-  </div> <!-- acordeon_observaciones -->
-</div> <!-- panel -->
+<div class='accordion' id="acordeon_observaciones">
+  <%= item_acordeon_bs(
+    'acordeon_observaciones', 'observaciones', 
+    t('Observaciones'), false, {
+      'estilo_accordion-header' => 'text-align: center',
+      'estilo_accordion-body' => 'anexos-div anexosdiv'
+    })  do %>
+    <div class="panel-body table-responsive" style="overflow-x:scroll;">
+      <table class="table table-bordered table-sm">
+        <thead class="thead-light">
+          <tr>
+            <th>Usuario</th>
+            <th>Fecha</th>
+            <th>Observación</th>
+            <th>Estado</th>
+            <th>Usuarios por notificar</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="filas_observacion">
+          <%= f.simple_fields_for :actividad_observacion do |ao| %>
+            <%= render partial: 'observacion_campos', 
+              locals: {f: ao} %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="links">
+      <%= link_to_add_association 'Añadir Observación', f, 
+        :actividad_observacion,
+        partial: 'cor1440_gen/actividades/observacion_campos',
+        "data-association-insertion-node" => "tbody#filas_observacion", 
+        "data-association-insertion-method" => "append", 
+        class: 'btn-primary' %>
+    </div>
+  <% end %>
+</div> <!-- accordion -->

@@ -47,9 +47,9 @@ es:
       "estadozrc":
         Estadozrc: Estado de ZRC
         Estadoszrc: Estados de ZRC
-      "estadoobs":
-        Estadoobs: Estado de observación
-        Estadosobs: Estados de observación
+      "sip/estadosol":
+        Estadosol: Estado de observación
+        Estadossol: Estados de observación
       "nivelorganzorc": 
         Nivelorganzorc: Nivel de organización
         Nivelesorganzorc: Niveles de organización

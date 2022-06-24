@@ -1996,7 +1996,7 @@ ALTER SEQUENCE public.cor1440_gen_tipoindicador_id_seq OWNED BY public.cor1440_g
 
 CREATE TABLE public.cor1440_gen_tipomoneda (
     id bigint NOT NULL,
-    nombre character varying(500) NOT NULL,
+    nombre character varying(500) NOT NULL COLLATE public.es_co_utf_8,
     codiso4217 character varying(3) NOT NULL,
     simbolo character varying(10),
     pais_id integer,
@@ -2209,40 +2209,6 @@ CREATE VIEW public.cvt1 AS
      JOIN public.sivel2_gen_supracategoria supracategoria ON ((categoria.supracategoria_id = supracategoria.id)))
      JOIN public.sivel2_gen_victima victima ON (((victima.id_persona = acto.id_persona) AND (victima.id_caso = caso.id))))
      JOIN public.sip_persona persona ON ((persona.id = acto.id_persona)));
-
-
---
--- Name: estadoobs; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.estadoobs (
-    id bigint NOT NULL,
-    nombre character varying(500) NOT NULL COLLATE public.es_co_utf_8,
-    observaciones character varying(5000),
-    fechacreacion date NOT NULL,
-    fechadeshabilitacion date,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
---
--- Name: estadoobs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.estadoobs_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: estadoobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.estadoobs_id_seq OWNED BY public.estadoobs.id;
 
 
 --
@@ -2961,7 +2927,7 @@ CREATE TABLE public.observacion (
     usuario_id integer NOT NULL,
     fecha date NOT NULL,
     observacion character varying(5000),
-    estadoobs_id integer,
+    estadosol_id integer,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -3112,6 +3078,40 @@ ALTER SEQUENCE public.sip_bitacora_id_seq OWNED BY public.sip_bitacora.id;
 
 
 --
+-- Name: sip_estadosol; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sip_estadosol (
+    id bigint NOT NULL,
+    nombre character varying(500) NOT NULL COLLATE public.es_co_utf_8,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: sip_estadosol_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sip_estadosol_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sip_estadosol_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.sip_estadosol_id_seq OWNED BY public.sip_estadosol.id;
+
+
+--
 -- Name: sip_etiqueta_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -3217,8 +3217,8 @@ ALTER SEQUENCE public.sip_grupo_id_seq OWNED BY public.sip_grupo.id;
 --
 
 CREATE TABLE public.sip_grupo_usuario (
-    usuario_id integer NOT NULL,
-    sip_grupo_id integer NOT NULL
+    usuario_id bigint NOT NULL,
+    sip_grupo_id bigint NOT NULL
 );
 
 
@@ -5192,24 +5192,10 @@ ALTER TABLE ONLY public.cor1440_gen_actividad_proyecto ALTER COLUMN id SET DEFAU
 
 
 --
--- Name: cor1440_gen_actividad_rangoedadac id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.cor1440_gen_actividad_rangoedadac ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_actividad_rangoedadac_id_seq'::regclass);
-
-
---
 -- Name: cor1440_gen_actividad_valorcampotind id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.cor1440_gen_actividad_valorcampotind ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_actividad_valorcampotind_id_seq'::regclass);
-
-
---
--- Name: cor1440_gen_actividadarea id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.cor1440_gen_actividadarea ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_actividadarea_id_seq'::regclass);
 
 
 --
@@ -5381,13 +5367,6 @@ ALTER TABLE ONLY public.cor1440_gen_proyectofinanciero_usuario ALTER COLUMN id S
 
 
 --
--- Name: cor1440_gen_rangoedadac id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.cor1440_gen_rangoedadac ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_rangoedadac_id_seq'::regclass);
-
-
---
 -- Name: cor1440_gen_resultadopf id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -5427,13 +5406,6 @@ ALTER TABLE ONLY public.cor1440_gen_valorcampoact ALTER COLUMN id SET DEFAULT ne
 --
 
 ALTER TABLE ONLY public.cor1440_gen_valorcampotind ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_valorcampotind_id_seq'::regclass);
-
-
---
--- Name: estadoobs id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.estadoobs ALTER COLUMN id SET DEFAULT nextval('public.estadoobs_id_seq'::regclass);
 
 
 --
@@ -5602,6 +5574,13 @@ ALTER TABLE ONLY public.sip_anexo ALTER COLUMN id SET DEFAULT nextval('public.si
 --
 
 ALTER TABLE ONLY public.sip_bitacora ALTER COLUMN id SET DEFAULT nextval('public.sip_bitacora_id_seq'::regclass);
+
+
+--
+-- Name: sip_estadosol id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_estadosol ALTER COLUMN id SET DEFAULT nextval('public.sip_estadosol_id_seq'::regclass);
 
 
 --
@@ -6180,14 +6159,6 @@ ALTER TABLE ONLY public.sivel2_gen_estadocivil
 
 
 --
--- Name: estadoobs estadoobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.estadoobs
-    ADD CONSTRAINT estadoobs_pkey PRIMARY KEY (id);
-
-
---
 -- Name: estadozrc estadozrc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6577,6 +6548,14 @@ ALTER TABLE ONLY public.sip_departamento
 
 ALTER TABLE ONLY public.sip_departamento
     ADD CONSTRAINT sip_departamento_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sip_estadosol sip_estadosol_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_estadosol
+    ADD CONSTRAINT sip_estadosol_pkey PRIMARY KEY (id);
 
 
 --
@@ -8220,7 +8199,7 @@ ALTER TABLE ONLY public.cor1440_gen_caracterizacionpersona
 --
 
 ALTER TABLE ONLY public.observacion
-    ADD CONSTRAINT fk_rails_24615f9c38 FOREIGN KEY (estadoobs_id) REFERENCES public.estadoobs(id);
+    ADD CONSTRAINT fk_rails_24615f9c38 FOREIGN KEY (estadosol_id) REFERENCES public.sip_estadosol(id);
 
 
 --
@@ -8477,6 +8456,14 @@ ALTER TABLE ONLY public.cor1440_gen_formulario_mindicadorpf
 
 ALTER TABLE ONLY public.sivel2_gen_caso_presponsable
     ADD CONSTRAINT fk_rails_5a8abbdd31 FOREIGN KEY (id_caso) REFERENCES public.sivel2_gen_caso(id);
+
+
+--
+-- Name: sip_orgsocial fk_rails_5b21e3a2af; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_orgsocial
+    ADD CONSTRAINT fk_rails_5b21e3a2af FOREIGN KEY (grupoper_id) REFERENCES public.sip_grupoper(id);
 
 
 --
@@ -10031,6 +10018,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220422190546'),
 ('20220428145059'),
 ('20220601111520'),
-('20220613224844');
+('20220613224844'),
+('20220623161800');
 
 

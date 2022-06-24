@@ -3,11 +3,11 @@
   @registro.proyectofinanciero.each do |p|
     if p.responsable
       if @registro.observacion.where(
-          usuario_id: p.responsable_id, estadoobs_id: Estadoobs::NOAPROBADO).
+          usuario_id: p.responsable_id, estadosol_id: Sip::Estadosol::NOAPROBADO).
           count >0
         estado = :MAL
       elsif estado != :MAL && (@registro.observacion.where(
-        usuario_id: p.responsable_id, estadoobs_id: nil).
+        usuario_id: p.responsable_id, estadosol_id: nil).
         count >0 || @registro.observacion.where(
           usuario_id: p.responsable_id).count == 0)
         estado = :VACIO

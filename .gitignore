@@ -35,3 +35,5 @@ app/controllers/application_controller.rb
 yarn-debug.log*
 .yarn-integrity
 app/assets/builds
+app/javascript/controllers/index.js
+app/javascript/controllers/sip

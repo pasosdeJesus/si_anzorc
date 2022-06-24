@@ -17,7 +17,7 @@ class ObservacionesController < Heb412Gen::ModelosController
       :usuario_id, 
       :fecha,
       :observacion,
-      :estadoobs_id,
+      :estadosol_id,
       :usuarionotificar_ids
     ]
   end
@@ -28,7 +28,7 @@ class ObservacionesController < Heb412Gen::ModelosController
       :usuario_id, 
       :fecha,
       :observacion,
-      :estadoobs_id,
+      :estadosol_id,
       :usuarionotificar_ids
     ]
   end

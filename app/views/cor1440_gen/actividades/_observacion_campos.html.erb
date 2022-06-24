@@ -43,16 +43,16 @@
     </td>
     <td>
       <% if autorizado %>
-        <%= ob.association :estadoobs,
-          collection: Estadoobs.habilitados,
+        <%= ob.association :estadosol,
+          collection: Sip::Estadosol.habilitados,
           label_method: :nombre,
           value_method: :id,
           wrapper_html: {style: "width: 8em"},
           label: false
         %>
       <% else %>
-        <%= ob.association :estadoobs,
-          collection: Estadoobs.habilitados,
+        <%= ob.association :estadosol,
+          collection: Sip::Estadosol.habilitados,
           label_method: :nombre,
           value_method: :id,
           wrapper_html: {style: "width: 8em"},

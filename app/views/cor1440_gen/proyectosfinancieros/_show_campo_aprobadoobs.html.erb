@@ -2,11 +2,11 @@
     estado = :INDEF
     gd = Usuario.where(rol: Ability::ROLDIR)
     @registro.observacion.where(usuario_id: gd.pluck(:id)).each do |o|
-      if o.estadoobs_id == Estadoobs::NOAPROBADO
+      if o.estadosol_id == Sip::Estadosol::NOAPROBADO
         estado = :MAL
-      elsif o.estadoobs_id == nil && estado != :MAL
+      elsif o.estadosol_id == nil && estado != :MAL
         estado = :VACIO
-      elsif o.estadoobs_id == Estadoobs::APROBADO && estado == :INDEF
+      elsif o.estadosol_id == Sip::Estadosol::APROBADO && estado == :INDEF
         estado = :BIEN
       end
     end

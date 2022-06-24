@@ -16,7 +16,6 @@ class Ability  < Cor1440Gen::Ability
 
   BASICAS_PROPIAS =  [
     ['', 'estadozrc'],
-    ['', 'estadoobs'],
     ['', 'nodo'],
     ['', 'tipoorganzorc'],
     ['', 'nivelorganzorc']
