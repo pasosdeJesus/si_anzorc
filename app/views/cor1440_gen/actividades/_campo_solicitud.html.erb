@@ -5,33 +5,7 @@
       'estilo_accordion-header' => 'text-align: center',
       'estilo_accordion-body' => 'anexos-div anexosdiv'
     })  do %>
-    <div class="panel-body table-responsive" style="overflow-x:scroll;">
-      <table class="table table-bordered table-sm">
-        <thead class="thead-light">
-          <tr>
-            <th>Usuario</th>
-            <th>Fecha</th>
-            <th>Observación</th>
-            <th>Estado</th>
-            <th>Usuarios por notificar</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="filas_solicitud">
-          <%= f.simple_fields_for :actividad_solicitud do |ao| %>
-            <%= render partial: 'solicitud_campos', 
-              locals: {f: ao} %>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <div class="links">
-      <%= link_to_add_association 'Añadir Observación', f, 
-        :actividad_solicitud,
-        partial: 'cor1440_gen/actividades/solicitud_campos',
-        "data-association-insertion-node" => "tbody#filas_solicitud", 
-        "data-association-insertion-method" => "append", 
-        class: 'btn-primary' %>
-    </div>
+    <%= render partial: 'sip/solicitudes/tabla_solicitudes',
+      locals: {f: f, relacion: :actividad_solicitud } %>
   <% end %>
 </div> <!-- accordion -->

@@ -93,7 +93,7 @@ module Cor1440Gen
     def proyectofinanciero_params_si_anzorc
       proyectofinanciero_params_cor1440_gen - [
       ] + [
-        :solicitud_proyectofinanciero_attributes => [
+        :proyectofinanciero_solicitud_attributes => [
           :id,
           :_destroy,
           :solicitud_attributes => [
