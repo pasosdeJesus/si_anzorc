@@ -4148,6 +4148,36 @@ CREATE TABLE public.sivel2_gen_caso_respuestafor (
 
 
 --
+-- Name: sivel2_gen_caso_solicitud; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sivel2_gen_caso_solicitud (
+    id bigint NOT NULL,
+    caso_id integer NOT NULL,
+    solicitud_id integer NOT NULL
+);
+
+
+--
+-- Name: sivel2_gen_caso_solicitud_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sivel2_gen_caso_solicitud_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sivel2_gen_caso_solicitud_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.sivel2_gen_caso_solicitud_id_seq OWNED BY public.sivel2_gen_caso_solicitud.id;
+
+
+--
 -- Name: sivel2_gen_caso_usuario; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -5668,6 +5698,13 @@ ALTER TABLE ONLY public.sip_ubicacionpre ALTER COLUMN id SET DEFAULT nextval('pu
 
 
 --
+-- Name: sivel2_gen_caso_solicitud id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sivel2_gen_caso_solicitud ALTER COLUMN id SET DEFAULT nextval('public.sivel2_gen_caso_solicitud_id_seq'::regclass);
+
+
+--
 -- Name: sivel2_gen_combatiente id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -6847,6 +6884,14 @@ ALTER TABLE ONLY public.sivel2_gen_caso_respuestafor
 
 
 --
+-- Name: sivel2_gen_caso_solicitud sivel2_gen_caso_solicitud_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sivel2_gen_caso_solicitud
+    ADD CONSTRAINT sivel2_gen_caso_solicitud_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: sivel2_gen_combatiente sivel2_gen_combatiente_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7244,6 +7289,20 @@ CREATE INDEX index_sip_ubicacion_on_id_municipio ON public.sip_ubicacion USING b
 --
 
 CREATE INDEX index_sip_ubicacion_on_id_pais ON public.sip_ubicacion USING btree (id_pais);
+
+
+--
+-- Name: index_sivel2_gen_caso_solicitud_on_caso_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_sivel2_gen_caso_solicitud_on_caso_id ON public.sivel2_gen_caso_solicitud USING btree (caso_id);
+
+
+--
+-- Name: index_sivel2_gen_caso_solicitud_on_solicitud_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_sivel2_gen_caso_solicitud_on_solicitud_id ON public.sivel2_gen_caso_solicitud USING btree (solicitud_id);
 
 
 --
@@ -8011,6 +8070,14 @@ ALTER TABLE ONLY public.cor1440_gen_resultadopf
 
 
 --
+-- Name: sivel2_gen_caso_solicitud fk_rails_06deb84185; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sivel2_gen_caso_solicitud
+    ADD CONSTRAINT fk_rails_06deb84185 FOREIGN KEY (caso_id) REFERENCES public.sivel2_gen_caso(id);
+
+
+--
 -- Name: sip_municipio fk_rails_089870a38d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8344,6 +8411,14 @@ ALTER TABLE ONLY public.sip_orgsocial
 
 ALTER TABLE ONLY public.cor1440_gen_informe
     ADD CONSTRAINT fk_rails_40cb623d50 FOREIGN KEY (filtroproyectofinanciero) REFERENCES public.cor1440_gen_proyectofinanciero(id);
+
+
+--
+-- Name: sivel2_gen_caso_solicitud fk_rails_435e539f61; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sivel2_gen_caso_solicitud
+    ADD CONSTRAINT fk_rails_435e539f61 FOREIGN KEY (solicitud_id) REFERENCES public.sip_solicitud(id);
 
 
 --
@@ -10017,6 +10092,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220420154535'),
 ('20220422190546'),
 ('20220428145059'),
+('20220525122150'),
 ('20220601111520'),
 ('20220613224844'),
 ('20220623161800'),

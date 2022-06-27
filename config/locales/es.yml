@@ -66,6 +66,9 @@ es:
         nivelorganzorc: Nivel de organización
         tipoorganzorc: Tipo de organización
         "{:orgsocial persona=>[]}": Contactos
+      "sip/solicitud":
+        Solicitud: Observacion
+        Solicitudes: Observaciones
       "tipoorganzorc": 
         Tipoorganzorc: Tipo de organización
         Tiposorganzorc: Tipos de organización
