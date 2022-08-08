@@ -117,108 +117,144 @@ CREATE FUNCTION public.sivel2_gen_polo_nombre(presponsable_id integer) RETURNS c
 -- Name: soundexesp(text); Type: FUNCTION; Schema: public; Owner: -
 --
 
-CREATE FUNCTION public.soundexesp(input text) RETURNS text
+CREATE FUNCTION public.soundexesp(entrada text) RETURNS text
     LANGUAGE plpgsql IMMUTABLE STRICT COST 500
     AS $$
-DECLARE
-	soundex text='';	
-	-- para determinar la primera letra
-	pri_letra text;
-	resto text;
-	sustituida text ='';
-	-- para quitar adyacentes
-	anterior text;
-	actual text;
-	corregido text;
-BEGIN
-       -- devolver null si recibi un string en blanco o con espacios en blanco
-	IF length(trim(input))= 0 then
-		RETURN NULL;
-	end IF;
- 
- 
-	-- 1: LIMPIEZA:
-		-- pasar a mayuscula, eliminar la letra "H" inicial, los acentos y la enie
-		-- 'holá coñó' => 'OLA CONO'
-		input=translate(ltrim(trim(upper(input)),'H'),'ÑÁÉÍÓÚÀÈÌÒÙÜ','NAEIOUAEIOUU');
- 
-		-- eliminar caracteres no alfabéticos (números, símbolos como &,%,",*,!,+, etc.
-		input=regexp_replace(input, '[^a-zA-Z]', '', 'g');
- 
-	-- 2: PRIMERA LETRA ES IMPORTANTE, DEBO ASOCIAR LAS SIMILARES
-	--  'vaca' se convierte en 'baca'  y 'zapote' se convierte en 'sapote'
-	-- un fenomeno importante es GE y GI se vuelven JE y JI; CA se vuelve KA, etc
-	pri_letra =substr(input,1,1);
-	resto =substr(input,2);
-	CASE 
-		when pri_letra IN ('V') then
-			sustituida='B';
-		when pri_letra IN ('Z','X') then
-			sustituida='S';
-		when pri_letra IN ('G') AND substr(input,2,1) IN ('E','I') then
-			sustituida='J';
-		when pri_letra IN('C') AND substr(input,2,1) NOT IN ('H','E','I') then
-			sustituida='K';
-		else
-			sustituida=pri_letra;
- 
-	end case;
-	--corregir el parametro con las consonantes sustituidas:
-	input=sustituida || resto;		
- 
-	-- 3: corregir "letras compuestas" y volverlas una sola
-	input=REPLACE(input,'CH','V');
-	input=REPLACE(input,'QU','K');
-	input=REPLACE(input,'LL','J');
-	input=REPLACE(input,'CE','S');
-	input=REPLACE(input,'CI','S');
-	input=REPLACE(input,'YA','J');
-	input=REPLACE(input,'YE','J');
-	input=REPLACE(input,'YI','J');
-	input=REPLACE(input,'YO','J');
-	input=REPLACE(input,'YU','J');
-	input=REPLACE(input,'GE','J');
-	input=REPLACE(input,'GI','J');
-	input=REPLACE(input,'NY','N');
-	-- para debug:    --return input;
- 
-	-- EMPIEZA EL CALCULO DEL SOUNDEX
-	-- 4: OBTENER PRIMERA letra
-	pri_letra=substr(input,1,1);
- 
-	-- 5: retener el resto del string
-	resto=substr(input,2);
- 
-	--6: en el resto del string, quitar vocales y vocales fonéticas
-	resto=translate(resto,'@AEIOUHWY','@');
- 
-	--7: convertir las letras foneticamente equivalentes a numeros  (esto hace que B sea equivalente a V, C con S y Z, etc.)
-	resto=translate(resto, 'BPFVCGKSXZDTLMNRQJ', '111122222233455677');
-	-- así va quedando la cosa
-	soundex=pri_letra || resto;
- 
-	--8: eliminar números iguales adyacentes (A11233 se vuelve A123)
-	anterior=substr(soundex,1,1);
-	corregido=anterior;
- 
-	FOR i IN 2 .. length(soundex) LOOP
-		actual = substr(soundex, i, 1);
-		IF actual <> anterior THEN
-			corregido=corregido || actual;
-			anterior=actual;			
-		END IF;
-	END LOOP;
-	-- así va la cosa
-	soundex=corregido;
- 
-	-- 9: siempre retornar un string de 4 posiciones
-	soundex=rpad(soundex,4,'0');
-	soundex=substr(soundex,1,4);		
- 
-	-- YA ESTUVO
-	RETURN soundex;	
-END;	
-$$;
+      DECLARE
+      	soundex text='';	
+      	-- para determinar la primera letra
+      	pri_letra text;
+      	resto text;
+      	sustituida text ='';
+      	-- para quitar adyacentes
+      	anterior text;
+      	actual text;
+      	corregido text;
+      BEGIN
+        --raise notice 'entrada=%', entrada;
+        -- devolver null si recibi un string en blanco o con espacios en blanco
+        IF length(trim(entrada))= 0 then
+              RETURN NULL;
+        END IF;
+
+
+      	-- 1: LIMPIEZA:
+      		-- pasar a mayuscula, eliminar la letra "H" inicial, los acentos y la enie
+      		-- 'holá coñó' => 'OLA CONO'
+      		entrada=translate(ltrim(trim(upper(entrada)),'H'),'ÑÁÉÍÓÚÀÈÌÒÙÜ','NAEIOUAEIOUU');
+
+        IF array_upper(regexp_split_to_array(entrada, '[^a-zA-Z]'), 1) > 1 THEN
+          RAISE NOTICE 'Esta función sólo maneja una palabra y no ''%''. Use más bien soundexespm', entrada;
+      		RETURN NULL;
+        END IF;
+
+      	-- 2: PRIMERA LETRA ES IMPORTANTE, DEBO ASOCIAR LAS SIMILARES
+      	--  'vaca' se convierte en 'baca'  y 'zapote' se convierte en 'sapote'
+      	-- un fenomeno importante es GE y GI se vuelven JE y JI; CA se vuelve KA, etc
+      	pri_letra =substr(entrada,1,1);
+      	resto =substr(entrada,2);
+      	CASE
+      		when pri_letra IN ('V') then
+      			sustituida='B';
+      		when pri_letra IN ('Z','X') then
+      			sustituida='S';
+      		when pri_letra IN ('G') AND substr(entrada,2,1) IN ('E','I') then
+      			sustituida='J';
+      		when pri_letra IN('C') AND substr(entrada,2,1) NOT IN ('H','E','I') then
+      			sustituida='K';
+      		else
+      			sustituida=pri_letra;
+
+      	end case;
+      	--corregir el parámetro con las consonantes sustituidas:
+      	entrada=sustituida || resto;		
+        --raise notice 'entrada tras cambios en primera letra %', entrada;
+
+      	-- 3: corregir "letras compuestas" y volverlas una sola
+      	entrada=REPLACE(entrada,'CH','V');
+      	entrada=REPLACE(entrada,'QU','K');
+      	entrada=REPLACE(entrada,'LL','J');
+      	entrada=REPLACE(entrada,'CE','S');
+      	entrada=REPLACE(entrada,'CI','S');
+      	entrada=REPLACE(entrada,'YA','J');
+      	entrada=REPLACE(entrada,'YE','J');
+      	entrada=REPLACE(entrada,'YI','J');
+      	entrada=REPLACE(entrada,'YO','J');
+      	entrada=REPLACE(entrada,'YU','J');
+      	entrada=REPLACE(entrada,'GE','J');
+      	entrada=REPLACE(entrada,'GI','J');
+      	entrada=REPLACE(entrada,'NY','N');
+      	-- para debug:    --return entrada;
+        --raise notice 'entrada tras cambiar letras compuestas %', entrada;
+
+      	-- EMPIEZA EL CALCULO DEL SOUNDEX
+      	-- 4: OBTENER PRIMERA letra
+      	pri_letra=substr(entrada,1,1);
+
+      	-- 5: retener el resto del string
+      	resto=substr(entrada,2);
+
+      	--6: en el resto del string, quitar vocales y vocales fonéticas
+      	resto=translate(resto,'@AEIOUHWY','@');
+
+      	--7: convertir las letras foneticamente equivalentes a numeros  (esto hace que B sea equivalente a V, C con S y Z, etc.)
+      	resto=translate(resto, 'BPFVCGKSXZDTLMNRQJ', '111122222233455677');
+      	-- así va quedando la cosa
+      	soundex=pri_letra || resto;
+
+      	--8: eliminar números iguales adyacentes (A11233 se vuelve A123)
+      	anterior=substr(soundex,1,1);
+      	corregido=anterior;
+
+      	FOR i IN 2 .. length(soundex) LOOP
+      		actual = substr(soundex, i, 1);
+      		IF actual <> anterior THEN
+      			corregido=corregido || actual;
+      			anterior=actual;			
+      		END IF;
+      	END LOOP;
+      	-- así va la cosa
+      	soundex=corregido;
+
+      	-- 9: siempre retornar un string de 4 posiciones
+      	soundex=rpad(soundex,4,'0');
+      	soundex=substr(soundex,1,4);		
+
+      	-- YA ESTUVO
+      	RETURN soundex;	
+      END;	
+      $$;
+
+
+--
+-- Name: soundexespm(text); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION public.soundexespm(entrada text) RETURNS text
+    LANGUAGE plpgsql IMMUTABLE STRICT COST 500
+    AS $$
+      DECLARE
+        soundex text = '' ;
+        partes text[];
+        sep text = '';
+        se text = '';
+      BEGIN
+        entrada=translate(ltrim(trim(upper(entrada)),'H'),'ÑÁÉÍÓÚÀÈÌÒÙÜ','NAEIOUAEIOUU');
+        partes=regexp_split_to_array(entrada, '[^a-zA-Z]');
+
+        --raise notice 'partes=%', partes;
+        FOR i IN 1 .. array_upper(partes, 1) LOOP
+          se = soundexesp(partes[i]);
+          IF length(se) > 0 THEN
+            soundex = soundex || sep || se;
+            sep = ' ';
+            --raise notice 'i=% . soundexesp=%', i, se;
+          END IF;
+        END LOOP;
+
+      	RETURN soundex;	
+      END;	
+      $$;
 
 
 SET default_tablespace = '';
@@ -2005,7 +2041,7 @@ ALTER SEQUENCE public.cor1440_gen_tipoindicador_id_seq OWNED BY public.cor1440_g
 
 CREATE TABLE public.cor1440_gen_tipomoneda (
     id bigint NOT NULL,
-    nombre character varying(500) NOT NULL COLLATE public.es_co_utf_8,
+    nombre character varying(500) NOT NULL,
     codiso4217 character varying(3) NOT NULL,
     simbolo character varying(10),
     pais_id integer,
@@ -3264,8 +3300,8 @@ ALTER SEQUENCE public.sip_grupo_id_seq OWNED BY public.sip_grupo.id;
 --
 
 CREATE TABLE public.sip_grupo_usuario (
-    usuario_id bigint NOT NULL,
-    sip_grupo_id bigint NOT NULL
+    usuario_id integer NOT NULL,
+    sip_grupo_id integer NOT NULL
 );
 
 
@@ -5299,23 +5335,6 @@ ALTER SEQUENCE public.tipoorganzorc_id_seq OWNED BY public.tipoorganzorc.id;
 
 
 --
--- Name: vvictimasoundexesp; Type: MATERIALIZED VIEW; Schema: public; Owner: -
---
-
-CREATE MATERIALIZED VIEW public.vvictimasoundexesp AS
- SELECT sivel2_gen_victima.id_caso,
-    sip_persona.id AS id_persona,
-    (((sip_persona.nombres)::text || ' '::text) || (sip_persona.apellidos)::text) AS nomap,
-    ( SELECT array_to_string(array_agg(public.soundexesp(n.s)), ' '::text) AS array_to_string
-           FROM ( SELECT unnest(string_to_array(regexp_replace((((sip_persona.nombres)::text || ' '::text) || (sip_persona.apellidos)::text), '  *'::text, ' '::text), ' '::text)) AS s
-                  ORDER BY (unnest(string_to_array(regexp_replace((((sip_persona.nombres)::text || ' '::text) || (sip_persona.apellidos)::text), '  *'::text, ' '::text), ' '::text)))) n) AS nomsoundexesp
-   FROM public.sip_persona,
-    public.sivel2_gen_victima
-  WHERE (sip_persona.id = sivel2_gen_victima.id_persona)
-  WITH NO DATA;
-
-
---
 -- Name: zrc; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -5376,10 +5395,24 @@ ALTER TABLE ONLY public.cor1440_gen_actividad_proyecto ALTER COLUMN id SET DEFAU
 
 
 --
+-- Name: cor1440_gen_actividad_rangoedadac id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_actividad_rangoedadac ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_actividad_rangoedadac_id_seq'::regclass);
+
+
+--
 -- Name: cor1440_gen_actividad_valorcampotind id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.cor1440_gen_actividad_valorcampotind ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_actividad_valorcampotind_id_seq'::regclass);
+
+
+--
+-- Name: cor1440_gen_actividadarea id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_actividadarea ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_actividadarea_id_seq'::regclass);
 
 
 --
@@ -5548,6 +5581,13 @@ ALTER TABLE ONLY public.cor1440_gen_proyectofinanciero ALTER COLUMN id SET DEFAU
 --
 
 ALTER TABLE ONLY public.cor1440_gen_proyectofinanciero_usuario ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_proyectofinanciero_usuario_id_seq'::regclass);
+
+
+--
+-- Name: cor1440_gen_rangoedadac id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_rangoedadac ALTER COLUMN id SET DEFAULT nextval('public.cor1440_gen_rangoedadac_id_seq'::regclass);
 
 
 --
@@ -8748,14 +8788,6 @@ ALTER TABLE ONLY public.sivel2_gen_caso_presponsable
 
 
 --
--- Name: sip_orgsocial fk_rails_5b21e3a2af; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sip_orgsocial
-    ADD CONSTRAINT fk_rails_5b21e3a2af FOREIGN KEY (grupoper_id) REFERENCES public.sip_grupoper(id);
-
-
---
 -- Name: cor1440_gen_informenarrativo fk_rails_629d2a2cb8; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10324,6 +10356,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220721170452'),
 ('20220721200858'),
 ('20220722000850'),
-('20220722192214');
+('20220722192214'),
+('20220805181901');
 
 
