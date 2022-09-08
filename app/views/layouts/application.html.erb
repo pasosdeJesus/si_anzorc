@@ -27,6 +27,14 @@
         <%= opcion_menu 'Conteo de victimizaciones individuales', 
           sivel2_gen.conteos_victimizaciones_path,
           desplegable: true %>
+        <%= opcion_menu "Graficar victimizaciones individuales", 
+          sivel2_gen.graficar_victimizaciones_individuales_path,
+          'data-turbo' => false,
+          desplegable: true %>
+        <%= opcion_menu 'Mapa de victimizaciones por departamento', 
+          sivel2_gen.mapadepvic_path,
+          'data-turbo' => false,
+          desplegable: true %>
       <% end %>
       <%= despliega_abajo 'Actividades y Proyectos' do %>
         <%= opcion_menu 'Listado de Actividades', cor1440_gen.actividades_path,
@@ -98,6 +106,10 @@
             desplegable: true %>
           <%= opcion_menu 'Respaldo cifrado', sip.respaldo7z_path,
             desplegable: true %>
+        <% end %>
+        <% if can?(:new, Sivel2Gen::Caso) %>
+          <%= opcion_menu "Árbol de presuntos responsables",
+            sivel2_gen.arbol_presponsables_path, desplegable: true %>
         <% end %>
       <% end %>
       <%= opcion_menu "Salir #{current_usuario.nusuario}", 
