@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 4939a7f8a46bf2fd3d1b37f0e169626c75298b93
+  revision: 1010cc678b7413c8ff3c2f29c827cf412aa1d1e5
   branch: main
   specs:
     cor1440_gen (2.1a1)
@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: c3f827bd8695b58148f4ed3019727eb0c6a2643f
+  revision: 00500c58ae543cbbb1c1ed5f2a54e3a9aa7ce8d8
   branch: main
   specs:
     heb412_gen (2.1.0.beta1)
@@ -35,7 +35,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/mr519_gen.git
-  revision: 1161bc3533bdf84d368c6ddb13161cd010efebbf
+  revision: 3eae03cdd4173988a7e8a07227940ddfe6522c09
   branch: main
   specs:
     mr519_gen (2.1.0.beta1)
@@ -62,7 +62,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sivel2_gen.git
-  revision: d67493e7386b8adb635cfb1280612a0e50fef16c
+  revision: fc893092f5081a46c619794565041084773d992c
   branch: main
   specs:
     sivel2_gen (2.1.0.beta1)
@@ -454,4 +454,4 @@ RUBY VERSION
    ruby 3.1.1p18
 
 BUNDLED WITH
-   2.3.25
+   2.3.26
